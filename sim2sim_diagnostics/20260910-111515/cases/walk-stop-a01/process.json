@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "walk-stop-a01",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/walk-stop-a01"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 3.489271402359009
+}

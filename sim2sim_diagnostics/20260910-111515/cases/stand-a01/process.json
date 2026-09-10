@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "stand-a01",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/stand-a01"
+  ],
+  "exit_code": 0,
+  "wall_seconds": 2.846555471420288
+}

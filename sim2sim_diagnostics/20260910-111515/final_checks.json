@@ -1,0 +1,13 @@
+{
+  "original_files_unchanged": true,
+  "original_models_unchanged": true,
+  "git_status_after": " M policy/LW/robot_lab/leg_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n",
+  "no_policy_weights_in_output": true,
+  "case_validation": {
+    "stand-a01": true,
+    "walk-stop-a01": true
+  },
+  "git_status_unchanged": true,
+  "cases_identical_before_command_divergence_10s": true,
+  "all_pass": true
+}

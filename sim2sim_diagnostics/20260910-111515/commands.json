@@ -1,0 +1,24 @@
+[
+  {
+    "case_id": "stand-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "stand-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/stand-a01"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml stand-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/stand-a01 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/stand-a01/console.log 2>&1"
+  },
+  {
+    "case_id": "walk-stop-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "walk-stop-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/walk-stop-a01"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml walk-stop-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/walk-stop-a01 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/cases/walk-stop-a01/console.log 2>&1"
+  }
+]

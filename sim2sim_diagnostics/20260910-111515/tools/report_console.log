@@ -1,0 +1,60 @@
+{
+  "stand-a01": {
+    "sensor_state_timing_max_error": 0.0,
+    "pd_formula_max_error": 0.0,
+    "physics_substeps": 15000,
+    "actuator_force_abs_max": [
+      12.701058387756348,
+      9.384727478027344,
+      18.509868621826172,
+      23.021900177001953,
+      26.16465950012207,
+      27.832252502441406,
+      24.290929794311523,
+      15.970348358154297,
+      0.5584285259246826,
+      0.3399850130081177
+    ],
+    "world_geom_ids_contacted": [
+      0
+    ],
+    "video": {
+      "decoded_frames": 1500,
+      "expected_frames": 1500,
+      "fps": 50.0,
+      "width": 960,
+      "height": 720,
+      "complete": true
+    },
+    "checks_pass": true
+  },
+  "walk-stop-a01": {
+    "sensor_state_timing_max_error": 0.0,
+    "pd_formula_max_error": 0.0,
+    "physics_substeps": 20000,
+    "actuator_force_abs_max": [
+      37.49908447265625,
+      36.23024368286133,
+      30.81298828125,
+      31.000701904296875,
+      50.36542510986328,
+      55.276363372802734,
+      24.290929794311523,
+      22.83660125732422,
+      0.7156102061271667,
+      0.579689621925354
+    ],
+    "world_geom_ids_contacted": [
+      0
+    ],
+    "video": {
+      "decoded_frames": 2000,
+      "expected_frames": 2000,
+      "fps": 50.0,
+      "width": 960,
+      "height": 720,
+      "complete": true
+    },
+    "checks_pass": true
+  }
+}

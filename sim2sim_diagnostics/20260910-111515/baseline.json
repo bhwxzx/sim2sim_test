@@ -1,0 +1,383 @@
+{
+  "created_at": "2026-09-10T11:23:25.259442+08:00",
+  "repository": "/home/lfr/rl_sar",
+  "head": "93d6c33fa0b8b64a5f5ab75d7c4baac3590352ea",
+  "git_status_short": " M policy/LW/robot_lab/leg_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n",
+  "git_diff_numstat": "-\t-\tpolicy/LW/robot_lab/leg_loco/policy.onnx\n",
+  "git_diff": "diff --git a/policy/LW/robot_lab/leg_loco/policy.onnx b/policy/LW/robot_lab/leg_loco/policy.onnx\nindex 3340303..936d503 100644\nBinary files a/policy/LW/robot_lab/leg_loco/policy.onnx and b/policy/LW/robot_lab/leg_loco/policy.onnx differ\n",
+  "files": [
+    {
+      "path": "/home/lfr/rl_sar/AGENTS.md",
+      "snapshot": "config_snapshot/AGENTS.md",
+      "sha256": "848736a6094218f7bf5446d11390d8716b6813efca48757ec18245f4b2edae30",
+      "size_bytes": 3558
+    },
+    {
+      "path": "/home/lfr/rl_sar/docs/LW_BUILD_DEPLOYMENT_CN.md",
+      "snapshot": "config_snapshot/docs/LW_BUILD_DEPLOYMENT_CN.md",
+      "sha256": "ba84d881adb6395bb17b19396c9d92da4f99e8cc7ad67d81bf108292c984bc0f",
+      "size_bytes": 66426
+    },
+    {
+      "path": "/home/lfr/rl_sar/docs/LW_QUICK_START_CN.md",
+      "snapshot": "config_snapshot/docs/LW_QUICK_START_CN.md",
+      "sha256": "cb5097ba52563eb233093c51f3ce266167b12156fc63a5b2ec59101f37515c80",
+      "size_bytes": 20668
+    },
+    {
+      "path": "/home/lfr/rl_sar/policy/LW/base.yaml",
+      "snapshot": "config_snapshot/policy/LW/base.yaml",
+      "sha256": "6f9f3a4c3e16ec7c11deced011062f359650c17ac73378773cd6243e9ed1a1e8",
+      "size_bytes": 4382
+    },
+    {
+      "path": "/home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/config.yaml",
+      "snapshot": "config_snapshot/policy/LW/robot_lab/leg_loco/config.yaml",
+      "sha256": "89682b817081e7aeedfcb47af7f292a5e2a18953fef4dd778f235d9bd97b3622",
+      "size_bytes": 2093
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "sha256": "742908d3907e8b97187a386222d30aba16657759646762420c6b3ef59192c081",
+      "size_bytes": 22417
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/include/rl_sim_LW.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/include/rl_sim_LW.hpp",
+      "sha256": "26880437d767f9a159db918120685cf60018d909161533b68012b1a208f70884",
+      "size_bytes": 5427
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "sha256": "97aab22d0a54dced5b13bfdd41a6ca3b8f2afcfc53c7b90ee84f6864133289b0",
+      "size_bytes": 13562
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "sha256": "3bbb55a1c31f12f9b4af2317e8253ac16aeda70634189a954589291c60cb7742",
+      "size_bytes": 5417
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "sha256": "8140e69359d23f915f30ba9063e44be8b190d4aa07347d0a4d6e5e5021654b8c",
+      "size_bytes": 7841
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "sha256": "3f28d46b9b90ab2e9b74c034458aeda77d0343b9030ee0ad9b7df08a9a4cc898",
+      "size_bytes": 2887
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "sha256": "ea4341639e11ec3fcf2e8a803be9b724d4b95883b683182df8a3b6e8c0a92526",
+      "size_bytes": 27578
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "sha256": "ec5629cc61f61196cf09dd9c949b4080b555be36098f6151830f048c9e2332bb",
+      "size_bytes": 3992
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "sha256": "c51e73de8d18c1d270e6c95f78507ff03505fae8a8204cf80942e61c218b9ded",
+      "size_bytes": 55690
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "sha256": "2c6e9e980de54fa13f0808dc6f7de52d8de23d7f9bd85a01fac5b00cb3cfb651",
+      "size_bytes": 17343
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "sha256": "a3978fa5a30e75652eaf388338a3c63209494c3b86003a68c04ce0622667c7c9",
+      "size_bytes": 5571
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "sha256": "ab6c2bea4fb43a08d6f4c547756d92e7b90594998e31dfe1f02bd4473c868dc1",
+      "size_bytes": 10809
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "sha256": "abe22531170e010a045d0149cf9542dd3e91523531ccc392dbb8e4115c0d8532",
+      "size_bytes": 4557
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "sha256": "6805670b2c81bb102741af74bd4160e21acfe1b55a158675ac28096f2c65bf94",
+      "size_bytes": 5541
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "sha256": "5d8d02e46247166119eca3f095e2e9b55358c965307f632d693bee73c433db1e",
+      "size_bytes": 2096
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "sha256": "798cb47d4518b8baf437dc6c3904034a9174193686dd721ad29e67e894df65b4",
+      "size_bytes": 28720
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "sha256": "729144d55d05c76caae83026144f5ead1d82bbee4c2aa2234d4e644ea311ae81",
+      "size_bytes": 6634
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "sha256": "4e8e67aaf2014c202ce3634ff4e247539a37582b19b2d87ecf6f01c1348e9eb2",
+      "size_bytes": 9919
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "sha256": "061cbdd6822b33d3ad37de98f3531dc0d20dec14258bda5cdaf61c645eb1b84e",
+      "size_bytes": 10852
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "sha256": "0ca946de513fd64bc0fe51bec8a754802ffb2e101f56ba94e9b9fff3525fd1b5",
+      "size_bytes": 2467
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "sha256": "ce00b507425d7c8dc0b9b148533d5a309f46cf5293fe836e7a5302e913a4eccf",
+      "size_bytes": 4265
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "sha256": "3b8a0f3bbb645ca37993a4c09224415151559dc86adbf53ce1306b7e32abccf4",
+      "size_bytes": 4763
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "sha256": "8eac7aff034e2ecb885012bdbcd871480e62b5145d410a65889d03ecb15c6a7e",
+      "size_bytes": 10627
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "sha256": "4b2698042fff6014fae8e467711eaad735d62b8baf5f70a6b1915434f0c5a684",
+      "size_bytes": 2022
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "sha256": "2f3f2845de39984ab69a4f451f2258b03dbf9e1059203c1920e48ea2c331167c",
+      "size_bytes": 5618
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "sha256": "2f028177e4859db02bf8a9e70090ce5d455b341d3256e556265eed56a15916a2",
+      "size_bytes": 6852
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "sha256": "f98e7f3a75c5d476a203ed475dff35810a16ed4991fa6c5bc689f709907c0bcb",
+      "size_bytes": 1815
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "sha256": "54e38e61ac7db14d42732f0a3a0a05e54734075cc0a72bc47371fd7f33ce074c",
+      "size_bytes": 3119
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "sha256": "ebce1d930c03bfed673b300c4bf13d40e886e0859d8b5845dc9ef5d3ceb9cba3",
+      "size_bytes": 2442
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "sha256": "9dc1fe56b13cdf116164bb2c79589ced335fddc0d8f1d53b7ff8fac3f6016168",
+      "size_bytes": 1363
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "sha256": "35370cc092c85cd650b3a54b7b9c7e484cc28ae52331f45f88d6b2ba97b083fd",
+      "size_bytes": 689
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "sha256": "819c2169ce8c9d7c94b7c4b9d319d41dc2d82367815465b1cf5a5f49f9672c24",
+      "size_bytes": 19194
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/thirdparty/mujoco_simulate/mujoco_utils.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/mujoco_utils.hpp",
+      "sha256": "592880769cdba1e2d356bfd2299811a7564874f495bb4a213a0b8680485751c2",
+      "size_bytes": 18021
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.cc",
+      "snapshot": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.cc",
+      "sha256": "d7d8c861fc321128c11caf5de5c0dbc31cb78dece193cddab5cc62cd18cd66f4",
+      "size_bytes": 93364
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.h",
+      "snapshot": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.h",
+      "sha256": "628e17f8292780539f02c492b8ac1ec31a750d1bb7d530f60cc3ec1aff3b1677",
+      "size_bytes": 10453
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/src/rl_sim_LW.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/src/rl_sim_LW.cpp",
+      "sha256": "c677c1835858a2ea29bfe58c2d612eec0a5e2679f9bd303f9ab7e118784c00ca",
+      "size_bytes": 49355
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "sha256": "aee18ff8549fdb6b2591be554902a81b13e1252bfc36cb331154e372e3419e6f",
+      "size_bytes": 15551
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "sha256": "b9a6b19059b13fc464d079850c0f01fc8d92273b022eb6c812226121200ec839",
+      "size_bytes": 9500084
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "sha256": "eab6dd1896081d5dda4f9579f1fe73f94a1a61b5db29fb575393a25847f41cc3",
+      "size_bytes": 810984
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "sha256": "de83517b08196f2dcfbb3fed786fca0f4a8432c79defaba6de6dd7f02343d6e6",
+      "size_bytes": 4731834
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "sha256": "a2412b88e9514bc9958d28cff59950973054102abadab7165acf8e5fa67483d6",
+      "size_bytes": 3968884
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "sha256": "728b0b7f1d745ecdebc37f22e0f594883a4412065180fa26814b3bcf7116165c",
+      "size_bytes": 5117334
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "sha256": "e4c1932dfced1b05134ec3dc6ec61af8178587810aac70ad5d192151a6d8a62e",
+      "size_bytes": 846384
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "sha256": "e55ff91db2f3fc29810853e726e495a558f413282ae4e939f61f6174abe90012",
+      "size_bytes": 810984
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "sha256": "d22d28271e537eb8cd7cfac82a32fa44e7b9593f20ec70b544292540a336b6f7",
+      "size_bytes": 4731834
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "sha256": "9ca46193032a82ac9603483bbca0cacd0df240a5c962502d2c76b4add301fc17",
+      "size_bytes": 3968984
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "sha256": "22f3f46e572e5528996225679f8683db71b30029f77fd1f912272138fe32ad66",
+      "size_bytes": 5117334
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "sha256": "6efcac8d8e72938d22a9db530eb8273e08a3ebb23ec32b9e50de5f264a1bb714",
+      "size_bytes": 846384
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "sha256": "cb879c82e32f23cac8ff5597caf39ed39032c272e84e50bcea59f0320ef707c0",
+      "size_bytes": 1480
+    }
+  ],
+  "models": [
+    {
+      "path": "/home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx",
+      "sha256": "63ef20be03cbba9602d7008e84f605e62ff38cbe9ed64ce25366fdab9d08a1a7",
+      "size_bytes": 820880,
+      "loaded_for_control": true
+    },
+    {
+      "path": "/home/lfr/policy_storage/LW/leg_loco/2026-09-04-11-16-35/policy.onnx",
+      "sha256": "63ef20be03cbba9602d7008e84f605e62ff38cbe9ed64ce25366fdab9d08a1a7",
+      "size_bytes": 820880,
+      "loaded_for_control": false
+    },
+    {
+      "path": "/home/lfr/policy_storage/LW/leg_loco/2026-09-04-11-16-35/policy.pt",
+      "sha256": "277285f9b728d17c3beb79dfc2d1b0ccadb7ea6a6c6f99edd79a60e3547cd87d",
+      "size_bytes": 852878,
+      "loaded_for_control": false
+    }
+  ],
+  "checkpoint": {
+    "archived_path": "/home/young/liufengrong/robot_lab/logs/rsl_rl/LW_leg_flat_amp_roa/2026-09-04_11-16-35/model_50000.pt",
+    "present": false,
+    "sha256_independently_verified": null,
+    "archive_declared_sha256": "59ab5245acb17de8ea1b79e924c2f0189765be3c51c85f437b22b8e2423b0e19"
+  },
+  "original_executable_not_launched": {
+    "path": "/home/lfr/rl_sar/build/rl_sar/rl_sim_LW",
+    "sha256": "3862259c3f3af89be557d6e756483cd160e65094795ec319d2f4893ae370b806"
+  },
+  "diagnostic_executable": {
+    "path": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect",
+    "sha256": "749909a75c24168ee12668a5e82dd305845a49d6f9278d560456ce1103dca593"
+  },
+  "ldd": "\tlinux-vdso.so.1 (0x00007ffeac171000)\n\tlibmujoco.so.3.2.7 => /home/lfr/rl_sar/library/mujoco/lib/libmujoco.so.3.2.7 (0x00007efe24a00000)\n\tlibonnxruntime.so.1 => /home/lfr/rl_sar/library/inference_runtime/onnxruntime/lib/libonnxruntime.so.1 (0x00007efe23400000)\n\tlibyaml-cpp.so.0.7 => /lib/x86_64-linux-gnu/libyaml-cpp.so.0.7 (0x00007efe24e3d000)\n\tlibtbb.so.12 => /lib/x86_64-linux-gnu/libtbb.so.12 (0x00007efe249b0000)\n\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007efe24e1f000)\n\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007efe23000000)\n\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007efe248c9000)\n\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007efe248a9000)\n\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007efe22c00000)\n\tlibdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x00007efe24e1a000)\n\t/lib64/ld-linux-x86-64.so.2 (0x00007efe24f2c000)\n\tlibpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x00007efe248a4000)\n\tlibrt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007efe2489f000)\n",
+  "runtime_libraries": [
+    {
+      "path": "/home/lfr/rl_sar/library/mujoco/lib/libmujoco.so.3.2.7",
+      "sha256": "848a26ad3daccac3a56d7269ac68167ed3497f048223f8720f4e56eb432eb6c6"
+    },
+    {
+      "path": "/home/lfr/rl_sar/library/inference_runtime/onnxruntime/lib/libonnxruntime.so.1.22.0",
+      "sha256": "3da6146e14e7b8aaec625dde11d6114c7457c87a5f93d744897da8781e35c673"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0",
+      "sha256": "0ff4f6210a56b6c232c1497514a86424279f2250fe8d25ee26f600b3dab0a2b5"
+    }
+  ]
+}

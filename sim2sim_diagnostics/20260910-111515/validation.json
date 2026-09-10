@@ -1,0 +1,70 @@
+{
+  "stand-a01": {
+    "rows": 1500,
+    "input_finite": true,
+    "output_finite": true,
+    "input_shapes_correct": true,
+    "history_shift_exact": true,
+    "first_history_repeated": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "target_max_error": 0.0,
+    "observation_state_max_error": 0.0,
+    "gravity_sensor_max_error": 1.9306931797746785e-07,
+    "gravity_current_pose_max_difference": 0.0025678387680608894,
+    "com_velocity_cross_product_max_error": 1.1102230246251565e-16,
+    "max_abs_xfrc_applied": 0.0,
+    "max_abs_qfrc_applied": 0.0,
+    "physics_substeps": 15000,
+    "low_level_updates": 6000,
+    "max_policy_period_error": 1.1084883011491797e-14,
+    "reset_rows": [
+      0
+    ],
+    "termination_rows": [
+      1499
+    ],
+    "nonfoot_ground_contacts": [],
+    "max_abs_raw_action": 3.1948115825653076,
+    "max_abs_clipped_action": 3.1948115825653076,
+    "pd_actual_intervals_rounded_for_summary": [
+      0.004,
+      0.006
+    ],
+    "all_checks_pass": true
+  },
+  "walk-stop-a01": {
+    "rows": 2000,
+    "input_finite": true,
+    "output_finite": true,
+    "input_shapes_correct": true,
+    "history_shift_exact": true,
+    "first_history_repeated": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "target_max_error": 0.0,
+    "observation_state_max_error": 0.0,
+    "gravity_sensor_max_error": 1.8700091253265327e-07,
+    "gravity_current_pose_max_difference": 0.004392160667564565,
+    "com_velocity_cross_product_max_error": 2.220446049250313e-16,
+    "max_abs_xfrc_applied": 0.0,
+    "max_abs_qfrc_applied": 0.0,
+    "physics_substeps": 20000,
+    "low_level_updates": 8000,
+    "max_policy_period_error": 2.4442253776513212e-14,
+    "reset_rows": [
+      0
+    ],
+    "termination_rows": [
+      1999
+    ],
+    "nonfoot_ground_contacts": [],
+    "max_abs_raw_action": 3.2692792415618896,
+    "max_abs_clipped_action": 3.2692792415618896,
+    "pd_actual_intervals_rounded_for_summary": [
+      0.004,
+      0.006
+    ],
+    "all_checks_pass": true
+  }
+}

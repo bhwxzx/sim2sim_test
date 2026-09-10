@@ -1,0 +1,14 @@
+{
+  "case_id": "walk-stop-a01",
+  "control_records": 2000,
+  "final_sim_time": 40.00000000000292,
+  "low_level_ticks": 8000,
+  "physics_steps": 20000,
+  "requested_sim_duration": 40.0,
+  "reset_count": 1,
+  "safety_events": [],
+  "seed": 42,
+  "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+  "status": "completed",
+  "termination_reason": "time_limit"
+}
