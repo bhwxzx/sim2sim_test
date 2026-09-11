@@ -1,0 +1,54 @@
+[
+  {
+    "condition": "A",
+    "case_id": "stand-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "stand-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01",
+      "A"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml stand-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01 A > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01/console.log 2>&1"
+  },
+  {
+    "condition": "A",
+    "case_id": "walk-stop-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "walk-stop-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01",
+      "A"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml walk-stop-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01 A > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01/console.log 2>&1"
+  },
+  {
+    "condition": "B",
+    "case_id": "stand-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "stand-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01",
+      "B"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml stand-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01 B > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01/console.log 2>&1"
+  },
+  {
+    "condition": "B",
+    "case_id": "walk-stop-a01",
+    "cwd": "/home/lfr/rl_sar",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+      "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "walk-stop-a01",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01",
+      "B"
+    ],
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml walk-stop-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01 B > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01/console.log 2>&1"
+  }
+]

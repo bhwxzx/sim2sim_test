@@ -1,0 +1,20 @@
+class ROADeploymentWrapper(Module):
+  __parameters__ = []
+  __buffers__ = []
+  training : bool
+  _is_full_backward_hook : Optional[bool]
+  history_encoder : __torch__.rsl_rl.modules.actor_critic_roa.StateHistoryEncoder
+  actor : __torch__.rsl_rl.networks.mlp.MLP
+  actor_obs_normalizer : __torch__.torch.nn.modules.linear.Identity
+  def forward(self: __torch__.ROADeploymentWrapper,
+    history: Tensor) -> Tensor:
+    actor = self.actor
+    history_encoder = self.history_encoder
+    actor_obs_normalizer = self.actor_obs_normalizer
+    _0 = torch.slice(history, 0, 0, 9223372036854775807)
+    current = torch.slice(_0, 1, -41, 9223372036854775807)
+    _1 = (actor_obs_normalizer).forward()
+    _2 = (history_encoder).forward(history, )
+    _3, _4, = _2
+    input = torch.cat([current, _3, _4], -1)
+    return (actor).forward(input, )
