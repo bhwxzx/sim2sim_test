@@ -1,0 +1,2 @@
+[libopenh264 @ 0x4bdf380] [OpenH264] this = 0x0x4e9f950, Warning:layerId(0) doesn't support profile(578), change to UNSPECIFIC profile
+[libopenh264 @ 0x4bdf380] [OpenH264] this = 0x0x4e9f950, Warning:bEnableFrameSkip = 0,bitrate can't be controlled for RC_QUALITY_MODE,RC_BITRATE_MODE and RC_TIMESTAMP_MODE without enabling skip frame.

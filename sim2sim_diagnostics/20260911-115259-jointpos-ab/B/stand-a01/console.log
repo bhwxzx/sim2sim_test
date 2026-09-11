@@ -1,0 +1,30 @@
+[0;37m[INFO]   [0m [FSMManager] Registered type: LW
+[0;37m[INFO]   [0m Preloading ONNX model into memory: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Successfully loaded ONNX model: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Validated model and warmed it up in 0.296 ms.
+[0;37m[INFO]   [0m Preload & Warmup finished for: LW/robot_lab/leg_loco
+[0;37m[INFO]   [0m [FSM] Set initial state: RLFSMStatePassive
+[0;37m[INFO]   [0m [FSMManager] FSM created for type: LW
+
+[0;37m[INFO]   [0m [FSM] Request switch from RLFSMStatePassive to RLFSMStateRLLocomotion_Leg
+case=stand-a01 step=250 time=5.000
+case=stand-a01 step=500 time=10.000
+case=stand-a01 step=750 time=15.000
+case=stand-a01 step=1000 time=20.000
+case=stand-a01 step=1250 time=25.000
+case=stand-a01 step=1500 time=30.000
+{
+  "case_id": "stand-a01",
+  "condition": "B",
+  "control_records": 1500,
+  "final_sim_time": 29.99999999999425,
+  "low_level_ticks": 6000,
+  "physics_steps": 15000,
+  "requested_sim_duration": 30.0,
+  "reset_count": 1,
+  "safety_events": [],
+  "seed": 42,
+  "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+  "status": "completed",
+  "termination_reason": "time_limit"
+}
