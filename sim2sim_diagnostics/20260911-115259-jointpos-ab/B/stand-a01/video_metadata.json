@@ -1,0 +1,42 @@
+{
+  "argv": [
+    "/home/lfr/miniconda3/envs/fluxweave/bin/ffmpeg",
+    "-nostdin",
+    "-v",
+    "warning",
+    "-n",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "960x720",
+    "-r",
+    "50",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libopenh264",
+    "-b:v",
+    "3500k",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01/side_view.mp4"
+  ],
+  "frames": 1500,
+  "fps": 50,
+  "duration_seconds": 30.0,
+  "renderer_version": "3.7.0",
+  "physics_version": "3.2.7",
+  "mode": "recorded state replay; no dynamics integration",
+  "camera": {
+    "elevation_deg": 0,
+    "azimuth_deg": "90 + recorded base yaw",
+    "distance": 2.35,
+    "lookat": "base x,y and world z=0.43"
+  },
+  "frame_source": "telemetry pre state, one frame per policy step"
+}

@@ -1,0 +1,77 @@
+[0;37m[INFO]   [0m [FSMManager] Registered type: LW
+[0;37m[INFO]   [0m Preloading ONNX model into memory: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Successfully loaded ONNX model: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Validated model and warmed it up in 0.289 ms.
+[0;37m[INFO]   [0m Preload & Warmup finished for: LW/robot_lab/leg_loco
+[0;37m[INFO]   [0m [FSM] Set initial state: RLFSMStatePassive
+[0;37m[INFO]   [0m [FSMManager] FSM created for type: LW
+
+[0;37m[INFO]   [0m [FSM] Request switch from RLFSMStatePassive to RLFSMStateRLLocomotion_Leg
+case=walk-stop-a01 step=250 time=5.000
+case=walk-stop-a01 step=500 time=10.000
+case=walk-stop-a01 step=750 time=15.000
+[0;33m[WARNING][0m Torque(7)=-27.646 out of range(-27.000, 27.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=-125.095 out of range(-120.000, 120.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=235.068 out of range(-120.000, 120.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=281.236 out of range(-120.000, 120.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=261.845 out of range(-120.000, 120.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=236.996 out of range(-120.000, 120.000)
+Safety observe 
+[0;33m[WARNING][0m Torque(5)=176.491 out of range(-120.000, 120.000)
+Safety observe 
+{
+  "case_id": "walk-stop-a01",
+  "condition": "B",
+  "control_records": 828,
+  "final_sim_time": 16.5580000000017,
+  "low_level_ticks": 3312,
+  "physics_steps": 8279,
+  "requested_sim_duration": 40.0,
+  "reset_count": 1,
+  "safety_events": [
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.340000000001822
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.36000000000181
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.460000000001756
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.480000000001745
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.500000000001734
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.520000000001723
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.54000000000171
+    }
+  ],
+  "seed": 42,
+  "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+  "status": "terminated_early",
+  "termination_reason": "fall_upright_tilt_over_75deg"
+}

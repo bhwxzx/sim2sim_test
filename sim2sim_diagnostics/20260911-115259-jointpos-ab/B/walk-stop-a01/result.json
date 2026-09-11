@@ -1,0 +1,51 @@
+{
+  "case_id": "walk-stop-a01",
+  "condition": "B",
+  "control_records": 828,
+  "final_sim_time": 16.5580000000017,
+  "low_level_ticks": 3312,
+  "physics_steps": 8279,
+  "requested_sim_duration": 40.0,
+  "reset_count": 1,
+  "safety_events": [
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.340000000001822
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.36000000000181
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.460000000001756
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.480000000001745
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.500000000001734
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.520000000001723
+    },
+    {
+      "action": "observe",
+      "reason": "",
+      "sim_time": 16.54000000000171
+    }
+  ],
+  "seed": 42,
+  "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+  "status": "terminated_early",
+  "termination_reason": "fall_upright_tilt_over_75deg"
+}
