@@ -1,0 +1,38 @@
+{
+  "A/stand-a01": {
+    "decoded_frames": 1500,
+    "expected_frames": 1500,
+    "passes": true,
+    "fps": 50,
+    "video_duration_s": 30.0,
+    "last_frame_simulation_time_nominal": 29.98,
+    "final_physics_time": 29.99999999999425
+  },
+  "A/walk-stop-a01": {
+    "decoded_frames": 2000,
+    "expected_frames": 2000,
+    "passes": true,
+    "fps": 50,
+    "video_duration_s": 40.0,
+    "last_frame_simulation_time_nominal": 39.980000000000004,
+    "final_physics_time": 40.00000000000292
+  },
+  "B/stand-a01": {
+    "decoded_frames": 1500,
+    "expected_frames": 1500,
+    "passes": true,
+    "fps": 50,
+    "video_duration_s": 30.0,
+    "last_frame_simulation_time_nominal": 29.98,
+    "final_physics_time": 29.99999999999425
+  },
+  "B/walk-stop-a01": {
+    "decoded_frames": 828,
+    "expected_frames": 828,
+    "passes": true,
+    "fps": 50,
+    "video_duration_s": 16.56,
+    "last_frame_simulation_time_nominal": 16.54,
+    "final_physics_time": 16.5580000000017
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "all_four_actual_configs_equal_excluding_ab_label": true,
+  "four_runs_only": true,
+  "all_semantic_checks_pass": true,
+  "all_cases_completed": false,
+  "new_A_vs_historical_reference": {
+    "stand-a01": {
+      "same_sample_count": true,
+      "input_and_action_exact": true,
+      "raw_qpos_qvel_exact": true
+    },
+    "walk-stop-a01": {
+      "same_sample_count": true,
+      "input_and_action_exact": true,
+      "raw_qpos_qvel_exact": true
+    }
+  }
+}
+stand-a01 [5, 10] lean A/B/delta 8.654479717489343 5.31799853414141 -3.3364811833479324
+stand-a01 [10, 30] lean A/B/delta 8.96925048643706 5.306348704080754 -3.6629017823563057
+walk-stop-a01 [5, 10] lean A/B/delta 8.654479717489343 5.31799853414141 -3.3364811833479324
+walk-stop-a01 [15, 20] lean A/B/delta 5.580116313377551 -9.006308234003422 None
+walk-stop-a01 [20, 22] lean A/B/delta 4.050280358075008 None None
+walk-stop-a01 [22, 30] lean A/B/delta 5.587968867992779 None None
+walk-stop-a01 [30, 40] lean A/B/delta 5.815700542437278 None None

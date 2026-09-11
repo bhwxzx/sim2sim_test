@@ -1,0 +1,32 @@
+--- original/rl_sdk.cpp
++++ experimental/rl_sdk.cpp
+@@ -439,6 +439,12 @@
+ }
+ } // namespace
+ 
++// Experiment-only hooks. Declared/defined in the independent collector.
++extern bool LWDiagnosticZeroJointPosition(std::size_t index, bool baseline_zero);
++extern void LWDiagnosticObserveFrame(const LWPolicyRuntimeConfiguration&,
++                                    const Observations<float>&,
++                                    const std::vector<float>&);
++
+ void RL::ComputeLWObservationInto(
+     const LWPolicyRuntimeConfiguration& policy_configuration,
+     const Observations<float>& policy_obs,
+@@ -480,7 +486,7 @@
+                 for (std::size_t i = 0; i < entry.size; ++i)
+                 {
+                     const float relative =
+-                        policy_configuration.wheel_mask[i] != 0
++                        LWDiagnosticZeroJointPosition(i, policy_configuration.wheel_mask[i] != 0)
+                         ? 0.0f
+                         : policy_obs.dof_pos[i]
+                             - policy_configuration.default_dof_pos[i];
+@@ -548,6 +554,7 @@
+     {
+         value = clamp(value, -clip, clip);
+     }
++    LWDiagnosticObserveFrame(policy_configuration, policy_obs, output);
+ }
+ 
+ std::vector<float> RL::ComputeLWObservation(

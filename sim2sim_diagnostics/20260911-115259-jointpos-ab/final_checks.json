@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-09-11T04:17:14.152294+00:00",
+  "all_evidence_integrity_checks_pass": true,
+  "all_cases_completed": false,
+  "completed_cases": 3,
+  "retained_early_termination_cases": 1,
+  "cases": {
+    "A/stand-a01": {
+      "all_raw_numeric_values_finite": true,
+      "chronological_rows": true,
+      "commands_match_original_schedule": true,
+      "rows": 1500,
+      "physics_substeps": 15000,
+      "pd_updates": 6000,
+      "reset_rows": 1,
+      "terminal_rows": 1,
+      "raw_action_abs_max": 3.1948115825653076,
+      "action_clip_events": 0
+    },
+    "A/walk-stop-a01": {
+      "all_raw_numeric_values_finite": true,
+      "chronological_rows": true,
+      "commands_match_original_schedule": true,
+      "rows": 2000,
+      "physics_substeps": 20000,
+      "pd_updates": 8000,
+      "reset_rows": 1,
+      "terminal_rows": 1,
+      "raw_action_abs_max": 3.2692792415618896,
+      "action_clip_events": 0
+    },
+    "B/stand-a01": {
+      "all_raw_numeric_values_finite": true,
+      "chronological_rows": true,
+      "commands_match_original_schedule": true,
+      "rows": 1500,
+      "physics_substeps": 15000,
+      "pd_updates": 6000,
+      "reset_rows": 1,
+      "terminal_rows": 1,
+      "raw_action_abs_max": 1.1660182476043701,
+      "action_clip_events": 0
+    },
+    "B/walk-stop-a01": {
+      "all_raw_numeric_values_finite": true,
+      "chronological_rows": true,
+      "commands_match_original_schedule": true,
+      "rows": 828,
+      "physics_substeps": 8279,
+      "pd_updates": 3312,
+      "reset_rows": 1,
+      "terminal_rows": 1,
+      "raw_action_abs_max": 13.563450813293457,
+      "action_clip_events": 0
+    }
+  },
+  "protected_original_file_count": 54,
+  "protected_originals_unchanged": true,
+  "old_manifest_and_payload_unchanged": true,
+  "repository_head": "93d6c33fa0b8b64a5f5ab75d7c4baac3590352ea",
+  "repository_status": " M policy/LW/robot_lab/leg_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n",
+  "transfer_repository_head": "a52d3515279968dff77ffa1e643fbe3b3f4bf122",
+  "no_new_git_commits": true,
+  "model_sha256_matches": true,
+  "video_frames": 5828
+}

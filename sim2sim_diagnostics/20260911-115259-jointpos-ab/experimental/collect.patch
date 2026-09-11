@@ -1,0 +1,232 @@
+--- old/collect.cpp
++++ new/collect.cpp
+@@ -18,10 +18,38 @@
+     std::ofstream f(p); f << j.dump(2) << '\n';
+     if (!f) throw std::runtime_error("write failed: "+p);
+ }
++// Process-local experiment state; no deployment configuration is changed.
++namespace experiment {
++bool isaac = false;
++bool pairing = false;
++std::size_t left_foot = 0, right_wheel = 0, left_wheel = 0;
++bool names_resolved = false;
++const LWPolicyRuntimeConfiguration* frame_config = nullptr;
++Observations<float> frame_state;
++std::vector<float> actual_frame;
++}
++bool LWDiagnosticZeroJointPosition(std::size_t index, bool baseline_zero) {
++    if (!experiment::isaac) return baseline_zero;
++    if (!experiment::names_resolved) throw std::runtime_error("joint names not resolved");
++    if (index == experiment::left_foot) return true;
++    if (index == experiment::right_wheel) return false;
++    return baseline_zero;
++}
++void LWDiagnosticObserveFrame(const LWPolicyRuntimeConfiguration& cfg,
++                              const Observations<float>& obs,
++                              const std::vector<float>& frame) {
++    if (experiment::pairing) return;
++    experiment::frame_config = &cfg;
++    experiment::frame_state = obs;
++    experiment::actual_frame = frame;
++}
+ struct CaptureModel : InferenceRuntime::Model {
+     std::shared_ptr<InferenceRuntime::Model> inner;
+     std::vector<float> input, raw;
+     int calls=0;
++    J* record=nullptr;
++    std::function<void(const std::vector<float>&)> before_model;
++    std::vector<float> previous_input;
+     explicit CaptureModel(std::shared_ptr<InferenceRuntime::Model> m):inner(m) {}
+     bool load(const std::string& p) override { return inner->load(p); }
+     bool is_loaded() const override { return inner->is_loaded(); }
+@@ -31,8 +59,23 @@
+     void forwardInto(const InferenceRuntime::TensorView* x, std::size_t n, InferenceRuntime::MutableTensorView y) override {
+         if (n!=1) throw std::runtime_error("unexpected input count");
+         input.assign(x[0].data,x[0].data+x[0].size);
++        if(record) {
++            (*record)["model_input"]={{"shape",{1,410}},{"dtype","float32"},{"values",input}};
++            (*record)["model_input_capture_phase"]="synchronous copy immediately before underlying ONNX forward";
++        }
++        if(before_model) before_model(input);
++        if(input.size()!=410) throw std::runtime_error("input width mismatch");
++        if(previous_input.empty()) {
++            for(int frame=0;frame<10;++frame)
++                if(!std::equal(input.begin()+frame*41,input.begin()+(frame+1)*41,input.begin()+369))
++                    throw std::runtime_error("initial history is not repeated current condition frame");
++        } else if(!std::equal(input.begin(),input.begin()+369,previous_input.begin()+41)) {
++            throw std::runtime_error("history time-major shift mismatch");
++        }
++        previous_input=input;
+         inner->forwardInto(x,n,y);
+         raw.assign(y.data,y.data+y.size); ++calls;
++        if(record) (*record)["model_raw_action"]=raw;
+     }
+ };
+ J metadata(const std::vector<InferenceRuntime::TensorMetadata>& ms) {
+@@ -46,6 +89,7 @@
+     std::shared_ptr<CaptureModel> capture;
+     std::vector<float> candidates=std::vector<float>(10), bounded=std::vector<float>(10);
+     std::vector<int> jids;
++    J joint_mapping_evidence=J::array();
+     J safety_events=J::array();
+     const std::string policy_key="LW/robot_lab/leg_loco";
+     explicit Diagnostic(const std::string& xml) {
+@@ -59,9 +103,75 @@
+         const auto& b=GetLWBaseRuntimeConfiguration();
+         adapter=std::make_unique<LWMuJoCoControlAdapter>(*m,b.joint_names,b.joint_mapping);
+         for(int i:b.joint_mapping) jids.push_back(mj_name2id(m,mjOBJ_JOINT,b.joint_names[i].c_str()));
++        const std::vector<std::string> expected={"right_hip_joint","left_hip_joint","right_thigh_joint","left_thigh_joint",
++            "right_shank_joint","left_shank_joint","right_foot_joint","left_foot_joint","right_wheel_joint","left_wheel_joint"};
++        for(std::size_t index=0;index<jids.size();++index) {
++            int jid=jids[index];
++            std::string jname=name(m,mjOBJ_JOINT,jid);
++            if(jid<0 || jname!=expected.at(index)) throw std::runtime_error("policy joint order does not match verified contract");
++            int sensor=-1;
++            for(int si=0;si<m->nsensor;++si)
++                if(m->sensor_type[si]==mjSENS_JOINTPOS && m->sensor_objtype[si]==mjOBJ_JOINT && m->sensor_objid[si]==jid) {
++                    if(sensor>=0) throw std::runtime_error("ambiguous joint position sensor");
++                    sensor=si;
++                }
++            if(sensor<0) throw std::runtime_error("missing joint position sensor");
++            joint_mapping_evidence.push_back({{"policy_index",index},{"joint_name",jname},{"config_mapping",b.joint_mapping[index]},
++                {"mj_joint_id",jid},{"mj_qpos_adr",m->jnt_qposadr[jid]},{"mj_dof_adr",m->jnt_dofadr[jid]},
++                {"position_sensor_id",sensor},{"position_sensor_adr",m->sensor_adr[sensor]}});
++            if(jname=="left_foot_joint") experiment::left_foot=index;
++            if(jname=="right_wheel_joint") experiment::right_wheel=index;
++            if(jname=="left_wheel_joint") experiment::left_wheel=index;
++        }
++        experiment::names_resolved=true;
+         PreloadModel(policy_key);
+         capture=std::make_shared<CaptureModel>(preloaded_models_.at(policy_key));
+         preloaded_models_[policy_key]=capture; PreloadLWPolicyContext(policy_key);
++        capture->before_model=[this](const std::vector<float>& input) {
++            if(input.size()!=410 || !experiment::frame_config || experiment::actual_frame.size()!=41)
++                throw std::runtime_error("frame capture unavailable");
++            const auto& cfg=*experiment::frame_config;
++            const auto raw_state=experiment::frame_state;
++            const auto current_frame=experiment::actual_frame;
++            if(!std::equal(current_frame.begin(),current_frame.end(),input.begin()+369))
++                throw std::runtime_error("frame reaching model differs from constructed frame");
++            std::vector<float> paired_a(41),paired_b(41);
++            const bool saved_condition=experiment::isaac;
++            experiment::pairing=true;
++            try {
++                experiment::isaac=false; ComputeLWObservationInto(cfg,raw_state,nullptr,paired_a);
++                experiment::isaac=true; ComputeLWObservationInto(cfg,raw_state,nullptr,paired_b);
++            } catch(...) {experiment::isaac=saved_condition;experiment::pairing=false;throw;}
++            experiment::isaac=saved_condition;experiment::pairing=false;
++            std::vector<int> changed;
++            for(int i=0;i<41;++i) if(paired_a[i]!=paired_b[i]) {
++                changed.push_back(i);
++                if(i!=9+int(experiment::left_foot) && i!=9+int(experiment::right_wheel))
++                    throw std::runtime_error("same-state observation changed outside approved columns");
++            }
++            if(current_frame!=(saved_condition?paired_b:paired_a)) throw std::runtime_error("selected observation path mismatch");
++            // Confirm raw joint angles are the named adapter's jointpos sensors,
++            // not native guessed indices or wheel velocities.
++            for(const auto& mapping:joint_mapping_evidence) {
++                int i=mapping["policy_index"],adr=mapping["position_sensor_adr"];
++                if(raw_state.dof_pos[i]!=static_cast<float>(d->sensordata[adr]))
++                    throw std::runtime_error("named joint angle and policy state mismatch");
++            }
++            if(capture->record) {
++                auto& r=*capture->record;
++                r["condition"]=saved_condition?"B":"A";
++                r["observation_frame"]={{"joint_pos_before_noise",arr(current_frame.data()+9,10)},
++                    {"joint_pos_sent",arr(input.data()+378,10)},{"noise_applied",false},
++                    {"raw_q_policy_float32",raw_state.dof_pos},{"default_q_policy_float32",cfg.default_dof_pos},
++                    {"dq_policy_float32",raw_state.dof_vel},{"joint_mapping",joint_mapping_evidence},
++                    {"quaternion_wxyz_body_to_world",raw_state.base_quat},
++                    {"commands",raw_state.commands},{"previous_action",raw_state.actions},
++                    {"gait_phase",raw_state.gait_phase}};
++                r["same_state_pair"]={{"A_frame",paired_a},{"B_frame",paired_b},{"changed_columns",changed},
++                    {"allowed_columns",{9+experiment::left_foot,9+experiment::right_wheel}},
++                    {"stage","complete per-frame observation builder, scale/clip included, before history; no additional inference or physics"}};
++            }
++        };
+         InitJointNum(b.num_dofs); InitControl(); control.gait_frequency=b.gait_command[0];
+         core.bind(*this,[this](const LWSafetyDecision& dec,const std::string& reason){
+             safety_events.push_back({{"sim_time",d->time},{"action",LWSafetyActionName(dec.action)},{"reason",reason}});
+@@ -140,6 +250,9 @@
+         for(int i=0;i<m->nsensor;++i) j["sensors"].push_back({{"id",i},{"name",name(m,mjOBJ_SENSOR,i)},
+             {"type",m->sensor_type[i]},{"objtype",m->sensor_objtype[i]},{"objid",m->sensor_objid[i]},
+             {"adr",m->sensor_adr[i]},{"dim",m->sensor_dim[i]},{"noise",m->sensor_noise[i]},{"cutoff",m->sensor_cutoff[i]}});
++        j["ab_experiment"]={{"condition",experiment::isaac?"B":"A"},{"noise_applied",false},
++            {"joint_mapping",joint_mapping_evidence},{"selection_scope","joint-position zero predicate only"},
++            {"application_stage","per-frame DofPosition before scaling/clipping and history insertion"}};
+         return j;
+     }
+     J state() {
+@@ -153,11 +266,16 @@
+         for(int i=0;i<3;++i) {pg[i]=0;for(int k=0;k<3;++k)pg[i]+=R[3*k+i]*m->opt.gravity[k]/gn;}
+         for(int id:jids) {q.push_back(d->qpos[m->jnt_qposadr[id]]);dq.push_back(d->qvel[m->jnt_dofadr[id]]);qa.push_back(d->qfrc_actuator[m->jnt_dofadr[id]]);}
+         double pitch=std::asin(std::clamp(-R[6],-1.0,1.0)); double roll=std::atan2(R[7],R[8]);
++        std::vector<double> origin_body(3);
++        for(int i=0;i<3;++i) {origin_body[i]=0;for(int k=0;k<3;++k)origin_body[i]+=R[3*k+i]*d->qvel[k];}
++        const auto* qw=d->qpos+3;
++        const double backward=std::asin(std::clamp(2*(qw[1]*qw[3]-qw[0]*qw[2]),-1.0,1.0))*180/M_PI;
+         J j={{"sim_time",d->time},{"qpos_mujoco",arr(d->qpos,m->nq)},{"qvel_mujoco",arr(d->qvel,m->nv)},
+             {"base_position_world",arr(scratch->xpos+3*base,3)},{"base_quaternion_wxyz_body_to_world",arr(d->qpos+3,4)},
+-            {"base_linear_velocity_world",arr(vw+3,3)},{"base_linear_velocity_body",arr(vb+3,3)},
++            {"base_com_linear_velocity_world",arr(vw+3,3)},{"base_com_linear_velocity_body",arr(vb+3,3)},
++            {"base_origin_linear_velocity_world",arr(d->qvel,3)},{"base_origin_linear_velocity_body",origin_body},
+             {"base_angular_velocity_world",arr(vw,3)},{"base_angular_velocity_body",arr(vb,3)},
+-            {"projected_gravity_from_raw_pose",pg},{"pitch_ZYX_rad",pitch},{"backward_lean_deg",-pitch*180/M_PI},{"roll_ZYX_deg",roll*180/M_PI},
++            {"projected_gravity_from_raw_pose",pg},{"pitch_ZYX_rad",pitch},{"backward_lean_deg",backward},{"roll_ZYX_deg",roll*180/M_PI},
+             {"q_policy_order",q},{"dq_policy_order",dq},{"ctrl",arr(d->ctrl,m->nu)},
+             {"actuator_force_last_dynamics",arr(d->actuator_force,m->nu)},
+             {"joint_actuator_generalized_force_last_dynamics_policy_order",qa},
+@@ -188,8 +306,12 @@
+ };
+ 
+ int main(int argc,char**argv) {
+-    if(argc!=4){std::cerr<<"usage: collect XML CASE_ID OUTPUT_DIR\n";return 2;}
++    if(argc!=5){std::cerr<<"usage: collect XML CASE_ID OUTPUT_DIR A|B\n";return 2;}
+     std::string xml=argv[1],cid=argv[2],out=argv[3];
++    const std::string condition=argv[4];
++    if(condition!="A" && condition!="B") {std::cerr<<"condition must be A or B\n";return 2;}
++    experiment::isaac=condition=="B";
++    J pending_row;
+     gzFile log=nullptr; J result={{"case_id",cid},{"status","failed"},{"control_records",0}};
+     try {
+         if(cid!="stand-a01" && cid!="walk-stop-a01")throw std::runtime_error("unknown case");
+@@ -206,9 +328,12 @@
+         int low_tick=0,physical=0,step=0; std::string why;
+         while(h.d->time<duration-1e-10) {
+             double boundary=step*period;
+-            J row={{"case_id",cid},{"control_step",step},{"simulation_time",h.d->time},
++            pending_row=J{{"case_id",cid},{"control_step",step},{"simulation_time",h.d->time},
+                 {"nominal_policy_time",boundary},{"reset",step==0},{"reset_id",0},{"terminated",false},
+-                {"pre",h.state()},{"low_level_updates",J::array()},{"physics_substeps",J::array()}};
++                {"pre",h.state()},{"low_level_updates",J::array()},{"physics_substeps",J::array()},
++                {"condition",condition},{"model_input",nullptr},{"model_raw_action",nullptr},{"new_policy_targets",nullptr},{"post",nullptr}};
++            J& row=pending_row;
++            h.capture->record=&row;
+             float planned=cid=="walk-stop-a01" && boundary>=10-1e-10 && boundary<20-1e-10?0.4f:0.0f;
+             row["planned_command"]={planned,0.0f,0.0f};
+             auto low=[&](){
+@@ -246,11 +371,11 @@
+             }
+             row["post"]=h.state();row["terminated"]=!why.empty() || h.d->time>=duration-1e-10;
+             row["termination_reason"]=why.empty()?(row["terminated"].get<bool>()?J("time_limit"):J(nullptr)):J(why);
+-            row["safety_events"]=h.safety_events;emit(row);++step;
++            row["safety_events"]=h.safety_events;emit(row);pending_row=J();h.capture->record=nullptr;++step;
+             if(step%250==0)std::cout<<"case="<<cid<<" step="<<step<<" time="<<h.d->time<<std::endl;
+             if(!why.empty())break;
+         }
+-        result={{"case_id",cid},{"status",why.empty()?"completed":"terminated_early"},{"termination_reason",why.empty()?"time_limit":why},
++        result={{"condition",condition},{"case_id",cid},{"status",why.empty()?"completed":"terminated_early"},{"termination_reason",why.empty()?"time_limit":why},
+             {"control_records",step},{"low_level_ticks",low_tick},{"physics_steps",physical},{"final_sim_time",h.d->time},
+             {"requested_sim_duration",duration},{"seed",42},{"seed_method","std::srand(42) before home_leg reset; no explicit policy or physics randomization"},
+             {"reset_count",1},{"safety_events",h.safety_events}};
+@@ -258,6 +383,10 @@
+         write_json(out+"/result.json",result);std::cout<<result.dump(2)<<std::endl;
+         return why.empty()?0:3;
+     }catch(const std::exception&e) {
++        if(log && !pending_row.is_null()) {
++            pending_row["terminated"]=true;pending_row["termination_reason"]=std::string("program_exception: ")+e.what();
++            std::string line=pending_row.dump()+"\n";gzwrite(log,line.data(),line.size());
++        }
+         if(log){std::string s=J({{"event","program_exception"},{"case_id",cid},{"terminated",true},{"reason",e.what()}}).dump()+"\n";gzwrite(log,s.data(),s.size());gzclose(log);}
+         result["exception"]=e.what();write_json(out+"/result.json",result);std::cerr<<e.what()<<std::endl;return 1;
+     }

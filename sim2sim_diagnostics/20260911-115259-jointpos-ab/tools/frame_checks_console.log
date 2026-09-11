@@ -1,0 +1,8 @@
+[0;37m[INFO]   [0m [FSMManager] Registered type: LW
+[0;37m[INFO]   [0m Preloading ONNX model into memory: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Successfully loaded ONNX model: /home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Validated model and warmed it up in 17.945 ms.
+[0;37m[INFO]   [0m Preload & Warmup finished for: LW/robot_lab/leg_loco
+[0;37m[INFO]   [0m [FSM] Set initial state: RLFSMStatePassive
+[0;37m[INFO]   [0m [FSMManager] FSM created for type: LW
+offline frame/history checks passed

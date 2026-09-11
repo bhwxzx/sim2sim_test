@@ -1,0 +1,108 @@
+{
+  "matrix": [
+    {
+      "condition": "A",
+      "case_id": "stand-a01",
+      "cwd": "/home/lfr/rl_sar",
+      "argv": [
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+        "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+        "stand-a01",
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01",
+        "A"
+      ],
+      "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml stand-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01 A > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01/console.log 2>&1"
+    },
+    {
+      "condition": "A",
+      "case_id": "walk-stop-a01",
+      "cwd": "/home/lfr/rl_sar",
+      "argv": [
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+        "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+        "walk-stop-a01",
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01",
+        "A"
+      ],
+      "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml walk-stop-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01 A > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01/console.log 2>&1"
+    },
+    {
+      "condition": "B",
+      "case_id": "stand-a01",
+      "cwd": "/home/lfr/rl_sar",
+      "argv": [
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+        "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+        "stand-a01",
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01",
+        "B"
+      ],
+      "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml stand-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01 B > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01/console.log 2>&1"
+    },
+    {
+      "condition": "B",
+      "case_id": "walk-stop-a01",
+      "cwd": "/home/lfr/rl_sar",
+      "argv": [
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+        "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+        "walk-stop-a01",
+        "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01",
+        "B"
+      ],
+      "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect /home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml walk-stop-a01 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01 B > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01/console.log 2>&1"
+    }
+  ],
+  "seed": 42,
+  "added_observation_noise": false,
+  "command_source": {
+    "commands_json": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/commands.json",
+    "schedule_implementation": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260910-111515/tools/collect.cpp",
+    "verified_from_old_telemetry": true
+  },
+  "schedules": {
+    "stand-a01": [
+      [
+        0,
+        30,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    ],
+    "walk-stop-a01": [
+      [
+        0,
+        10,
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      [
+        10,
+        20,
+        [
+          0.4,
+          0,
+          0
+        ]
+      ],
+      [
+        20,
+        40,
+        [
+          0,
+          0,
+          0
+        ]
+      ]
+    ]
+  },
+  "four_runs_only": true,
+  "on_failure": "preserve logs, stop the affected case, no tuning or retry",
+  "unchanged": "model, XML, physics (including freejoint frictionloss=.2), action mapping, PD, scaling, normalization, history algorithm, seed, reset/FSM path, scheduling and action delay"
+}

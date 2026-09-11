@@ -1,0 +1,985 @@
+{
+  "schema_version": 2,
+  "created_at": "2026-09-11T04:17:14.262902+00:00",
+  "output_directory": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab",
+  "report": "report.md",
+  "runtime_configuration": "runtime_config.json",
+  "model": {
+    "path": "/home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/policy.onnx",
+    "sha256": "63ef20be03cbba9602d7008e84f605e62ff38cbe9ed64ce25366fdab9d08a1a7",
+    "expected": "63ef20be03cbba9602d7008e84f605e62ff38cbe9ed64ce25366fdab9d08a1a7",
+    "matches": true,
+    "type": "ONNX",
+    "inputs": [
+      {
+        "name": "obs",
+        "shape": [
+          1,
+          410
+        ],
+        "dtype": "float32"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "actions",
+        "shape": [
+          1,
+          10
+        ],
+        "dtype": "float32"
+      }
+    ]
+  },
+  "training_identity": {
+    "run": "2026-09-04_11-16-35",
+    "checkpoint": "model_50000.pt",
+    "checkpoint_local_hash_verified": false,
+    "task": "RobotLab-Isaac-Velocity-Flat-LW-leg-Amp-Roa-v0"
+  },
+  "repository": "/home/lfr/rl_sar",
+  "head": "93d6c33fa0b8b64a5f5ab75d7c4baac3590352ea",
+  "scene": {
+    "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "sha256": "cb879c82e32f23cac8ff5597caf39ed39032c272e84e50bcea59f0320ef707c0",
+    "dependencies": "baseline.json"
+  },
+  "commands": "commands.json",
+  "cases": {
+    "A/stand-a01": {
+      "result": {
+        "case_id": "stand-a01",
+        "condition": "A",
+        "control_records": 1500,
+        "final_sim_time": 29.99999999999425,
+        "low_level_ticks": 6000,
+        "physics_steps": 15000,
+        "requested_sim_duration": 30.0,
+        "reset_count": 1,
+        "safety_events": [],
+        "seed": 42,
+        "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+        "status": "completed",
+        "termination_reason": "time_limit"
+      },
+      "process": {
+        "argv": [
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+          "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+          "stand-a01",
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01",
+          "A"
+        ],
+        "cwd": "/home/lfr/rl_sar",
+        "exit_code": 0,
+        "wall_seconds": 2.7633228302001953,
+        "started_at": "2026-09-11T11:58:02.201396+08:00"
+      },
+      "telemetry": "A/stand-a01/telemetry.jsonl.gz",
+      "effective_configuration": "A/stand-a01/effective_config.json",
+      "video": "A/stand-a01/side_view.mp4",
+      "console": "A/stand-a01/console.log"
+    },
+    "A/walk-stop-a01": {
+      "result": {
+        "case_id": "walk-stop-a01",
+        "condition": "A",
+        "control_records": 2000,
+        "final_sim_time": 40.00000000000292,
+        "low_level_ticks": 8000,
+        "physics_steps": 20000,
+        "requested_sim_duration": 40.0,
+        "reset_count": 1,
+        "safety_events": [],
+        "seed": 42,
+        "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+        "status": "completed",
+        "termination_reason": "time_limit"
+      },
+      "process": {
+        "argv": [
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+          "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+          "walk-stop-a01",
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/walk-stop-a01",
+          "A"
+        ],
+        "cwd": "/home/lfr/rl_sar",
+        "exit_code": 0,
+        "wall_seconds": 3.3943514823913574,
+        "started_at": "2026-09-11T11:58:04.965104+08:00"
+      },
+      "telemetry": "A/walk-stop-a01/telemetry.jsonl.gz",
+      "effective_configuration": "A/walk-stop-a01/effective_config.json",
+      "video": "A/walk-stop-a01/side_view.mp4",
+      "console": "A/walk-stop-a01/console.log"
+    },
+    "B/stand-a01": {
+      "result": {
+        "case_id": "stand-a01",
+        "condition": "B",
+        "control_records": 1500,
+        "final_sim_time": 29.99999999999425,
+        "low_level_ticks": 6000,
+        "physics_steps": 15000,
+        "requested_sim_duration": 30.0,
+        "reset_count": 1,
+        "safety_events": [],
+        "seed": 42,
+        "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+        "status": "completed",
+        "termination_reason": "time_limit"
+      },
+      "process": {
+        "argv": [
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+          "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+          "stand-a01",
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/stand-a01",
+          "B"
+        ],
+        "cwd": "/home/lfr/rl_sar",
+        "exit_code": 0,
+        "wall_seconds": 2.786702871322632,
+        "started_at": "2026-09-11T11:58:08.359767+08:00"
+      },
+      "telemetry": "B/stand-a01/telemetry.jsonl.gz",
+      "effective_configuration": "B/stand-a01/effective_config.json",
+      "video": "B/stand-a01/side_view.mp4",
+      "console": "B/stand-a01/console.log"
+    },
+    "B/walk-stop-a01": {
+      "result": {
+        "case_id": "walk-stop-a01",
+        "condition": "B",
+        "control_records": 828,
+        "final_sim_time": 16.5580000000017,
+        "low_level_ticks": 3312,
+        "physics_steps": 8279,
+        "requested_sim_duration": 40.0,
+        "reset_count": 1,
+        "safety_events": [
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.340000000001822
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.36000000000181
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.460000000001756
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.480000000001745
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.500000000001734
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.520000000001723
+          },
+          {
+            "action": "observe",
+            "reason": "",
+            "sim_time": 16.54000000000171
+          }
+        ],
+        "seed": 42,
+        "seed_method": "std::srand(42) before home_leg reset; no explicit policy or physics randomization",
+        "status": "terminated_early",
+        "termination_reason": "fall_upright_tilt_over_75deg"
+      },
+      "process": {
+        "argv": [
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+          "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+          "walk-stop-a01",
+          "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/B/walk-stop-a01",
+          "B"
+        ],
+        "cwd": "/home/lfr/rl_sar",
+        "exit_code": 3,
+        "wall_seconds": 2.123255729675293,
+        "started_at": "2026-09-11T11:58:11.147017+08:00"
+      },
+      "telemetry": "B/walk-stop-a01/telemetry.jsonl.gz",
+      "effective_configuration": "B/walk-stop-a01/effective_config.json",
+      "video": "B/walk-stop-a01/side_view.mp4",
+      "console": "B/walk-stop-a01/console.log"
+    }
+  },
+  "all_cases_completed": false,
+  "evidence_integrity_checks": "final_checks.json",
+  "semantic_checks": "validation.json",
+  "files": [
+    {
+      "path": "A/stand-a01/console.log",
+      "size_bytes": 1281,
+      "sha256": "1a70fddca50704f43aa35f1f9c1b769baed7b31efea8b77e46c2f1048dfba46e"
+    },
+    {
+      "path": "A/stand-a01/derived.jsonl.gz",
+      "size_bytes": 182359,
+      "sha256": "4ca7ad22030a4d572d1ff4367cc1e4abc1afb3544259e1b8345dd2d8262ed741"
+    },
+    {
+      "path": "A/stand-a01/effective_config.json",
+      "size_bytes": 57469,
+      "sha256": "16f4765c2298827ef953b9370bcecde649dfafffec0804b9b6c632bf875c0c92"
+    },
+    {
+      "path": "A/stand-a01/process.json",
+      "size_bytes": 433,
+      "sha256": "10f3177722e5b99f7794aa248fe17e3a7e59e789810b8845d9946c75ef623196"
+    },
+    {
+      "path": "A/stand-a01/result.json",
+      "size_bytes": 424,
+      "sha256": "573db6d784753daa52f6dba3db2737cadc56b016201e7146dfd79a12a1e14882"
+    },
+    {
+      "path": "A/stand-a01/side_view.mp4",
+      "size_bytes": 3571436,
+      "sha256": "227688ed4c9f107bf989babe2214217960fb3ae401cb4c968331442a923a9f4c"
+    },
+    {
+      "path": "A/stand-a01/side_view_first_frame.png",
+      "size_bytes": 195832,
+      "sha256": "994ef41297649d98cde3581a7b0b6cbdf8aef62c900a9195aec5e2c37335002e"
+    },
+    {
+      "path": "A/stand-a01/telemetry.jsonl.gz",
+      "size_bytes": 20174245,
+      "sha256": "e69d99ce109b38b4aa0e56ba4141276cee4363c78f78e132f957c3a8898f5046"
+    },
+    {
+      "path": "A/stand-a01/video_console.log",
+      "size_bytes": 340,
+      "sha256": "86dbdf2f33883fb096e6710220cd697858bd019cdb7e5047c1e6b6b9524957eb"
+    },
+    {
+      "path": "A/stand-a01/video_metadata.json",
+      "size_bytes": 885,
+      "sha256": "7995d90ed6b0f9b2b8fa07b23bd4e9c38e20adcb1a3fa4bbcf0e8fd08c93c1b0"
+    },
+    {
+      "path": "A/walk-stop-a01/console.log",
+      "size_bytes": 1391,
+      "sha256": "91d0c3ed651dd8e207cd1ef16b628117400a39ccc745a9256e5ffc69891179f3"
+    },
+    {
+      "path": "A/walk-stop-a01/derived.jsonl.gz",
+      "size_bytes": 248610,
+      "sha256": "72289917f8dc433b4c7f78ab30e2fad84bc4e4254bfeebe1546672ddf645454d"
+    },
+    {
+      "path": "A/walk-stop-a01/effective_config.json",
+      "size_bytes": 57469,
+      "sha256": "16f4765c2298827ef953b9370bcecde649dfafffec0804b9b6c632bf875c0c92"
+    },
+    {
+      "path": "A/walk-stop-a01/process.json",
+      "size_bytes": 441,
+      "sha256": "ea6e154d3ef0677b7768efc6773bfee4e9540848b9c6b7a3f66c75d06eda9058"
+    },
+    {
+      "path": "A/walk-stop-a01/result.json",
+      "size_bytes": 428,
+      "sha256": "eea429aa19f2fe06665c51defc41a2612fb19ab192f44151b1118d5c0d3b9419"
+    },
+    {
+      "path": "A/walk-stop-a01/side_view.mp4",
+      "size_bytes": 11512936,
+      "sha256": "5dbe7deac76a0a5f4de72f9e8c6f85afe044dc18461a329d837345af96047240"
+    },
+    {
+      "path": "A/walk-stop-a01/side_view_first_frame.png",
+      "size_bytes": 196838,
+      "sha256": "2ab3e558c6e49672d29e9041f9912f60e06ae9332e547d764f14d8fd10c45392"
+    },
+    {
+      "path": "A/walk-stop-a01/telemetry.jsonl.gz",
+      "size_bytes": 26497429,
+      "sha256": "362cd75875fb6cba515e7e78a4676af9dd5a81e5248426789a824f2577ef8123"
+    },
+    {
+      "path": "A/walk-stop-a01/video_console.log",
+      "size_bytes": 336,
+      "sha256": "37c02b06810789d09c46fa35bbe6b582e84e9eeb337e564a9111083402b8f5d9"
+    },
+    {
+      "path": "A/walk-stop-a01/video_metadata.json",
+      "size_bytes": 889,
+      "sha256": "66dbe2ea01e6d3fd29438afb0f1da1a78c11f5e177ad82621441b7034817e427"
+    },
+    {
+      "path": "B/stand-a01/console.log",
+      "size_bytes": 1281,
+      "sha256": "adfbcb4b4737930f8488783c0ecf8e629305a5a44db85936bbba12a8a22b2712"
+    },
+    {
+      "path": "B/stand-a01/derived.jsonl.gz",
+      "size_bytes": 180990,
+      "sha256": "059a697f1d15164fc0ed9d4bc621f0c91cf48b62e55ed38ca53df5123cd9820d"
+    },
+    {
+      "path": "B/stand-a01/effective_config.json",
+      "size_bytes": 57469,
+      "sha256": "3e506d29faf754803ac4a94edfff44c0383ea51b478601e6f184a0d010c46d8e"
+    },
+    {
+      "path": "B/stand-a01/process.json",
+      "size_bytes": 432,
+      "sha256": "356074a46892fa98f4b61a91cbe1475366c02c1f3c65138d39738056657e8888"
+    },
+    {
+      "path": "B/stand-a01/result.json",
+      "size_bytes": 424,
+      "sha256": "a69239370b18165e1995245216cbae5efd40744452fe9334d896899dc63b1b90"
+    },
+    {
+      "path": "B/stand-a01/side_view.mp4",
+      "size_bytes": 2023456,
+      "sha256": "3ce7289e1160521ee5b344f8c56836ff23334ab7a6728be64333d6521568d301"
+    },
+    {
+      "path": "B/stand-a01/side_view_first_frame.png",
+      "size_bytes": 195941,
+      "sha256": "eba93e3f999dcc7342123b2bf05794345e79b53a95d38826e69014fb392c25f6"
+    },
+    {
+      "path": "B/stand-a01/telemetry.jsonl.gz",
+      "size_bytes": 20376243,
+      "sha256": "0ae20205b09680e89855ae206ac852bf3a6556ca4a497b13b3ab2bfd00d359fc"
+    },
+    {
+      "path": "B/stand-a01/video_console.log",
+      "size_bytes": 340,
+      "sha256": "c45e1f6f552cc34b5c5a130f845fa6215b02e2e7a59262ff865c24279aba1d26"
+    },
+    {
+      "path": "B/stand-a01/video_metadata.json",
+      "size_bytes": 885,
+      "sha256": "cbd973e96fd09c213ff24d599ecc780b47f253615ae958e8c86ece08fb6a56de"
+    },
+    {
+      "path": "B/walk-stop-a01/console.log",
+      "size_bytes": 2495,
+      "sha256": "53534e4fc1f283e15ae2533c28349c8865028487769de9aa3fccd2465622c10a"
+    },
+    {
+      "path": "B/walk-stop-a01/derived.jsonl.gz",
+      "size_bytes": 102872,
+      "sha256": "26b016690eaf27fafea24e22c6ace2ceb4cd2b5355f7c91883f0004ab82d83e0"
+    },
+    {
+      "path": "B/walk-stop-a01/effective_config.json",
+      "size_bytes": 57469,
+      "sha256": "3e506d29faf754803ac4a94edfff44c0383ea51b478601e6f184a0d010c46d8e"
+    },
+    {
+      "path": "B/walk-stop-a01/last_video_frame.png",
+      "size_bytes": 362273,
+      "sha256": "4df4c5e2d6f6d4092805cd1892ca3473b7c0359ec476f41fcb0e547806def6ef"
+    },
+    {
+      "path": "B/walk-stop-a01/process.json",
+      "size_bytes": 440,
+      "sha256": "bbab990f293467788c11c8e62eb8ffa43c075112b2ebb2e9268d2ebdd8652a36"
+    },
+    {
+      "path": "B/walk-stop-a01/result.json",
+      "size_bytes": 1129,
+      "sha256": "ba1638decf27f4aac9125316151d86f56e0a8e763aeede5f8d17e66e21633434"
+    },
+    {
+      "path": "B/walk-stop-a01/side_view.mp4",
+      "size_bytes": 4313134,
+      "sha256": "c82b0a29eaeb3fec34767ef634cc1987a5fca80d157c2f0b80d6207dfafea237"
+    },
+    {
+      "path": "B/walk-stop-a01/side_view_first_frame.png",
+      "size_bytes": 196892,
+      "sha256": "165d0b8197198d4f0e975740e642fc21e159fcec4bad95f0d15823ad68b93f90"
+    },
+    {
+      "path": "B/walk-stop-a01/telemetry.jsonl.gz",
+      "size_bytes": 11048641,
+      "sha256": "cb1a9682f859d9822d751b884e0e2565e4e412cda5bbd18c5c7a793013a351b3"
+    },
+    {
+      "path": "B/walk-stop-a01/video_console.log",
+      "size_bytes": 340,
+      "sha256": "d3c1fc4131bd341ab8de168767572eff3d4fcf96e6988b42b84fa5474097ce05"
+    },
+    {
+      "path": "B/walk-stop-a01/video_metadata.json",
+      "size_bytes": 889,
+      "sha256": "12f4ebbcad5ee970beea441e8454934fa65d338570e134201a6508a030679272"
+    },
+    {
+      "path": "baseline.json",
+      "size_bytes": 38473,
+      "sha256": "f23a2d9bb6066251723e7c57207094337394b5ea153ca1c81639c36d571ff639"
+    },
+    {
+      "path": "commands.json",
+      "size_bytes": 3107,
+      "sha256": "6a12cc59ea236e05254c914a9c37de2373d778bf57bdbac07f816596930da223"
+    },
+    {
+      "path": "comparison.json",
+      "size_bytes": 82906,
+      "sha256": "4d491635e187a70dee147fddf19097c13311f4b84d240ce4e428f883094cae5a"
+    },
+    {
+      "path": "config_snapshot/AGENTS.md",
+      "size_bytes": 3558,
+      "sha256": "848736a6094218f7bf5446d11390d8716b6813efca48757ec18245f4b2edae30"
+    },
+    {
+      "path": "config_snapshot/additional_dependencies.json",
+      "size_bytes": 3693,
+      "sha256": "3dbd62cb94db9b8f1af4daec66267aabb8571a85161fcc47e74bc8585434ae3e"
+    },
+    {
+      "path": "config_snapshot/archive_manifest.json",
+      "size_bytes": 21904,
+      "sha256": "10649e1bca07527c392407174cbe1bed77dc0d36040dbc6649acd1fb8ba189a7"
+    },
+    {
+      "path": "config_snapshot/docs/LW_BUILD_DEPLOYMENT_CN.md",
+      "size_bytes": 66426,
+      "sha256": "ba84d881adb6395bb17b19396c9d92da4f99e8cc7ad67d81bf108292c984bc0f"
+    },
+    {
+      "path": "config_snapshot/docs/LW_QUICK_START_CN.md",
+      "size_bytes": 20668,
+      "sha256": "cb5097ba52563eb233093c51f3ce266167b12156fc63a5b2ec59101f37515c80"
+    },
+    {
+      "path": "config_snapshot/jit_wrapper.txt",
+      "size_bytes": 836,
+      "sha256": "f4870944f3693061c3605998b315a6a315c616469903de4fe98ddea4547d51f2"
+    },
+    {
+      "path": "config_snapshot/onnx_graph.json",
+      "size_bytes": 6597,
+      "sha256": "00537e18d611cadc6eda2c0f68e0cd38900a90345c9eb0dfcb452a7f81e2a41d"
+    },
+    {
+      "path": "config_snapshot/policy/LW/base.yaml",
+      "size_bytes": 4382,
+      "sha256": "6f9f3a4c3e16ec7c11deced011062f359650c17ac73378773cd6243e9ed1a1e8"
+    },
+    {
+      "path": "config_snapshot/policy/LW/robot_lab/leg_loco/config.yaml",
+      "size_bytes": 2093,
+      "sha256": "89682b817081e7aeedfcb47af7f292a5e2a18953fef4dd778f235d9bd97b3622"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "size_bytes": 22417,
+      "sha256": "742908d3907e8b97187a386222d30aba16657759646762420c6b3ef59192c081"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/include/rl_sim_LW.hpp",
+      "size_bytes": 5427,
+      "sha256": "26880437d767f9a159db918120685cf60018d909161533b68012b1a208f70884"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/fsm/fsm.hpp",
+      "size_bytes": 6850,
+      "sha256": "4b59489b9cc1702ad06c47efbcc4bfe5f10b0a6737cbe5fbc86fe53c4c06ba07"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "size_bytes": 13562,
+      "sha256": "97aab22d0a54dced5b13bfdd41a6ca3b8f2afcfc53c7b90ee84f6864133289b0"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "size_bytes": 5417,
+      "sha256": "3bbb55a1c31f12f9b4af2317e8253ac16aeda70634189a954589291c60cb7742"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/logger/logger.hpp",
+      "size_bytes": 3016,
+      "sha256": "53e0d41f9e8953a9a83331bdd62398a17a7f60bc97661aac3a61b622fcda6c42"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/loop/command_gate.hpp",
+      "size_bytes": 1340,
+      "sha256": "a1585c2502e1e584a4370a67dc9aed0eebf7bdd4562795a79b723ad62ac59c23"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/loop/loop.hpp",
+      "size_bytes": 24031,
+      "sha256": "cfeb6811775f6040ceb433e441868b0c1d40f1c6b473e2aa7169496de14b0bdf"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.cpp",
+      "size_bytes": 14296,
+      "sha256": "73e95118c848ae09b3551bf00f234f3ec38896c6c3bd33f6dfa5da22c95f9f30"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.hpp",
+      "size_bytes": 5015,
+      "sha256": "cfd4f15382688b90a18cdad4d42db1799229f52afd4c624d669c1c86c2707690"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "size_bytes": 7841,
+      "sha256": "8140e69359d23f915f30ba9063e44be8b190d4aa07347d0a4d6e5e5021654b8c"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "size_bytes": 2887,
+      "sha256": "3f28d46b9b90ab2e9b74c034458aeda77d0343b9030ee0ad9b7df08a9a4cc898"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "size_bytes": 27578,
+      "sha256": "ea4341639e11ec3fcf2e8a803be9b724d4b95883b683182df8a3b6e8c0a92526"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "size_bytes": 3992,
+      "sha256": "ec5629cc61f61196cf09dd9c949b4080b555be36098f6151830f048c9e2332bb"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "size_bytes": 55690,
+      "sha256": "c51e73de8d18c1d270e6c95f78507ff03505fae8a8204cf80942e61c218b9ded"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "size_bytes": 17343,
+      "sha256": "2c6e9e980de54fa13f0808dc6f7de52d8de23d7f9bd85a01fac5b00cb3cfb651"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "size_bytes": 5571,
+      "sha256": "a3978fa5a30e75652eaf388338a3c63209494c3b86003a68c04ce0622667c7c9"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "size_bytes": 10809,
+      "sha256": "ab6c2bea4fb43a08d6f4c547756d92e7b90594998e31dfe1f02bd4473c868dc1"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "size_bytes": 4557,
+      "sha256": "abe22531170e010a045d0149cf9542dd3e91523531ccc392dbb8e4115c0d8532"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "size_bytes": 5541,
+      "sha256": "6805670b2c81bb102741af74bd4160e21acfe1b55a158675ac28096f2c65bf94"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "size_bytes": 2096,
+      "sha256": "5d8d02e46247166119eca3f095e2e9b55358c965307f632d693bee73c433db1e"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "size_bytes": 28720,
+      "sha256": "798cb47d4518b8baf437dc6c3904034a9174193686dd721ad29e67e894df65b4"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "size_bytes": 6634,
+      "sha256": "729144d55d05c76caae83026144f5ead1d82bbee4c2aa2234d4e644ea311ae81"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "size_bytes": 9919,
+      "sha256": "4e8e67aaf2014c202ce3634ff4e247539a37582b19b2d87ecf6f01c1348e9eb2"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "size_bytes": 10852,
+      "sha256": "061cbdd6822b33d3ad37de98f3531dc0d20dec14258bda5cdaf61c645eb1b84e"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "size_bytes": 2467,
+      "sha256": "0ca946de513fd64bc0fe51bec8a754802ffb2e101f56ba94e9b9fff3525fd1b5"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "size_bytes": 4265,
+      "sha256": "ce00b507425d7c8dc0b9b148533d5a309f46cf5293fe836e7a5302e913a4eccf"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "size_bytes": 4763,
+      "sha256": "3b8a0f3bbb645ca37993a4c09224415151559dc86adbf53ce1306b7e32abccf4"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "size_bytes": 10627,
+      "sha256": "8eac7aff034e2ecb885012bdbcd871480e62b5145d410a65889d03ecb15c6a7e"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "size_bytes": 2022,
+      "sha256": "4b2698042fff6014fae8e467711eaad735d62b8baf5f70a6b1915434f0c5a684"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "size_bytes": 5618,
+      "sha256": "2f3f2845de39984ab69a4f451f2258b03dbf9e1059203c1920e48ea2c331167c"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "size_bytes": 6852,
+      "sha256": "2f028177e4859db02bf8a9e70090ce5d455b341d3256e556265eed56a15916a2"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "size_bytes": 1815,
+      "sha256": "f98e7f3a75c5d476a203ed475dff35810a16ed4991fa6c5bc689f709907c0bcb"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "size_bytes": 3119,
+      "sha256": "54e38e61ac7db14d42732f0a3a0a05e54734075cc0a72bc47371fd7f33ce074c"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "size_bytes": 2442,
+      "sha256": "ebce1d930c03bfed673b300c4bf13d40e886e0859d8b5845dc9ef5d3ceb9cba3"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "size_bytes": 1363,
+      "sha256": "9dc1fe56b13cdf116164bb2c79589ced335fddc0d8f1d53b7ff8fac3f6016168"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "size_bytes": 689,
+      "sha256": "35370cc092c85cd650b3a54b7b9c7e484cc28ae52331f45f88d6b2ba97b083fd"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "size_bytes": 19194,
+      "sha256": "819c2169ce8c9d7c94b7c4b9d319d41dc2d82367815465b1cf5a5f49f9672c24"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/mujoco_utils.hpp",
+      "size_bytes": 18021,
+      "sha256": "592880769cdba1e2d356bfd2299811a7564874f495bb4a213a0b8680485751c2"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.cc",
+      "size_bytes": 93364,
+      "sha256": "d7d8c861fc321128c11caf5de5c0dbc31cb78dece193cddab5cc62cd18cd66f4"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/thirdparty/mujoco_simulate/simulate.h",
+      "size_bytes": 10453,
+      "sha256": "628e17f8292780539f02c492b8ac1ec31a750d1bb7d530f60cc3ec1aff3b1677"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/src/rl_sim_LW.cpp",
+      "size_bytes": 49355,
+      "sha256": "c677c1835858a2ea29bfe58c2d612eec0a5e2679f9bd303f9ab7e118784c00ca"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "size_bytes": 15551,
+      "sha256": "aee18ff8549fdb6b2591be554902a81b13e1252bfc36cb331154e372e3419e6f"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "size_bytes": 9500084,
+      "sha256": "b9a6b19059b13fc464d079850c0f01fc8d92273b022eb6c812226121200ec839"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "size_bytes": 810984,
+      "sha256": "eab6dd1896081d5dda4f9579f1fe73f94a1a61b5db29fb575393a25847f41cc3"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "size_bytes": 4731834,
+      "sha256": "de83517b08196f2dcfbb3fed786fca0f4a8432c79defaba6de6dd7f02343d6e6"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "size_bytes": 3968884,
+      "sha256": "a2412b88e9514bc9958d28cff59950973054102abadab7165acf8e5fa67483d6"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "size_bytes": 5117334,
+      "sha256": "728b0b7f1d745ecdebc37f22e0f594883a4412065180fa26814b3bcf7116165c"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "size_bytes": 846384,
+      "sha256": "e4c1932dfced1b05134ec3dc6ec61af8178587810aac70ad5d192151a6d8a62e"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "size_bytes": 810984,
+      "sha256": "e55ff91db2f3fc29810853e726e495a558f413282ae4e939f61f6174abe90012"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "size_bytes": 4731834,
+      "sha256": "d22d28271e537eb8cd7cfac82a32fa44e7b9593f20ec70b544292540a336b6f7"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "size_bytes": 3968984,
+      "sha256": "9ca46193032a82ac9603483bbca0cacd0df240a5c962502d2c76b4add301fc17"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "size_bytes": 5117334,
+      "sha256": "22f3f46e572e5528996225679f8683db71b30029f77fd1f912272138fe32ad66"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "size_bytes": 846384,
+      "sha256": "6efcac8d8e72938d22a9db530eb8273e08a3ebb23ec32b9e50de5f264a1bb714"
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "size_bytes": 1480,
+      "sha256": "cb879c82e32f23cac8ff5597caf39ed39032c272e84e50bcea59f0320ef707c0"
+    },
+    {
+      "path": "experiment_plan.json",
+      "size_bytes": 4318,
+      "sha256": "cb46a7d9d8dcab16666aca04c4f71f7f3e4dd38ef147147ecaf656637a002c73"
+    },
+    {
+      "path": "experimental/collect.patch",
+      "size_bytes": 15408,
+      "sha256": "2fabefe09f736a962db620daafd9b4824c4a154e96a2596cff0667bfa5fbb5ce"
+    },
+    {
+      "path": "experimental/rl_sdk.cpp",
+      "size_bytes": 56154,
+      "sha256": "2af87f9739ea36d19b347788f4fcbc265e18aa2ddca1f2a8abe49af31031db69"
+    },
+    {
+      "path": "experimental/rl_sdk.patch",
+      "size_bytes": 1265,
+      "sha256": "060df5fe9a389391fdd5fe5a72a9ce7cb79d5bfd99c67876c3320b26f2b086c9"
+    },
+    {
+      "path": "final_checks.json",
+      "size_bytes": 2149,
+      "sha256": "8eae93e63ca7e829e9615d8c2041eec570fe5a81a594fe94760ddc39a22bad13"
+    },
+    {
+      "path": "frame_checks.json",
+      "size_bytes": 297575,
+      "sha256": "d0d5ae6c9688144612ee50777d1118a513e6fe7d546b13d6bd77f2ab62463bfc"
+    },
+    {
+      "path": "overview.png",
+      "size_bytes": 425392,
+      "sha256": "ac415e166b4f177fdd55a20225a3934c0bc02d96d2ffc7ccbea9a71e75d9a4e2"
+    },
+    {
+      "path": "report.md",
+      "size_bytes": 24266,
+      "sha256": "2048a0fa767bd922427bc7ba420db37e6dd68c732d2bd694e8f3f411dad76715"
+    },
+    {
+      "path": "runtime_config.json",
+      "size_bytes": 372283,
+      "sha256": "7bdb019166cccb0667dfe00e2e6a2021a5a7e48ee6a33c5639fbc5b8b89af55d"
+    },
+    {
+      "path": "runtime_dependencies.json",
+      "size_bytes": 3349,
+      "sha256": "5e9f61ea64466f960ced46035e2a0134a46239f9eb9422c683712fe4b3a68e10"
+    },
+    {
+      "path": "source_reference/baseline.json",
+      "size_bytes": 19799,
+      "sha256": "6a9fb09361d1f4530c41378dbfd676af33237e9a1417d2762c6500e8f0b2ea54"
+    },
+    {
+      "path": "source_reference/collect.cpp",
+      "size_bytes": 19682,
+      "sha256": "5d2ab446ed944c131b9b8923622c607ca1e787686bf8e6e0d0157f43304a530c"
+    },
+    {
+      "path": "source_reference/commands.json",
+      "size_bytes": 1389,
+      "sha256": "cfb3ef84048b2ad276ee7bf64326cd1792a25f952a68c9a6a0064d04995f4e33"
+    },
+    {
+      "path": "source_reference/manifest.json",
+      "size_bytes": 24209,
+      "sha256": "703b519558f4eeb347e1434e25bde17c0dd10840de44a32a67c692516f2dad8c"
+    },
+    {
+      "path": "source_reference/runtime_config.json",
+      "size_bytes": 75919,
+      "sha256": "df6261df81d121057721f841e3e1071b379b406decbc53eb1c68c6a2eae10d97"
+    },
+    {
+      "path": "source_reference/statistics.json",
+      "size_bytes": 22867,
+      "sha256": "66c8bb477baf2a308c6ce6ddd147565c2ab74af52b2426366bc2f5b914c6beec"
+    },
+    {
+      "path": "statistics.json",
+      "size_bytes": 90948,
+      "sha256": "0d3fece7bdae1d36e48ea57d9e4d7b206cdcde74a1fd7ea5789beafc338f89a3"
+    },
+    {
+      "path": "supplemental_analysis.json",
+      "size_bytes": 11447,
+      "sha256": "79121957f289517a51bcd712f83d3dd4d0c618206197cb5575af77e26ce4c527"
+    },
+    {
+      "path": "tools/analysis_console.log",
+      "size_bytes": 1011,
+      "sha256": "2fdcd69743ffba2eb93288eb87baf2598136c3102947925db2ff664a0e0f3e5e"
+    },
+    {
+      "path": "tools/analyze.py",
+      "size_bytes": 21385,
+      "sha256": "5f975bc1e65692927166c80c22c7e66b41a5f957eace2c9e383a0a1caaf13fa3"
+    },
+    {
+      "path": "tools/build.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/build_check.py",
+      "size_bytes": 651,
+      "sha256": "f1b164668031655e3451eff884b0a99f3c09df92a880da6335441bb728365231"
+    },
+    {
+      "path": "tools/build_collect.py",
+      "size_bytes": 1567,
+      "sha256": "f940efed1534b0d26ce4bd75687dd816b7fadd3f8984cfa12531d84ce2b1e0eb"
+    },
+    {
+      "path": "tools/build_command.json",
+      "size_bytes": 7673,
+      "sha256": "22157be03779382057ec05f9028b944e76e2f4494e72faaa86a94fd3dea7aed7"
+    },
+    {
+      "path": "tools/check_build.log",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tools/check_build_command.json",
+      "size_bytes": 7693,
+      "sha256": "d083b258bc0ddc7e3824a8e22ef6adc4923f3edeeffd5c527117e7c5271fc54a"
+    },
+    {
+      "path": "tools/check_frames",
+      "size_bytes": 741712,
+      "sha256": "e01486bdb3c255a9b690e2c8c1bdc82b2d15e597c0bd630c4f02c44814b01115"
+    },
+    {
+      "path": "tools/check_frames.cpp",
+      "size_bytes": 2984,
+      "sha256": "3da6d7c84698b30f32f161bbb66a5694a8232204f4232273b760155222e6e014"
+    },
+    {
+      "path": "tools/collect",
+      "size_bytes": 729560,
+      "sha256": "149bcd83ff0012bc3ec9931108c01bf6ed2e55d7c905a32493e07047c6bcc53c"
+    },
+    {
+      "path": "tools/collect.cpp",
+      "size_bytes": 28070,
+      "sha256": "f601f38ac9bdf56f44dea6d84e0c828f082a8ac620883a93c28c43722931e650"
+    },
+    {
+      "path": "tools/frame_checks_console.log",
+      "size_bytes": 580,
+      "sha256": "9150d0e3d049d8f7200cdbf16850e465dc58bffde3eb67ae43faa6ec5a04db04"
+    },
+    {
+      "path": "tools/matrix_console.log",
+      "size_bytes": 2493,
+      "sha256": "8817e4c93010ea95fe0c1a09628a8bc319311a7d17d9792cf55ed038a0bf4456"
+    },
+    {
+      "path": "tools/package.py",
+      "size_bytes": 10971,
+      "sha256": "ae4b3edeec01dee2a277a7f5a1c1efccf859b9f54d80bb1aa7801d5c7cbe8418"
+    },
+    {
+      "path": "tools/prepare.py",
+      "size_bytes": 15748,
+      "sha256": "d9d202ae8d574a474ad8ed1cedb742697474bd61039246a38460159c8ecafec3"
+    },
+    {
+      "path": "tools/render_console.log",
+      "size_bytes": 322,
+      "sha256": "130f7240582014233777d01ed5a5197b443131507b4d4c3600bfce78ad577cb3"
+    },
+    {
+      "path": "tools/render_video.py",
+      "size_bytes": 3535,
+      "sha256": "f5f55716fe399a219fbed9a1e05c745ed6ede40cc0bd862dd21daf5db1eab298"
+    },
+    {
+      "path": "tools/report.py",
+      "size_bytes": 23042,
+      "sha256": "ed96d844807f08a9059b018639fc0316198eb5168f9eeca87820ff2a07cbf387"
+    },
+    {
+      "path": "tools/report_console.log",
+      "size_bytes": 874,
+      "sha256": "946b72d33321a60c74a1661d47273e9ca13f3be93e52075270d745dfbd38754a"
+    },
+    {
+      "path": "tools/run_matrix.py",
+      "size_bytes": 1243,
+      "sha256": "57cd3c0c29890eb7a6a54cf5c12f8ba562325abae2704c6293c5e3d311c02c64"
+    },
+    {
+      "path": "tools/supplement.py",
+      "size_bytes": 6284,
+      "sha256": "b18f2ba128e1ba356573a7f056fca0927542c85dc1913e4a5df01bb0cb553d2b"
+    },
+    {
+      "path": "tools/supplement_console.log",
+      "size_bytes": 11447,
+      "sha256": "79121957f289517a51bcd712f83d3dd4d0c618206197cb5575af77e26ce4c527"
+    },
+    {
+      "path": "validation.json",
+      "size_bytes": 5979,
+      "sha256": "bd05fcd65d1168a3995d47bfa397126badea0ef708cfcde3c0d4428a070116a2"
+    },
+    {
+      "path": "video_validation.json",
+      "size_bytes": 978,
+      "sha256": "debde7d4ab6843a51b219921b4f38c7129dc32992027d2798c52f5d3c2373f60"
+    }
+  ],
+  "self_hash_note": "manifest.json excluded from its own file list; manifest.sha256 contains its SHA-256",
+  "archive": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab.tar.gz",
+  "archive_digest_path": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab.tar.gz.sha256"
+}
