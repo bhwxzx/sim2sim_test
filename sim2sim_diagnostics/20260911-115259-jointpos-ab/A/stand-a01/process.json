@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/tools/collect",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "stand-a01",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260911-115259-jointpos-ab/A/stand-a01",
+    "A"
+  ],
+  "cwd": "/home/lfr/rl_sar",
+  "exit_code": 0,
+  "wall_seconds": 2.7633228302001953,
+  "started_at": "2026-09-11T11:58:02.201396+08:00"
+}
