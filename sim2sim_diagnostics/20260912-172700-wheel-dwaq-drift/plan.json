@@ -1,0 +1,322 @@
+{
+  "schema_version": 1,
+  "host_id": "LFR",
+  "receiver_id": "younghit",
+  "repository": "/home/lfr/rl_sar",
+  "output": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift",
+  "scene": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+  "policy_root": "/home/lfr/sim2sim_test/sim2sim_work/20260912-172700-wheel-dwaq-drift/policy",
+  "model": {
+    "path": "/home/lfr/sim2sim_test/sim2sim_work/20260912-172700-wheel-dwaq-drift/policy/LW/robot_lab/wheel_loco/policy.onnx",
+    "archive": "/home/lfr/policy_storage/LW/wheel_loco/2026-09-11-17-04-10",
+    "sha256": "f19ef4d568e3fc5b0cc4cf07d3f34519683e372b4bc3f296284af4823257015d",
+    "jit_sha256": "7fe006dade63ed6003321e37392834e490ef5e993ddc43dad64c72a5f5cb3ac3",
+    "run": "2026-09-11_17-04-10",
+    "checkpoint": "model_49999.pt",
+    "task": "RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0"
+  },
+  "cases": [
+    {
+      "case_id": "A-seed42",
+      "condition": "A",
+      "seed": 42,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "A-seed43",
+      "condition": "A",
+      "seed": 43,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "A-seed44",
+      "condition": "A",
+      "seed": 44,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "B-seed42",
+      "condition": "B",
+      "seed": 42,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "B-seed43",
+      "condition": "B",
+      "seed": 43,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "B-seed44",
+      "condition": "B",
+      "seed": 44,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "C-seed42",
+      "condition": "C",
+      "seed": 42,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          40,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          60,
+          [
+            0.5,
+            0,
+            0
+          ]
+        ],
+        [
+          60,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "C-seed43",
+      "condition": "C",
+      "seed": 43,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          40,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          60,
+          [
+            0.5,
+            0,
+            0
+          ]
+        ],
+        [
+          60,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "C-seed44",
+      "condition": "C",
+      "seed": 44,
+      "duration": 120,
+      "segments": [
+        [
+          0,
+          40,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          40,
+          60,
+          [
+            0.5,
+            0,
+            0
+          ]
+        ],
+        [
+          60,
+          120,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  ],
+  "maximum_simulation_seconds": 1080,
+  "wall_timeout_seconds": 600,
+  "reset": "independent process, mj_resetDataKeyframe(home_wheel), WheelLocomotion Enter/Activate resets core; no midrun reset",
+  "noise_evidence": "rough_env_cfg.py matches archive hash; user explicitly confirmed flat inherits without override. Effective training YAML and exact modified flat source unavailable. Noise distribution replicated, not Torch random stream.",
+  "source_head": "536e94dab10eedb31971c8b741f8b915163aa353",
+  "source_dirty": " M policy/LW/robot_lab/leg_loco/policy.onnx\n M policy/LW/robot_lab/wheel_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n",
+  "protected_source_hashes": {
+    "/home/lfr/rl_sar/src/rl_sar/library/core/logger/logger.hpp": "53e0d41f9e8953a9a83331bdd62398a17a7f60bc97661aac3a61b622fcda6c42",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/vector_math/vector_math.hpp": "819c2169ce8c9d7c94b7c4b9d319d41dc2d82367815465b1cf5a5f49f9672c24",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp": "c51e73de8d18c1d270e6c95f78507ff03505fae8a8204cf80942e61c218b9ded",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp": "2c6e9e980de54fa13f0808dc6f7de52d8de23d7f9bd85a01fac5b00cb3cfb651",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp": "ea4341639e11ec3fcf2e8a803be9b724d4b95883b683182df8a3b6e8c0a92526",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp": "ec5629cc61f61196cf09dd9c949b4080b555be36098f6151830f048c9e2332bb",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/loop/loop.hpp": "cfeb6811775f6040ceb433e441868b0c1d40f1c6b473e2aa7169496de14b0bdf",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/loop/command_gate.hpp": "a1585c2502e1e584a4370a67dc9aed0eebf7bdd4562795a79b723ad62ac59c23",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/debug/lw_debug_publisher.cpp": "4ecb802937e55f41c4f90b4d347c2a2dc742de4833d573f3fb8e722f6c9fac7a",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/debug/lw_debug_publisher.hpp": "121e6971a358e0d8bb12b9d75d43e7428b530974058e2e43f271a09ede0ed096",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp": "8140e69359d23f915f30ba9063e44be8b190d4aa07347d0a4d6e5e5021654b8c",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp": "3f28d46b9b90ab2e9b74c034458aeda77d0343b9030ee0ad9b7df08a9a4cc898",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/fsm/fsm.hpp": "4b59489b9cc1702ad06c47efbcc4bfe5f10b0a6737cbe5fbc86fe53c4c06ba07",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/matplotlibcpp/matplotlibcpp.h": "4dc15d82f644af5f1b0db14b963d548b477aaff5f7444dd21094b137930c2eee",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp": "3bbb55a1c31f12f9b4af2317e8253ac16aeda70634189a954589291c60cb7742",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp": "97aab22d0a54dced5b13bfdd41a6ca3b8f2afcfc53c7b90ee84f6864133289b0",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_startup.hpp": "ebce1d930c03bfed673b300c4bf13d40e886e0859d8b5845dc9ef5d3ceb9cba3",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp": "35370cc092c85cd650b3a54b7b9c7e484cc28ae52331f45f88d6b2ba97b083fd",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp": "9dc1fe56b13cdf116164bb2c79589ced335fddc0d8f1d53b7ff8fac3f6016168",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp": "f98e7f3a75c5d476a203ed475dff35810a16ed4991fa6c5bc689f709907c0bcb",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp": "2f3f2845de39984ab69a4f451f2258b03dbf9e1059203c1920e48ea2c331167c",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp": "4b2698042fff6014fae8e467711eaad735d62b8baf5f70a6b1915434f0c5a684",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp": "2f028177e4859db02bf8a9e70090ce5d455b341d3256e556265eed56a15916a2",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp": "54e38e61ac7db14d42732f0a3a0a05e54734075cc0a72bc47371fd7f33ce074c",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp": "3b8a0f3bbb645ca37993a4c09224415151559dc86adbf53ce1306b7e32abccf4",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp": "8eac7aff034e2ecb885012bdbcd871480e62b5145d410a65889d03ecb15c6a7e",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_safety_policy.hpp": "4e8e67aaf2014c202ce3634ff4e247539a37582b19b2d87ecf6f01c1348e9eb2",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_core.hpp": "798cb47d4518b8baf437dc6c3904034a9174193686dd721ad29e67e894df65b4",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_control_safety.hpp": "ab6c2bea4fb43a08d6f4c547756d92e7b90594998e31dfe1f02bd4473c868dc1",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_startup_disable.hpp": "061cbdd6822b33d3ad37de98f3531dc0d20dec14258bda5cdaf61c645eb1b84e",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp": "0ca946de513fd64bc0fe51bec8a754802ffb2e101f56ba94e9b9fff3525fd1b5",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_sync.hpp": "729144d55d05c76caae83026144f5ead1d82bbee4c2aa2234d4e644ea311ae81",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_config_profile.hpp": "a3978fa5a30e75652eaf388338a3c63209494c3b86003a68c04ce0622667c7c9",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp": "abe22531170e010a045d0149cf9542dd3e91523531ccc392dbb8e4115c0d8532",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/sensor_readiness.hpp": "ce00b507425d7c8dc0b9b148533d5a309f46cf5293fe836e7a5302e913a4eccf",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_loop_config.hpp": "5d8d02e46247166119eca3f095e2e9b55358c965307f632d693bee73c433db1e",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_joystick_safety.hpp": "6805670b2c81bb102741af74bd4160e21acfe1b55a158675ac28096f2c65bf94",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/deployment/lw_deployment_bundle.hpp": "62cf00d01df263d98e8cee7309bfbca18634513b6235480dadb269bce0128781",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/deployment/lw_deployment_bundle.cpp": "f1fcd37787f15612c4bd9bd3d800416e3653fd2134abc39e9a13b2fb035ca1c6",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/motion_loader/motion_loader_lw.cpp": "73e95118c848ae09b3551bf00f234f3ec38896c6c3bd33f6dfa5da22c95f9f30",
+    "/home/lfr/rl_sar/src/rl_sar/library/core/motion_loader/motion_loader_lw.hpp": "cfd4f15382688b90a18cdad4d42db1799229f52afd4c624d669c1c86c2707690",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/height_field.png": "996b940ec9fcbe5551d436f76040f6b3690e90fb056ff8f2ba8c650c91f39e10",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/LW_inertial.xml": "c44bd220ea19a264c3b97dced8d3fe2ba5c73c27700fda5ccc2c3537baa00586",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/unitree_hfield.png": "8a3f9777e096c5e8b6a5f8b2ca9382d5b25e2cacc15be7b5ac41f1e432e61a6c",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene_terrain.xml": "2d99527c373e859802aa374b22975b896b7182fdceb4843d82c55dbbf134d12d",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml": "cb879c82e32f23cac8ff5597caf39ed39032c272e84e50bcea59f0320ef707c0",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/LW.xml": "aee18ff8549fdb6b2591be554902a81b13e1252bfc36cb331154e372e3419e6f",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl": "a2412b88e9514bc9958d28cff59950973054102abadab7165acf8e5fa67483d6",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl": "de83517b08196f2dcfbb3fed786fca0f4a8432c79defaba6de6dd7f02343d6e6",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl": "728b0b7f1d745ecdebc37f22e0f594883a4412065180fa26814b3bcf7116165c",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl": "6efcac8d8e72938d22a9db530eb8273e08a3ebb23ec32b9e50de5f264a1bb714",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl": "b9a6b19059b13fc464d079850c0f01fc8d92273b022eb6c812226121200ec839",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl": "e4c1932dfced1b05134ec3dc6ec61af8178587810aac70ad5d192151a6d8a62e",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl": "e55ff91db2f3fc29810853e726e495a558f413282ae4e939f61f6174abe90012",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl": "22f3f46e572e5528996225679f8683db71b30029f77fd1f912272138fe32ad66",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl": "9ca46193032a82ac9603483bbca0cacd0df240a5c962502d2c76b4add301fc17",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl": "d22d28271e537eb8cd7cfac82a32fa44e7b9593f20ec70b544292540a336b6f7",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl": "eab6dd1896081d5dda4f9579f1fe73f94a1a61b5db29fb575393a25847f41cc3",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/terrain/blind_rough_and_stairs_terrain.png": "6ffaba9cff2aa28640a72c578e9fbf1cea8a878b8cc26eafcccf985d78d75a2a",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/terrain/blind_rough_and_stairs_terrain_info.txt": "00a9ea4d6bf36270f9b06d493b51d8d775fb542ae28e03659b9c29716444d1ee",
+    "/home/lfr/rl_sar/AGENTS.md": "848736a6094218f7bf5446d11390d8716b6813efca48757ec18245f4b2edae30",
+    "/home/lfr/rl_sar/src/rl_sar/fsm_robot/fsm_LW.hpp": "742908d3907e8b97187a386222d30aba16657759646762420c6b3ef59192c081",
+    "/home/lfr/rl_sar/src/rl_sar/src/rl_sim_LW.cpp": "c677c1835858a2ea29bfe58c2d612eec0a5e2679f9bd303f9ab7e118784c00ca",
+    "/home/lfr/rl_sar/src/rl_sar/include/rl_sim_LW.hpp": "26880437d767f9a159db918120685cf60018d909161533b68012b1a208f70884",
+    "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/urdf/LW.urdf": "e416fdf3568b6a25b42c5e73e67d15b03762bf20e870d0a205e389af9dc6861e",
+    "/home/lfr/rl_sar/policy/LW/base.yaml": "6f9f3a4c3e16ec7c11deced011062f359650c17ac73378773cd6243e9ed1a1e8",
+    "/home/lfr/rl_sar/policy/LW/robot_lab/wheel_loco/config.yaml": "ff11fa9a44a00b4ee79202fd6197576885479228fd5253f79812f7ab112ab642"
+  },
+  "removed_ground_objects": [
+    "<geom pos=\"2.3 0 0.02\" type=\"box\" size=\"0.2 2 0.05\" quat=\"1.0 0 0 0\" />\n    ",
+    "<geom pos=\"2.7 0 0.02\" type=\"box\" size=\"0.2 2 0.10\" quat=\"1.0 0 0 0\" />\n    ",
+    "<geom pos=\"3.1 0 0.02\" type=\"box\" size=\"0.2 2 0.15\" quat=\"1.0 0 0 0\" />\n    ",
+    "<geom pos=\"3.5 0 0.02\" type=\"box\" size=\"0.2 2 0.20\" quat=\"1.0 0 0 0\" />\n    ",
+    "<geom pos=\"3.9 0 0.02\" type=\"box\" size=\"0.2 2 0.25\" quat=\"1.0 0 0 0\" />\n    ",
+    "<geom pos=\"4.3 0 0.02\" type=\"box\" size=\"0.2 2 0.30\" quat=\"1.0 0 0 0\" />\n  "
+  ],
+  "video": "not requested for this matrix; full-rate numerical curves retained",
+  "stop_conditions": [
+    "nonfinite",
+    "MuJoCo warning",
+    "runtime safety latch",
+    "base height <0.25m",
+    "upright tilt >75deg",
+    "base collision contact",
+    "program exception",
+    "600s wall timeout"
+  ],
+  "initial_pose": "unchanged home_wheel qpos, zero qvel and ctrl"
+}

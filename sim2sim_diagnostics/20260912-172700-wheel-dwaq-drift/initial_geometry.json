@@ -1,0 +1,18 @@
+{
+  "collision_mesh_min_z_m": {
+    "base_collision": 0.5243000093917027,
+    "left_foot_collision": 0.634937367714923,
+    "left_hip_collision": 0.5243000018988155,
+    "left_shank_collision": 0.07674468259637052,
+    "left_thigh_collision": 0.33108851467568357,
+    "left_wheel_collision": 0.028345458734285792,
+    "right_foot_collision": 0.6349373686755914,
+    "right_hip_collision": 0.524300001448725,
+    "right_shank_collision": 0.07687176466677209,
+    "right_thigh_collision": 0.3310885069052478,
+    "right_wheel_collision": 0.028328368634936485
+  },
+  "method": "minimum world Z of compiled collision mesh vertices at unchanged home_wheel; geometric clearance, excludes contact margin",
+  "mujoco_version": "3.2.7",
+  "physics_steps": 0
+}

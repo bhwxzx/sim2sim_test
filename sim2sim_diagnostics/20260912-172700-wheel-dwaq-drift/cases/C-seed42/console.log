@@ -1,0 +1,34 @@
+[0;37m[INFO]   [0m [FSMManager] Registered type: LW
+[0;37m[INFO]   [0m Preloading ONNX model into memory: /home/lfr/sim2sim_test/sim2sim_work/20260912-172700-wheel-dwaq-drift/policy/LW/robot_lab/wheel_loco/policy.onnx
+[0;37m[INFO]   [0m Successfully loaded ONNX model: /home/lfr/sim2sim_test/sim2sim_work/20260912-172700-wheel-dwaq-drift/policy/LW/robot_lab/wheel_loco/policy.onnx
+[0;37m[INFO]   [0m Validated model and warmed it up in 0.155 ms.
+[0;37m[INFO]   [0m Preload & Warmup finished for: LW/robot_lab/wheel_loco
+[0;37m[INFO]   [0m [FSM] Set initial state: RLFSMStatePassive
+[0;37m[INFO]   [0m [FSMManager] FSM created for type: LW
+
+[0;37m[INFO]   [0m [FSM] Request switch from RLFSMStatePassive to RLFSMStateRLLocomotion_Wheel
+C-seed42 250 5.000
+C-seed42 500 10.000
+C-seed42 750 15.000
+C-seed42 1000 20.000
+C-seed42 1250 25.000
+C-seed42 1500 30.000
+C-seed42 1750 35.000
+C-seed42 2000 40.000
+C-seed42 2250 45.000
+C-seed42 2500 50.000
+C-seed42 2750 55.000
+C-seed42 3000 60.000
+C-seed42 3250 65.000
+C-seed42 3500 70.000
+C-seed42 3750 75.000
+C-seed42 4000 80.000
+C-seed42 4250 85.000
+C-seed42 4500 90.000
+C-seed42 4750 95.000
+C-seed42 5000 100.000
+C-seed42 5250 105.000
+C-seed42 5500 110.000
+C-seed42 5750 115.000
+C-seed42 6000 120.000
+{"case_id":"C-seed42","condition":"C","control_records":6000,"final_sim_time":119.99999999990173,"low_level_ticks":24000,"physics_steps":60000,"requested_sim_duration":120.0,"reset_count":1,"seed":42,"seed_method":"srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization","status":"completed","termination_reason":"time_limit"}

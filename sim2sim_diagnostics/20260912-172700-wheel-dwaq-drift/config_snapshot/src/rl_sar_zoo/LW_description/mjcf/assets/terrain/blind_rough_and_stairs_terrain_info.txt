@@ -1,0 +1,12 @@
+=== MuJoCo Heightfield Configuration ===
+
+You can use the following XML snippet to load the generated terrain:
+
+<asset>
+    <hfield name="terrain_hfield" file="blind_rough_and_stairs_terrain.png" size="16.000 16.000 1.000 1.000" />
+</asset>
+
+<worldbody>
+    <!-- Optionally, you can add pos="0 0 0" to adjust its placement -->
+    <geom type="hfield" hfield="terrain_hfield" material="your_material_here" />
+</worldbody>

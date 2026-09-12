@@ -1,0 +1,209 @@
+{
+  "nodes": [
+    {
+      "name": "/Slice",
+      "op": "Slice",
+      "inputs": [
+        "obs",
+        "/Constant_1_output_0",
+        "/Constant_2_output_0",
+        "/Constant_output_0",
+        "/Constant_output_0"
+      ],
+      "outputs": [
+        "/Slice_output_0"
+      ]
+    },
+    {
+      "name": "/encoder_backbone/encoder_backbone.0/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "obs",
+        "encoder_backbone.0.weight",
+        "encoder_backbone.0.bias"
+      ],
+      "outputs": [
+        "/encoder_backbone/encoder_backbone.0/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/encoder_backbone/encoder_backbone.1/Elu",
+      "op": "Elu",
+      "inputs": [
+        "/encoder_backbone/encoder_backbone.0/Gemm_output_0"
+      ],
+      "outputs": [
+        "/encoder_backbone/encoder_backbone.1/Elu_output_0"
+      ]
+    },
+    {
+      "name": "/encoder_backbone/encoder_backbone.2/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/encoder_backbone/encoder_backbone.1/Elu_output_0",
+        "encoder_backbone.2.weight",
+        "encoder_backbone.2.bias"
+      ],
+      "outputs": [
+        "/encoder_backbone/encoder_backbone.2/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/encode_mean_vel/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/encoder_backbone/encoder_backbone.2/Gemm_output_0",
+        "encode_mean_vel.weight",
+        "encode_mean_vel.bias"
+      ],
+      "outputs": [
+        "/encode_mean_vel/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/encode_mean_latent/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/encoder_backbone/encoder_backbone.2/Gemm_output_0",
+        "encode_mean_latent.weight",
+        "encode_mean_latent.bias"
+      ],
+      "outputs": [
+        "/encode_mean_latent/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/Concat",
+      "op": "Concat",
+      "inputs": [
+        "/encode_mean_vel/Gemm_output_0",
+        "/encode_mean_latent/Gemm_output_0",
+        "/Slice_output_0"
+      ],
+      "outputs": [
+        "/Concat_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.0/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/Concat_output_0",
+        "actor.0.weight",
+        "actor.0.bias"
+      ],
+      "outputs": [
+        "/actor/actor.0/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.1/Elu",
+      "op": "Elu",
+      "inputs": [
+        "/actor/actor.0/Gemm_output_0"
+      ],
+      "outputs": [
+        "/actor/actor.1/Elu_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.2/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/actor/actor.1/Elu_output_0",
+        "actor.2.weight",
+        "actor.2.bias"
+      ],
+      "outputs": [
+        "/actor/actor.2/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.1_1/Elu",
+      "op": "Elu",
+      "inputs": [
+        "/actor/actor.2/Gemm_output_0"
+      ],
+      "outputs": [
+        "/actor/actor.1_1/Elu_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.4/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/actor/actor.1_1/Elu_output_0",
+        "actor.4.weight",
+        "actor.4.bias"
+      ],
+      "outputs": [
+        "/actor/actor.4/Gemm_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.1_2/Elu",
+      "op": "Elu",
+      "inputs": [
+        "/actor/actor.4/Gemm_output_0"
+      ],
+      "outputs": [
+        "/actor/actor.1_2/Elu_output_0"
+      ]
+    },
+    {
+      "name": "/actor/actor.6/Gemm",
+      "op": "Gemm",
+      "inputs": [
+        "/actor/actor.1_2/Elu_output_0",
+        "actor.6.weight",
+        "actor.6.bias"
+      ],
+      "outputs": [
+        "actions"
+      ]
+    }
+  ],
+  "initializer_names": [
+    "encoder_backbone.0.weight",
+    "encoder_backbone.0.bias",
+    "encoder_backbone.2.weight",
+    "encoder_backbone.2.bias",
+    "encode_mean_vel.weight",
+    "encode_mean_vel.bias",
+    "encode_mean_latent.weight",
+    "encode_mean_latent.bias",
+    "actor.0.weight",
+    "actor.0.bias",
+    "actor.2.weight",
+    "actor.2.bias",
+    "actor.4.weight",
+    "actor.4.bias",
+    "actor.6.weight",
+    "actor.6.bias",
+    "/Constant_output_0",
+    "/Constant_1_output_0",
+    "/Constant_2_output_0"
+  ],
+  "input": [
+    {
+      "dtype": "float32",
+      "name": "obs",
+      "shape": [
+        1,
+        195
+      ]
+    }
+  ],
+  "output": [
+    {
+      "dtype": "float32",
+      "name": "actions",
+      "shape": [
+        1,
+        10
+      ]
+    }
+  ],
+  "normalization_enabled": false,
+  "evidence": "user and archive training description; graph has no normalization operators or named normalization parameters"
+}

@@ -1,0 +1,955 @@
+{
+  "schema_version": 1,
+  "sealed_at": "2026-09-12T09:47:26.489784+00:00",
+  "host_id": "LFR",
+  "receiver_id": "younghit",
+  "model": {
+    "path": "/home/lfr/sim2sim_test/sim2sim_work/20260912-172700-wheel-dwaq-drift/policy/LW/robot_lab/wheel_loco/policy.onnx",
+    "archive": "/home/lfr/policy_storage/LW/wheel_loco/2026-09-11-17-04-10",
+    "sha256": "f19ef4d568e3fc5b0cc4cf07d3f34519683e372b4bc3f296284af4823257015d",
+    "jit_sha256": "7fe006dade63ed6003321e37392834e490ef5e993ddc43dad64c72a5f5cb3ac3",
+    "run": "2026-09-11_17-04-10",
+    "checkpoint": "model_49999.pt",
+    "task": "RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0"
+  },
+  "scene": {
+    "path": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "sha256": "5da9fabb16f498e967b6a1dfe56f7eb2b15b1c23751bcc4d287eff9690cba4d2"
+  },
+  "cases": {
+    "A-seed42": {
+      "case_id": "A-seed42",
+      "condition": "A",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 42,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "A-seed43": {
+      "case_id": "A-seed43",
+      "condition": "A",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 43,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "A-seed44": {
+      "case_id": "A-seed44",
+      "condition": "A",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 44,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "B-seed42": {
+      "case_id": "B-seed42",
+      "condition": "B",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 42,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "B-seed43": {
+      "case_id": "B-seed43",
+      "condition": "B",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 43,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "B-seed44": {
+      "case_id": "B-seed44",
+      "condition": "B",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 44,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "C-seed42": {
+      "case_id": "C-seed42",
+      "condition": "C",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 42,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "C-seed43": {
+      "case_id": "C-seed43",
+      "condition": "C",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 43,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    },
+    "C-seed44": {
+      "case_id": "C-seed44",
+      "condition": "C",
+      "control_records": 6000,
+      "final_sim_time": 119.99999999990173,
+      "low_level_ticks": 24000,
+      "physics_steps": 60000,
+      "requested_sim_duration": 120.0,
+      "reset_count": 1,
+      "seed": 44,
+      "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+      "status": "completed",
+      "termination_reason": "time_limit"
+    }
+  },
+  "files": [
+    {
+      "path": "additional_audit.json",
+      "sha256": "1359da24754ca08ac174ef80b6e2e13da942b53b02ce167ae54db3bc15b43234",
+      "size_bytes": 66806
+    },
+    {
+      "path": "cases/A-seed42/console.log",
+      "sha256": "ab3fa388aa4cec6fa8b9f8b7d3729b6877c477337ff40ae41994902736c80700",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/A-seed42/effective_config.json",
+      "sha256": "420d42a4017f9d5252ba9ac3f1d4c3f4cde13b7ffa5e0a5522ad87b6b722146b",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/A-seed42/process.json",
+      "sha256": "2ec27b64a95733fcfea748a1b4903c9481cb897bed6f3d31d2ef10799948321e",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/A-seed42/result.json",
+      "sha256": "acf27af2a7b23011847cfe8a91c24051b028b376233dd1a16bea7fcacaa65983",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/A-seed42/telemetry.jsonl.gz",
+      "sha256": "4e4ae7f8d5aaac3a864b35a6648d08a0cf3034751e269121e2cb821c2304ca72",
+      "size_bytes": 96086912
+    },
+    {
+      "path": "cases/A-seed43/console.log",
+      "sha256": "180ffcc5da085b4ba7f56ef35f57214f672547f3c1e3e6d2df9d6c514ad44dec",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/A-seed43/effective_config.json",
+      "sha256": "580d70b951d40cf0442d6be6089948fc450ca6ac2577a1dcaf8bd67c845735bb",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/A-seed43/process.json",
+      "sha256": "4a1466c7d60695bd375ef209dac62eee0577e2b36df1555f3c8e7a3fb5af3cb3",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/A-seed43/result.json",
+      "sha256": "cdd72b9991b9b598aa4ad5adeba009a59efceaf991c8419f605a7a9e1fac63ee",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/A-seed43/telemetry.jsonl.gz",
+      "sha256": "1f0022e69e3310cb85f363244c700733a50a1e053d67702a02f6090c87c0121d",
+      "size_bytes": 96086735
+    },
+    {
+      "path": "cases/A-seed44/console.log",
+      "sha256": "8525a9643f080b95811bafca4f0858740be85f313032c179e99ce69446c3de5c",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/A-seed44/effective_config.json",
+      "sha256": "87a36ef128102269fbcfd024e33ea9ab6b1410c66611b6f7ab6cb69e8571c2db",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/A-seed44/process.json",
+      "sha256": "439d4b0cd78b567894e6773fc2a386bf99eeccf37853b06705edc1e79a76e0b5",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/A-seed44/result.json",
+      "sha256": "a343cda0193b6a548386353cceb85597ca2ef323a71c253dc5b19a04d4167ded",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/A-seed44/telemetry.jsonl.gz",
+      "sha256": "501b1d415e9f3f9f756ea46ced3e4858149ffd82b66e81c01f3e9a319f36cd09",
+      "size_bytes": 96083958
+    },
+    {
+      "path": "cases/B-seed42/console.log",
+      "sha256": "87fc41c25755dc0af528c87403bbd8ea958d05f5cec04cb340dae6a4780be215",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/B-seed42/effective_config.json",
+      "sha256": "fb0a13508422c54b7ae26840ed21e22b349a5c0c642a8942e550add5bf092c75",
+      "size_bytes": 54055
+    },
+    {
+      "path": "cases/B-seed42/process.json",
+      "sha256": "41fb10150f6fd6d68637d1bfbc18955da228ddbc315429b94a6d8f5773a41c9f",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/B-seed42/result.json",
+      "sha256": "f111c2b0317a8abf92fb028ec54323ee6ba46f0ba9622ab63b89f7c6141e416a",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/B-seed42/telemetry.jsonl.gz",
+      "sha256": "955f0e58178ebbdcef6b7adb890b537223583e3b7362441548d005bf9d60cad3",
+      "size_bytes": 98727267
+    },
+    {
+      "path": "cases/B-seed43/console.log",
+      "sha256": "041657c1866bb106c7ac10042ee0baf73eec43e4fedb252dd8a856b4773ca88d",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/B-seed43/effective_config.json",
+      "sha256": "3d808b8094426a87708cd31e8a02ca8cccca9933193cd90e629a84497b3ae1ae",
+      "size_bytes": 54055
+    },
+    {
+      "path": "cases/B-seed43/process.json",
+      "sha256": "20f3ae4ee60a5e46b11ea2ebbe3316caabe48af174f5afed410f50d49f9ef7c7",
+      "size_bytes": 1017
+    },
+    {
+      "path": "cases/B-seed43/result.json",
+      "sha256": "d8fe254bee284c783feda6600a073e2f83cb552a362bbb6c24f4c5e5d0dd6211",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/B-seed43/telemetry.jsonl.gz",
+      "sha256": "a27c9f7dcee14816ceee0f86556a99036ca1495ab2d9e0b396ac8dc3a6d06994",
+      "size_bytes": 98794098
+    },
+    {
+      "path": "cases/B-seed44/console.log",
+      "sha256": "d32d1df263720a47ca01fde65b6d290d5aead458eeb59e9661f080517d9df0f4",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/B-seed44/effective_config.json",
+      "sha256": "b2b1a8d2fbc9487b5441c921b7196c93bcfe6f69359f11aa73b999cd9506608b",
+      "size_bytes": 54055
+    },
+    {
+      "path": "cases/B-seed44/process.json",
+      "sha256": "a70b0dae71c849626339eaaadcf3fe31808687629bd63ec722d8d6224e0f889c",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/B-seed44/result.json",
+      "sha256": "ba4b144052179eadaa077614b5ac880d89bc2ac70f7488660ee1703a9c4f0851",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/B-seed44/telemetry.jsonl.gz",
+      "sha256": "5d5a235ba0294a4336db07a09907256bc4660cdcbb4eb6096fb72305c392d25c",
+      "size_bytes": 98750928
+    },
+    {
+      "path": "cases/C-seed42/console.log",
+      "sha256": "db24bb0ed00ac7919432d3bcfe535293059a181dc9c18cd717087aa2fa530680",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/C-seed42/effective_config.json",
+      "sha256": "420d42a4017f9d5252ba9ac3f1d4c3f4cde13b7ffa5e0a5522ad87b6b722146b",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/C-seed42/process.json",
+      "sha256": "ca853ee9aa9868db42de04264d970ad747b9f7a8234a5c3f98790a9ac4b40e8e",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/C-seed42/result.json",
+      "sha256": "eb915f0c6f3c56e3738531bc1ae99d69b012aef5ef75f04c3068b82de0419d74",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/C-seed42/telemetry.jsonl.gz",
+      "sha256": "79573bbffc5e14a496c51ab689d5d3bf086da76298487efddcecb560d7118b74",
+      "size_bytes": 96310881
+    },
+    {
+      "path": "cases/C-seed43/console.log",
+      "sha256": "a1e28953f8e56e588b47b0c08bed09ebc24d2d7e6451b41b963ea06d7637e9ec",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/C-seed43/effective_config.json",
+      "sha256": "580d70b951d40cf0442d6be6089948fc450ca6ac2577a1dcaf8bd67c845735bb",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/C-seed43/process.json",
+      "sha256": "957c67c0fa1ba87a12d28910392297f09b26d46b3761f23f587f7082d5f4c9a6",
+      "size_bytes": 1016
+    },
+    {
+      "path": "cases/C-seed43/result.json",
+      "sha256": "eef8c7b43c1ec412f7fc7a161ad92040fcda9f7cb5bffc86b58128a9e9af1c9c",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/C-seed43/telemetry.jsonl.gz",
+      "sha256": "00f728a31198ef35ffe7c6898cecd18e9af8b22b10585a1c1012c3b1dfe5e49d",
+      "size_bytes": 96310137
+    },
+    {
+      "path": "cases/C-seed44/console.log",
+      "sha256": "3b97cdafee2ff795f4eeb25af34f35f08b137c723fb6c9ccbb43a38e92a18ed6",
+      "size_bytes": 1643
+    },
+    {
+      "path": "cases/C-seed44/effective_config.json",
+      "sha256": "87a36ef128102269fbcfd024e33ea9ab6b1410c66611b6f7ab6cb69e8571c2db",
+      "size_bytes": 54057
+    },
+    {
+      "path": "cases/C-seed44/process.json",
+      "sha256": "790e5639d5cc3d73f0ac2d89e882250fcff208eb0184abcb021de6b4615a04ee",
+      "size_bytes": 1018
+    },
+    {
+      "path": "cases/C-seed44/result.json",
+      "sha256": "95399fc0210f6fa5f95118292ea0f686a439bcbfc3d9a1ca0130aa498ca2bac9",
+      "size_bytes": 436
+    },
+    {
+      "path": "cases/C-seed44/telemetry.jsonl.gz",
+      "sha256": "4174b88934f5f632addae66dee476fa3788f76270b45584de2a11a6db43d695e",
+      "size_bytes": 96308037
+    },
+    {
+      "path": "commands.json",
+      "sha256": "06417a43f1f0be237b6ea9c9707aebf7fefff0fd00bcfb878c2b1a22ef285ab6",
+      "size_bytes": 8418
+    },
+    {
+      "path": "comparison.json",
+      "sha256": "404902154f6d7ca21857611d110fa29cc1f43664b9561687c7b08b1c741f1174",
+      "size_bytes": 1300
+    },
+    {
+      "path": "config_snapshot/AGENTS.md",
+      "sha256": "848736a6094218f7bf5446d11390d8716b6813efca48757ec18245f4b2edae30",
+      "size_bytes": 3558
+    },
+    {
+      "path": "config_snapshot/archive_manifest.json",
+      "sha256": "ad06744a27195e73c047f78ff835d47a94c351ca25bfed9710831306d56d5c7d",
+      "size_bytes": 19737
+    },
+    {
+      "path": "config_snapshot/flat_scene.patch",
+      "sha256": "f6dbac86fb2470b662e1371080373468eb84b3ffb1b54f327d392389a7de31b6",
+      "size_bytes": 2265
+    },
+    {
+      "path": "config_snapshot/isaaclab_reference_observation_manager.py",
+      "sha256": "57539db34658e98f92961ea6a182d5b1326ec9c9ec5a1cc39e5c032bfdd2cf01",
+      "size_bytes": 33735
+    },
+    {
+      "path": "config_snapshot/isaaclab_reference_source.json",
+      "sha256": "593616aefc7ebe02010a19276a9266a65c631a55ba30e8f0b4e00afba61f085b",
+      "size_bytes": 370
+    },
+    {
+      "path": "config_snapshot/policy/LW/base.yaml",
+      "sha256": "6f9f3a4c3e16ec7c11deced011062f359650c17ac73378773cd6243e9ed1a1e8",
+      "size_bytes": 4382
+    },
+    {
+      "path": "config_snapshot/policy/LW/robot_lab/wheel_loco/config.yaml",
+      "sha256": "ff11fa9a44a00b4ee79202fd6197576885479228fd5253f79812f7ab112ab642",
+      "size_bytes": 2059
+    },
+    {
+      "path": "config_snapshot/repository.diff",
+      "sha256": "81257d6158f99cfc06952b4a96acd7b6bf9a53acd56c4e4bcf774f13cc43bbeb",
+      "size_bytes": 4193042
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "sha256": "742908d3907e8b97187a386222d30aba16657759646762420c6b3ef59192c081",
+      "size_bytes": 22417
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/include/rl_sim_LW.hpp",
+      "sha256": "26880437d767f9a159db918120685cf60018d909161533b68012b1a208f70884",
+      "size_bytes": 5427
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/debug/lw_debug_publisher.cpp",
+      "sha256": "4ecb802937e55f41c4f90b4d347c2a2dc742de4833d573f3fb8e722f6c9fac7a",
+      "size_bytes": 7448
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/debug/lw_debug_publisher.hpp",
+      "sha256": "121e6971a358e0d8bb12b9d75d43e7428b530974058e2e43f271a09ede0ed096",
+      "size_bytes": 2336
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/deployment/lw_deployment_bundle.cpp",
+      "sha256": "f1fcd37787f15612c4bd9bd3d800416e3653fd2134abc39e9a13b2fb035ca1c6",
+      "size_bytes": 25723
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/deployment/lw_deployment_bundle.hpp",
+      "sha256": "62cf00d01df263d98e8cee7309bfbca18634513b6235480dadb269bce0128781",
+      "size_bytes": 1300
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/fsm/fsm.hpp",
+      "sha256": "4b59489b9cc1702ad06c47efbcc4bfe5f10b0a6737cbe5fbc86fe53c4c06ba07",
+      "size_bytes": 6850
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "sha256": "97aab22d0a54dced5b13bfdd41a6ca3b8f2afcfc53c7b90ee84f6864133289b0",
+      "size_bytes": 13562
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "sha256": "3bbb55a1c31f12f9b4af2317e8253ac16aeda70634189a954589291c60cb7742",
+      "size_bytes": 5417
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/logger/logger.hpp",
+      "sha256": "53e0d41f9e8953a9a83331bdd62398a17a7f60bc97661aac3a61b622fcda6c42",
+      "size_bytes": 3016
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/loop/command_gate.hpp",
+      "sha256": "a1585c2502e1e584a4370a67dc9aed0eebf7bdd4562795a79b723ad62ac59c23",
+      "size_bytes": 1340
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/loop/loop.hpp",
+      "sha256": "cfeb6811775f6040ceb433e441868b0c1d40f1c6b473e2aa7169496de14b0bdf",
+      "size_bytes": 24031
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/matplotlibcpp/matplotlibcpp.h",
+      "sha256": "4dc15d82f644af5f1b0db14b963d548b477aaff5f7444dd21094b137930c2eee",
+      "size_bytes": 99857
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.cpp",
+      "sha256": "73e95118c848ae09b3551bf00f234f3ec38896c6c3bd33f6dfa5da22c95f9f30",
+      "size_bytes": 14296
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.hpp",
+      "sha256": "cfd4f15382688b90a18cdad4d42db1799229f52afd4c624d669c1c86c2707690",
+      "size_bytes": 5015
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "sha256": "8140e69359d23f915f30ba9063e44be8b190d4aa07347d0a4d6e5e5021654b8c",
+      "size_bytes": 7841
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "sha256": "3f28d46b9b90ab2e9b74c034458aeda77d0343b9030ee0ad9b7df08a9a4cc898",
+      "size_bytes": 2887
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "sha256": "ea4341639e11ec3fcf2e8a803be9b724d4b95883b683182df8a3b6e8c0a92526",
+      "size_bytes": 27578
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "sha256": "ec5629cc61f61196cf09dd9c949b4080b555be36098f6151830f048c9e2332bb",
+      "size_bytes": 3992
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "sha256": "c51e73de8d18c1d270e6c95f78507ff03505fae8a8204cf80942e61c218b9ded",
+      "size_bytes": 55690
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "sha256": "2c6e9e980de54fa13f0808dc6f7de52d8de23d7f9bd85a01fac5b00cb3cfb651",
+      "size_bytes": 17343
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "sha256": "a3978fa5a30e75652eaf388338a3c63209494c3b86003a68c04ce0622667c7c9",
+      "size_bytes": 5571
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "sha256": "ab6c2bea4fb43a08d6f4c547756d92e7b90594998e31dfe1f02bd4473c868dc1",
+      "size_bytes": 10809
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "sha256": "abe22531170e010a045d0149cf9542dd3e91523531ccc392dbb8e4115c0d8532",
+      "size_bytes": 4557
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "sha256": "6805670b2c81bb102741af74bd4160e21acfe1b55a158675ac28096f2c65bf94",
+      "size_bytes": 5541
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "sha256": "5d8d02e46247166119eca3f095e2e9b55358c965307f632d693bee73c433db1e",
+      "size_bytes": 2096
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "sha256": "798cb47d4518b8baf437dc6c3904034a9174193686dd721ad29e67e894df65b4",
+      "size_bytes": 28720
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "sha256": "729144d55d05c76caae83026144f5ead1d82bbee4c2aa2234d4e644ea311ae81",
+      "size_bytes": 6634
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "sha256": "4e8e67aaf2014c202ce3634ff4e247539a37582b19b2d87ecf6f01c1348e9eb2",
+      "size_bytes": 9919
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "sha256": "061cbdd6822b33d3ad37de98f3531dc0d20dec14258bda5cdaf61c645eb1b84e",
+      "size_bytes": 10852
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "sha256": "0ca946de513fd64bc0fe51bec8a754802ffb2e101f56ba94e9b9fff3525fd1b5",
+      "size_bytes": 2467
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "sha256": "ce00b507425d7c8dc0b9b148533d5a309f46cf5293fe836e7a5302e913a4eccf",
+      "size_bytes": 4265
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "sha256": "3b8a0f3bbb645ca37993a4c09224415151559dc86adbf53ce1306b7e32abccf4",
+      "size_bytes": 4763
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "sha256": "8eac7aff034e2ecb885012bdbcd871480e62b5145d410a65889d03ecb15c6a7e",
+      "size_bytes": 10627
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "sha256": "4b2698042fff6014fae8e467711eaad735d62b8baf5f70a6b1915434f0c5a684",
+      "size_bytes": 2022
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "sha256": "2f3f2845de39984ab69a4f451f2258b03dbf9e1059203c1920e48ea2c331167c",
+      "size_bytes": 5618
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "sha256": "2f028177e4859db02bf8a9e70090ce5d455b341d3256e556265eed56a15916a2",
+      "size_bytes": 6852
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "sha256": "f98e7f3a75c5d476a203ed475dff35810a16ed4991fa6c5bc689f709907c0bcb",
+      "size_bytes": 1815
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "sha256": "54e38e61ac7db14d42732f0a3a0a05e54734075cc0a72bc47371fd7f33ce074c",
+      "size_bytes": 3119
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "sha256": "ebce1d930c03bfed673b300c4bf13d40e886e0859d8b5845dc9ef5d3ceb9cba3",
+      "size_bytes": 2442
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "sha256": "9dc1fe56b13cdf116164bb2c79589ced335fddc0d8f1d53b7ff8fac3f6016168",
+      "size_bytes": 1363
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "sha256": "35370cc092c85cd650b3a54b7b9c7e484cc28ae52331f45f88d6b2ba97b083fd",
+      "size_bytes": 689
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "sha256": "819c2169ce8c9d7c94b7c4b9d319d41dc2d82367815465b1cf5a5f49f9672c24",
+      "size_bytes": 19194
+    },
+    {
+      "path": "config_snapshot/src/rl_sar/src/rl_sim_LW.cpp",
+      "sha256": "c677c1835858a2ea29bfe58c2d612eec0a5e2679f9bd303f9ab7e118784c00ca",
+      "size_bytes": 49355
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "sha256": "aee18ff8549fdb6b2591be554902a81b13e1252bfc36cb331154e372e3419e6f",
+      "size_bytes": 15551
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW_inertial.xml",
+      "sha256": "c44bd220ea19a264c3b97dced8d3fe2ba5c73c27700fda5ccc2c3537baa00586",
+      "size_bytes": 1833
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "sha256": "b9a6b19059b13fc464d079850c0f01fc8d92273b022eb6c812226121200ec839",
+      "size_bytes": 9500084
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "sha256": "eab6dd1896081d5dda4f9579f1fe73f94a1a61b5db29fb575393a25847f41cc3",
+      "size_bytes": 810984
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "sha256": "de83517b08196f2dcfbb3fed786fca0f4a8432c79defaba6de6dd7f02343d6e6",
+      "size_bytes": 4731834
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "sha256": "a2412b88e9514bc9958d28cff59950973054102abadab7165acf8e5fa67483d6",
+      "size_bytes": 3968884
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "sha256": "728b0b7f1d745ecdebc37f22e0f594883a4412065180fa26814b3bcf7116165c",
+      "size_bytes": 5117334
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "sha256": "e4c1932dfced1b05134ec3dc6ec61af8178587810aac70ad5d192151a6d8a62e",
+      "size_bytes": 846384
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "sha256": "e55ff91db2f3fc29810853e726e495a558f413282ae4e939f61f6174abe90012",
+      "size_bytes": 810984
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "sha256": "d22d28271e537eb8cd7cfac82a32fa44e7b9593f20ec70b544292540a336b6f7",
+      "size_bytes": 4731834
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "sha256": "9ca46193032a82ac9603483bbca0cacd0df240a5c962502d2c76b4add301fc17",
+      "size_bytes": 3968984
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "sha256": "22f3f46e572e5528996225679f8683db71b30029f77fd1f912272138fe32ad66",
+      "size_bytes": 5117334
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "sha256": "6efcac8d8e72938d22a9db530eb8273e08a3ebb23ec32b9e50de5f264a1bb714",
+      "size_bytes": 846384
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/terrain/blind_rough_and_stairs_terrain.png",
+      "sha256": "6ffaba9cff2aa28640a72c578e9fbf1cea8a878b8cc26eafcccf985d78d75a2a",
+      "size_bytes": 206856
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/terrain/blind_rough_and_stairs_terrain_info.txt",
+      "sha256": "00a9ea4d6bf36270f9b06d493b51d8d775fb542ae28e03659b9c29716444d1ee",
+      "size_bytes": 421
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/height_field.png",
+      "sha256": "996b940ec9fcbe5551d436f76040f6b3690e90fb056ff8f2ba8c650c91f39e10",
+      "size_bytes": 4865
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "sha256": "5da9fabb16f498e967b6a1dfe56f7eb2b15b1c23751bcc4d287eff9690cba4d2",
+      "size_bytes": 872
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene_terrain.xml",
+      "sha256": "2d99527c373e859802aa374b22975b896b7182fdceb4843d82c55dbbf134d12d",
+      "size_bytes": 1016
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/unitree_hfield.png",
+      "sha256": "8a3f9777e096c5e8b6a5f8b2ca9382d5b25e2cacc15be7b5ac41f1e432e61a6c",
+      "size_bytes": 14273
+    },
+    {
+      "path": "config_snapshot/src/rl_sar_zoo/LW_description/urdf/LW.urdf",
+      "sha256": "e416fdf3568b6a25b42c5e73e67d15b03762bf20e870d0a205e389af9dc6861e",
+      "size_bytes": 11871
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/assets/LW.py",
+      "sha256": "ff205e674b2e3a02c69af058b4ef5e96ff7e264fd514afc2fdce1d215331b578",
+      "size_bytes": 7537
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/tasks/manager_based/locomotion/velocity/config/LW/LW_Wheel/flat_env_cfg.py",
+      "sha256": "6924bf80c49f5058e9964c836c4e99f798b33f77d975ce73114b8ad2ba3a17f5",
+      "size_bytes": 8207
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/tasks/manager_based/locomotion/velocity/config/LW/LW_Wheel/rough_env_cfg.py",
+      "sha256": "1225c46ab31587acb8ed759d998f52e2bb718f7c5512a3a8cfe228218d877f7f",
+      "size_bytes": 65980
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/tasks/manager_based/locomotion/velocity/mdp/noise.py",
+      "sha256": "fb28bee6a7afe57b63677667540f708a33f4fc9c5402bdb0045d245c9d738282",
+      "size_bytes": 2074
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/tasks/manager_based/locomotion/velocity/mdp/observations.py",
+      "sha256": "8c3c31d676dbe832110eafe7f57cd19223a9c68c4f79cab1118b9e4c14ab545e",
+      "size_bytes": 22889
+    },
+    {
+      "path": "config_snapshot/training_reference/source/robot_lab/robot_lab/tasks/manager_based/locomotion/velocity/velocity_env_cfg.py",
+      "sha256": "ee43a2023fc80eabb3932db0a22f1940c7e095670f78ada4b61dd0b7e99e925c",
+      "size_bytes": 26320
+    },
+    {
+      "path": "config_snapshot/策略说明.txt",
+      "sha256": "b26e3a0f94f962f7b9712b2f5c44134651a1b4db725c9b60a4a5515f17950395",
+      "size_bytes": 7092
+    },
+    {
+      "path": "final_checks.json",
+      "sha256": "3952827b6f6e8e4406f0a4495c0ca577d33e4280b4d2f4b4b457cf2626188d92",
+      "size_bytes": 967
+    },
+    {
+      "path": "initial_geometry.json",
+      "sha256": "82d9bd7b10bdb09efe13091c7088a3e0c21a673ed490649259f55e77f6cbd691",
+      "size_bytes": 751
+    },
+    {
+      "path": "input_validation.json",
+      "sha256": "cb9b54cb1ec8f03d15ed5b1a71207e37a736cfb7b351c708b074dd4005664ee0",
+      "size_bytes": 10406
+    },
+    {
+      "path": "onnx_graph_contract.json",
+      "sha256": "6a144258e14657f4e735a78cabd3f1408fb730a98753cd4640501dcf3df28ebf",
+      "size_bytes": 4572
+    },
+    {
+      "path": "overview.png",
+      "sha256": "b7822dfaa196d8e0fdcb1c94d25bcb5ca421d086dbc080128f4b878eace68da6",
+      "size_bytes": 1713349
+    },
+    {
+      "path": "plan.json",
+      "sha256": "d4a620602ad039df5960135cce8eee5c74907a94e63857691878fa3b93191862",
+      "size_bytes": 15369
+    },
+    {
+      "path": "preflight_config.json",
+      "sha256": "32fd27563ec92a52910985683e6803731f84da5a602c715ac7f7d516638fb1ee",
+      "size_bytes": 54340
+    },
+    {
+      "path": "report.md",
+      "sha256": "4d7d422d0be6632e43644b3c25fff5c868c45e933678c97b3466847abdf430c4",
+      "size_bytes": 23637
+    },
+    {
+      "path": "repository_identity.json",
+      "sha256": "4eb6a262e81ad4667ab62a133cc3d89fa53dd43949893a8276d849cff6917249",
+      "size_bytes": 680
+    },
+    {
+      "path": "runtime_config.json",
+      "sha256": "be5a00cdd0cc8aca741423c21d20d68927d25c5c70c5f27ebb8829ae4ab83589",
+      "size_bytes": 599175
+    },
+    {
+      "path": "runtime_dependencies.json",
+      "sha256": "a20a626b9ddc153fb0b7329959df57efb39e0cebf48c1138c27a3d77263b7550",
+      "size_bytes": 2350
+    },
+    {
+      "path": "statistics.json",
+      "sha256": "6ee5a12e4f37916859ed050465f466a1e188bb6993fef0cfbd2b4c44dcebe0a4",
+      "size_bytes": 616439
+    },
+    {
+      "path": "tools/analysis_console.log",
+      "sha256": "75f643e7ee16016934c8b91cfa8179c2b889e8ff31c04071c678db22e10432c9",
+      "size_bytes": 189
+    },
+    {
+      "path": "tools/analysis_final_console.log",
+      "sha256": "207b8aa97ad4985194407c99001f5403e37b228b73da18445d98f8e4e57c2603",
+      "size_bytes": 2690
+    },
+    {
+      "path": "tools/analysis_operations.json",
+      "sha256": "0305b8a1c8f2f43c86a13335ef0dd21d4f3bb12f5718c6b1a7f8b63e0270744f",
+      "size_bytes": 1643
+    },
+    {
+      "path": "tools/analysis_system_console.log",
+      "sha256": "f772a0b6b0d351c86a70915f0a9525dea6db645c7669de79c262d0b06786a9f2",
+      "size_bytes": 4057
+    },
+    {
+      "path": "tools/analyze.py",
+      "sha256": "26a90438c83ff9f950a6c7b249d00396d8e708a770c852887f461b75e5c54576",
+      "size_bytes": 14697
+    },
+    {
+      "path": "tools/audit.py",
+      "sha256": "bcdc14c879b8eebb2304ec1abf5b29300584ecbb5603a7d490e2e3e7897294f7",
+      "size_bytes": 4945
+    },
+    {
+      "path": "tools/audit_console.log",
+      "sha256": "134d74508f3a81b7ffcde438ad637e737e1de5f1fd9777bc11f6c0b349b710b8",
+      "size_bytes": 2658
+    },
+    {
+      "path": "tools/build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0
+    },
+    {
+      "path": "tools/build.py",
+      "sha256": "4cf7d371bbd58a245dfdcaa24064aa3d10605ef1baa678b5366426535a188ac2",
+      "size_bytes": 1867
+    },
+    {
+      "path": "tools/build_command.json",
+      "sha256": "3d1a377306446b8c2fc829dbe1c9841b868c5cf1057aceb7ca4faac404daf74c",
+      "size_bytes": 8835
+    },
+    {
+      "path": "tools/collect",
+      "sha256": "235eb27f92a86af08f5beacc523fc626457db3884bb2ed92c46f36277becb215",
+      "size_bytes": 844232
+    },
+    {
+      "path": "tools/collect.cpp",
+      "sha256": "0f17a8f1dad2a372571e6c36c5910bd91da457771bb5c38cb128589536c9f92d",
+      "size_bytes": 28169
+    },
+    {
+      "path": "tools/diagnostic_changes.patch",
+      "sha256": "be472ee806541873db4abc4a0d56b61dea3731c67464a710acaf83f1e3a5e398",
+      "size_bytes": 11006
+    },
+    {
+      "path": "tools/geometry_command.json",
+      "sha256": "0f94a2bad634b15b5d695d4de9ae10b5582f3a1f21e46a2730277780d30b86ae",
+      "size_bytes": 874
+    },
+    {
+      "path": "tools/inspect_geometry",
+      "sha256": "48a423227e85077e1664e5eaa01f2c0a968e186883d1b5f706d270a3d680f9bc",
+      "size_bytes": 484392
+    },
+    {
+      "path": "tools/inspect_geometry.cpp",
+      "sha256": "98f0fc87acf31e60dbcd9a6917661c65f11237323309b5612b27b60c781728d8",
+      "size_bytes": 1152
+    },
+    {
+      "path": "tools/ldd.txt",
+      "sha256": "337fa50c53330aa245ce82bf59d116d2e5dead93f304c6dbcea1e5ec25734c96",
+      "size_bytes": 1039
+    },
+    {
+      "path": "tools/lw_runtime_core.hpp",
+      "sha256": "182882326a8bcca589551416acd51d8b47511c3ad7ad3c8209793a0bda5db205",
+      "size_bytes": 29026
+    },
+    {
+      "path": "tools/noise_hook.hpp",
+      "sha256": "87dccb44b17cd9ca88dd498282f4b0b2ded6a909c4844f37c3f44f98fdd99b24",
+      "size_bytes": 2609
+    },
+    {
+      "path": "tools/run_cases.py",
+      "sha256": "a0ac76629b504c91f2da0bcdc9b2190364e4cf6c25f016e727566781187f2056",
+      "size_bytes": 1919
+    },
+    {
+      "path": "tools/seal.py",
+      "sha256": "106f003914606395add1ad2c0f1f713f0609384ee99ca50cf34919d68c9c6fcf",
+      "size_bytes": 27803
+    },
+    {
+      "path": "tools/sim2sim_report_bundle.py",
+      "sha256": "511e618bc3bae502f669cb03a0621409ebb455edae1761d49d5e276f23bb7386",
+      "size_bytes": 15954
+    }
+  ],
+  "self_hash": "manifest.sha256"
+}

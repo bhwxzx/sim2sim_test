@@ -1,0 +1,19 @@
+{
+  "build_argv": [
+    "/usr/bin/c++",
+    "-std=c++17",
+    "-I/home/lfr/rl_sar/library/mujoco/include",
+    "/home/lfr/sim2sim_test/tools/wheel_drift/inspect_geometry.cpp",
+    "-L/home/lfr/rl_sar/library/mujoco/lib",
+    "-Wl,-rpath,/home/lfr/rl_sar/library/mujoco/lib",
+    "-lmujoco",
+    "-o",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/inspect_geometry"
+  ],
+  "run_argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/inspect_geometry",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/initial_geometry.json"
+  ],
+  "source_sha256": "98f0fc87acf31e60dbcd9a6917661c65f11237323309b5612b27b60c781728d8"
+}

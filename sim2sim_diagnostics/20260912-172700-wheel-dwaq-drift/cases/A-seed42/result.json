@@ -1,0 +1,14 @@
+{
+  "case_id": "A-seed42",
+  "condition": "A",
+  "control_records": 6000,
+  "final_sim_time": 119.99999999990173,
+  "low_level_ticks": 24000,
+  "physics_steps": 60000,
+  "requested_sim_duration": 120.0,
+  "reset_count": 1,
+  "seed": 42,
+  "seed_method": "srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization",
+  "status": "completed",
+  "termination_reason": "time_limit"
+}

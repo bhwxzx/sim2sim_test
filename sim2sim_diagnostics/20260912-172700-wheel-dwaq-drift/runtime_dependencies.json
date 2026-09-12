@@ -1,0 +1,62 @@
+{
+  "libraries": [
+    {
+      "path": "/home/lfr/rl_sar/library/mujoco/lib/libmujoco.so.3.2.7",
+      "sha256": "848a26ad3daccac3a56d7269ac68167ed3497f048223f8720f4e56eb432eb6c6"
+    },
+    {
+      "path": "/home/lfr/rl_sar/library/inference_runtime/onnxruntime/lib/libonnxruntime.so.1.22.0",
+      "sha256": "3da6146e14e7b8aaec625dde11d6114c7457c87a5f93d744897da8781e35c673"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libyaml-cpp.so.0.7.0",
+      "sha256": "0ff4f6210a56b6c232c1497514a86424279f2250fe8d25ee26f600b3dab0a2b5"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libtbb.so.12.5",
+      "sha256": "662cde99c415f7ac2bcedca97f884345f9c158d3b446678d59a8a98603e7938e"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libz.so.1.2.11",
+      "sha256": "64c206f0146cc58bbddc4f22054436f4ff278f5a554aa3ce6921ddf7e9133370"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30",
+      "sha256": "ff0825e113603c3866680d5d52216bc6d8eedf3a59f52a0aef67ff01994db128"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libm.so.6",
+      "sha256": "3dd5511ae94785c9f921429b0f2b2f7aabb461b6f0e6de6dfdbef15f24bdfee6"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libgcc_s.so.1",
+      "sha256": "fc9d43b2f6c20e53b009238f767c5b949d202389e20de9e202ea684b4ba3729a"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libc.so.6",
+      "sha256": "b2cf6c33b74d2f22543b7a469a75b538911e690f769d0b238843a49465b83793"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libdl.so.2",
+      "sha256": "3eaaa4aefd9c28f3867c96a427c3cbec9191cb61c4c9d0a2cb4a765d66064499"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2",
+      "sha256": "41daf7836f7fce21a40ca63a00c5caf21b05a35a76ccc075d86f1716212cdf01"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/libpthread.so.0",
+      "sha256": "fbed9505adacada2abb37c6b43be2df6de81e742712c6025694ba48de62c7e78"
+    },
+    {
+      "path": "/usr/lib/x86_64-linux-gnu/librt.so.1",
+      "sha256": "5f20d34fb3bb4d84b4edeb6ca11fa5b48c705207253741619acab7cc758185fb"
+    }
+  ],
+  "analysis_python": "/usr/bin/python3",
+  "analysis_numpy": "1.21.5",
+  "analysis_matplotlib": "3.5.1",
+  "simulation": "MuJoCo 3.2.7; ONNX Runtime 1.22.0 CPU",
+  "initial_geometry": "same MuJoCo 3.2.7, zero physical steps",
+  "video": "not requested; not recorded"
+}

@@ -1,0 +1,15 @@
+{
+  "case_id": "C-seed42",
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+    "C-seed42",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42"
+  ],
+  "cwd": "/home/lfr/rl_sar",
+  "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42/console.log",
+  "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json C-seed42 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42/console.log 2>&1",
+  "started_at": "2026-09-12T09:32:23.185711+00:00",
+  "wall_seconds": 12.624007735983469,
+  "exit_code": 0
+}

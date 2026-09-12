@@ -1,0 +1,45 @@
+{
+  "A_B_40_120": [
+    {
+      "seed": 42,
+      "window_s": [
+        40,
+        120
+      ],
+      "B_minus_A_net_displacement_m": -5.045291024296925,
+      "B_minus_A_fitted_drift_speed_m_s": -0.060288276560771875,
+      "B_minus_A_mean_planar_speed_m_s": -0.052522844574378655,
+      "B_minus_A_body_vx_m_s": 0.05980581102331936,
+      "B_minus_A_yaw_change_deg": -41.5781288683653
+    },
+    {
+      "seed": 43,
+      "window_s": [
+        40,
+        120
+      ],
+      "B_minus_A_net_displacement_m": -6.032284210256677,
+      "B_minus_A_fitted_drift_speed_m_s": -0.067559901674331,
+      "B_minus_A_mean_planar_speed_m_s": -0.06257273255794525,
+      "B_minus_A_body_vx_m_s": 0.07375956284739152,
+      "B_minus_A_yaw_change_deg": -42.195442512351605
+    },
+    {
+      "seed": 44,
+      "window_s": [
+        40,
+        120
+      ],
+      "B_minus_A_net_displacement_m": -5.76292547656749,
+      "B_minus_A_fitted_drift_speed_m_s": -0.06778071833951983,
+      "B_minus_A_mean_planar_speed_m_s": -0.0615561081901876,
+      "B_minus_A_body_vx_m_s": 0.07011328533849678,
+      "B_minus_A_yaw_change_deg": -40.60747132758722
+    }
+  ],
+  "across_seed_identity": {
+    "A_across_seeds_bitwise_identical": true,
+    "C_across_seeds_bitwise_identical": true,
+    "A_C_first40_exact": true
+  }
+}

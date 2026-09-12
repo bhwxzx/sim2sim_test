@@ -1,0 +1,206 @@
+<mujoco model="LW">
+    <compiler angle="radian" meshdir="assets" />
+    <size njmax="500" nconmax="100" />
+
+    <option cone="elliptic" impratio="100" />
+
+    <default>
+        <light castshadow="false" diffuse="1 1 1" />
+        <default class="visual">
+            <geom contype="0" conaffinity="0" group="1" type="mesh" rgba="0.9 0.9 0.9 1.0"/>
+        </default>
+        <joint armature="0.01" damping="0.01" frictionloss="0.2" />
+        <geom contype="1" conaffinity="1" condim="3" friction="0.8" rgba="0.5 0.6 0.7 1.0" margin="0.001" group="0" />
+    </default>
+    <visual>
+        <rgba com="0.502 1.0 0 0.5" contactpoint="1.0 1.0 0.6 0.4" contactforce="0.2 0.98 0.2 0.8"/>
+        <scale com="0.2" forcewidth="0.05" contactwidth="0.10" contactheight="0.04"/>
+    </visual>
+
+    <asset>
+        <mesh name="base_link" file="base_link.stl" />
+        <mesh name="right_hip_link" file="right_hip.stl" />
+        <mesh name="right_thigh_link" file="right_thigh.stl" />
+        <mesh name="right_shank_link" file="right_shank.stl" />
+        <mesh name="right_wheel_link" file="right_wheel.stl" />
+        <mesh name="right_foot_link" file="right_foot.stl" />
+        <mesh name="left_hip_link" file="left_hip.stl" />
+        <mesh name="left_thigh_link" file="left_thigh.stl" />
+        <mesh name="left_shank_link" file="left_shank.stl" />
+        <mesh name="left_wheel_link" file="left_wheel.stl" />
+        <mesh name="left_foot_link" file="left_foot.stl" />
+    </asset>
+
+    <worldbody>
+        <!-- <camera name="track" mode="trackcom" pos="0 -2.3 1.6" xyaxes="1 0 0 0 0.707 0.707"/> -->
+        <!-- <camera name="side_camera_track" mode="track" target="base_link" pos="0 -2.5 0.7" xyaxes="1 0 0 0 0 1"/> -->
+        <!-- <camera name="video" pos="3.152 3.877 1.832" xyaxes="-0.776 0.631 0.000 -0.207 -0.254 0.945"/> -->
+        <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
+
+        <body name="base_link" pos="0 0 0.73">
+            <inertial pos="0.08622748 -9.382e-05 -0.03217461" mass="10.802295" fullinertia="0.11709101 0.12021585 0.11536991 -0.0004895 -0.00942922 0.00018346"/>
+            <joint type="free" limited="false" damping="0.0000" stiffness="0.0000" armature="0"/>
+            <site name="imu" pos="0 0 0"/>
+            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="base_link" />
+            <geom name="base_collision" type="mesh" mesh="base_link" rgba="0 0 1 0" contype="2" conaffinity="5"/>
+            <!-- <geom name="base_collision" size="0.135 0.06 0.05" pos="0.05 0 0" type="box" rgba="0 0 1 0" /> -->
+            <camera name="track_cam" mode="trackcom" target="base_link" pos="-3.021 0.031 1.165" xyaxes="-0.010 -1.000 0.000 0.332 -0.003 0.943"/>
+            <!-- <camera name="side_camera_track" mode="track" target="base_link" pos="0 2.5 0.0" xyaxes="-1 0 0 0 0 1"/> -->
+
+            <body name="right_hip_link" pos="-0.077000 -0.080000 -0.115700">
+                <inertial pos="0.01340414 0.00183962 0.00079948" mass="1.7281856" fullinertia="0.00165391 0.0031902 0.00286098 0.00027486 3.201e-05 6.22e-06"/>
+                <!-- <joint name="right_hip_joint" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" damping="0.1828" armature="0.0547" /> -->
+                <joint name="right_hip_joint" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_hip_link" />
+                <geom name="right_hip_collision" type="mesh" mesh="right_hip_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
+
+                <body name="right_thigh_link" pos="0.000000 -0.072000 0.000000">
+                    <inertial pos="0.00174903 0.01643291 -0.19383909" mass="2.1688845" fullinertia="0.0257618 0.02681836 0.00237267 1.908e-05 0.00026483 0.00092532"/>
+                    <!-- <joint name="right_thigh_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.570796 1.570796" damping="0.1828" armature="0.0547" /> -->
+                    <joint name="right_thigh_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.570796 1.570796" />
+                    <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_thigh_link" />
+                    <geom name="right_thigh_collision" type="mesh" mesh="right_thigh_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
+
+                    <body name="right_shank_link" pos="0.000000 -0.045000 -0.260000">
+                        <inertial pos="-0.0897515 -0.01644027 -0.01104105" mass="2.4008846" fullinertia="0.09133451 0.11040001 0.02059866 -0.00159777 -0.03562713 -0.00206082"/>
+                        <!-- <joint name="right_shank_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-3.141593 3.141593" damping="0.1828" armature="0.0547" /> -->
+                        <joint name="right_shank_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-3.141593 3.141593" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_shank_link" />
+                        <geom name="right_shank_collision" type="mesh" mesh="right_shank_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+
+                        <body name="right_wheel_link" pos="-0.183850 -0.061000 -0.183850">
+                            <inertial pos="0 -0.00436057 0" mass="1.2208995" fullinertia="0.00407557 0.00773266 0.00407557 0 0 0"/>
+                            <!-- <joint name="right_wheel_joint" pos="0 0 0" axis="0 -1 0" limited="false" damping="0.07152" armature="0.01537" /> -->
+                            <joint name="right_wheel_joint" pos="0 0 0" axis="0 -1 0" limited="false" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_wheel_link" />
+                            <geom name="right_wheel_collision" type="mesh" mesh="right_wheel_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+                        </body>
+
+                        <body name="right_foot_link" pos="0.000000 -0.013000 0.307000">
+                            <inertial pos="0 0.000401 0.04890106" mass="0.44560421" fullinertia="0.00043846 0.00103428 0.00127123 0 0 1.06e-05"/>
+                            <!-- <joint name="right_foot_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.919862 1.919862" damping="0.369" armature="0.02776" /> -->
+                            <joint name="right_foot_joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.919862 1.919862" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="right_foot_link" />
+                            <geom name="right_foot_collision" type="mesh" mesh="right_foot_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+                            <site name="right_foot_site" pos="0 0 0" type="sphere" size="0.01" rgba="1 0 0 0"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <body name="left_hip_link" pos="-0.077000 0.080000 -0.115700">
+                <inertial pos="0.00900513 -0.00183962 0.00079947" mass="1.7281856" fullinertia="0.00165391 0.00336057 0.00303134 -0.00023325 -1.05e-06 -6.22e-06"/>
+                <!-- <joint name="left_hip_joint" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" damping="0.1828" armature="0.0547" /> -->
+                <joint name="left_hip_joint" pos="0 0 0" axis="-1 0 0" limited="true" range="-1.570796 1.570796" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_hip_link" />
+                <geom name="left_hip_collision" type="mesh" mesh="left_hip_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
+
+                <body name="left_thigh_link" pos="0.000000 0.072000 0.000000">
+                    <inertial pos="-0.00175614 -0.01643299 -0.19384029" mass="2.1688711" fullinertia="0.0257613 0.02681777 0.00237258 1.943e-05 -0.00026512 -0.00092528"/>
+                    <!-- <joint name="left_thigh_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" damping="0.1828" armature="0.0547" /> -->
+                    <joint name="left_thigh_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.570796 1.570796" />
+                    <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_thigh_link" />
+                    <geom name="left_thigh_collision" type="mesh" mesh="left_thigh_link" rgba="0 0 1 0" contype="8" conaffinity="1"/>
+
+                    <body name="left_shank_link" pos="0.000000 0.045000 -0.260000">
+                        <inertial pos="-0.08977188 0.01644027 -0.01102067" mass="2.4008846" fullinertia="0.09131735 0.11039229 0.02060811 0.00159673 -0.03563096 0.00206186"/>
+                        <!-- <joint name="left_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" damping="0.1828" armature="0.0547" /> -->
+                        <joint name="left_shank_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-3.141593 3.141593" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_shank_link" />
+                        <geom name="left_shank_collision" type="mesh" mesh="left_shank_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+
+                        <body name="left_wheel_link" pos="-0.183850 0.061000 -0.183850">
+                            <inertial pos="0 0.00436057 0" mass="1.2208995" fullinertia="0.00407557 0.00773266 0.00407557 0 0 0"/>
+                            <!-- <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0" limited="false" damping="0.07152" armature="0.01537" /> -->
+                            <joint name="left_wheel_joint" pos="0 0 0" axis="0 1 0" limited="false" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_wheel_link" />
+                            <geom name="left_wheel_collision" type="mesh" mesh="left_wheel_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+                        </body>
+
+                        <body name="left_foot_link" pos="0.000000 0.013000 0.307000">
+                            <inertial pos="0 -0.000401 0.04890106" mass="0.44560421" fullinertia="0.00043846 0.00103428 0.00127123 0 0 -1.06e-05"/>
+                            <!-- <joint name="left_foot_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.919862 1.919862" damping="0.369" armature="0.02776" /> -->
+                            <joint name="left_foot_joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.919862 1.919862" />
+                            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="left_foot_link" />
+                            <geom name="left_foot_collision" type="mesh" mesh="left_foot_link" rgba="0 0 1 0" contype="4" conaffinity="3"/>
+                            <site name="left_foot_site" pos="0 0 0" type="sphere" size="0.01" rgba="1 0 0 0"/>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor name="right_hip_joint"  gear="1"  joint="right_hip_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_hip_joint"   gear="1"  joint="left_hip_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_thigh_joint"  gear="1"  joint="right_thigh_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_thigh_joint"   gear="1"  joint="left_thigh_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_shank_joint"  gear="1"  joint="right_shank_joint" ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="left_shank_joint"   gear="1"  joint="left_shank_joint"  ctrllimited='true' ctrlrange='-120 120'/>
+        <motor name="right_foot_joint"  gear="1"  joint="right_foot_joint" ctrllimited='true' ctrlrange='-27 27'/>
+        <motor name="left_foot_joint"   gear="1"  joint="left_foot_joint"  ctrllimited='true' ctrlrange='-27 27'/>
+        <motor name="right_wheel_joint"  gear="1"  joint="right_wheel_joint" ctrllimited='true' ctrlrange='-40 40'/>
+        <motor name="left_wheel_joint"   gear="1"  joint="left_wheel_joint"  ctrllimited='true' ctrlrange='-40 40'/>
+    </actuator>
+
+    <sensor>
+        <jointpos name="right_hip_pos"    joint="right_hip_joint" />
+        <jointpos name="left_hip_pos"     joint="left_hip_joint" />
+        <jointpos name="right_thigh_pos"    joint="right_thigh_joint" />
+        <jointpos name="left_thigh_pos"     joint="left_thigh_joint" />
+        <jointpos name="right_shank_pos"    joint="right_shank_joint" />
+        <jointpos name="left_shank_pos"     joint="left_shank_joint" />
+        <jointpos name="right_foot_pos"    joint="right_foot_joint" />
+        <jointpos name="left_foot_pos"     joint="left_foot_joint" />
+        <jointpos name="right_wheel_pos"    joint="right_wheel_joint" />
+        <jointpos name="left_wheel_pos"     joint="left_wheel_joint" />
+
+        <jointvel name="right_hip_vel"    joint="right_hip_joint" />
+        <jointvel name="left_hip_vel"     joint="left_hip_joint" />
+        <jointvel name="right_thigh_vel"    joint="right_thigh_joint" />
+        <jointvel name="left_thigh_vel"     joint="left_thigh_joint" />
+        <jointvel name="right_shank_vel"    joint="right_shank_joint" />
+        <jointvel name="left_shank_vel"     joint="left_shank_joint" />
+        <jointvel name="right_foot_vel"    joint="right_foot_joint" />
+        <jointvel name="left_foot_vel"     joint="left_foot_joint" />
+        <jointvel name="right_wheel_vel"    joint="right_wheel_joint" />
+        <jointvel name="left_wheel_vel"     joint="left_wheel_joint" />
+
+        <jointactuatorfrc name="right_hip_torque" joint="right_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="left_hip_torque" joint="left_hip_joint" noise="0.01" />
+        <jointactuatorfrc name="right_thigh_torque" joint="right_thigh_joint" noise="0.01" />
+        <jointactuatorfrc name="left_thigh_torque" joint="left_thigh_joint" noise="0.01" />
+        <jointactuatorfrc name="right_shank_torque" joint="right_shank_joint" noise="0.01" />
+        <jointactuatorfrc name="left_shank_torque" joint="left_shank_joint" noise="0.01" />
+        <jointactuatorfrc name="right_foot_torque" joint="right_foot_joint" noise="0.01" />
+        <jointactuatorfrc name="left_foot_torque" joint="left_foot_joint" noise="0.01" />
+        <jointactuatorfrc name="right_wheel_torque" joint="right_wheel_joint" noise="0.01" />
+        <jointactuatorfrc name="left_wheel_torque" joint="left_wheel_joint" noise="0.01" />
+
+        <framequat name="imu_quat" objtype="site" objname="imu" />
+        <gyro name="imu_gyro" site="imu" />
+        <accelerometer name="imu_acc" site="imu" />
+    
+        <framepos name="frame_pos" objtype="site" objname="imu" />
+        <framelinvel name="frame_vel" objtype="site" objname="imu" />
+
+        <force name="left_foot_force_sensor" site="left_foot_site"/>
+        <force name="right_foot_force_sensor" site="right_foot_site"/>
+    </sensor>
+
+    <keyframe>
+        <key name="home_leg"  
+            qpos="0 0 0.70 1 0 0 0 0 -0.4363 -2.234 0 -0.4712 0 0.4363 2.234 0 0.4712"
+            qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            ctrl="0 0 0 0 0 0 0 0 0 0" />
+    </keyframe>
+    <keyframe>
+        <key name="home_wheel"  
+            qpos="0 0 0.70 1 0 0 0 0 0.7330 -0.1745 0 0 0 -0.7330 0.1745 0 0"
+            qvel="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+            ctrl="0 0 0 0 0 0 0 0 0 0" />
+    </keyframe>
+
+</mujoco>
+

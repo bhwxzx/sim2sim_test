@@ -1,0 +1,148 @@
+--- /home/lfr/sim2sim_test/tools/lw_sim2sim/collect.cpp
++++ /home/lfr/sim2sim_test/tools/wheel_drift/collect.cpp
+@@ -6,6 +6,8 @@
+ #include <fstream>
+ #include <iomanip>
+ #include <cstdlib>
++#include <random>
++#include "noise_hook.hpp"
+ 
+ // Independent diagnostic executable. All policy/control computations remain
+ // in the repository sources linked by build_collect.py.
+@@ -31,11 +33,11 @@
+     const std::vector<InferenceRuntime::TensorMetadata>& input_metadata()const override{return inner->input_metadata();}
+     const std::vector<InferenceRuntime::TensorMetadata>& output_metadata()const override{return inner->output_metadata();}
+     void forwardInto(const InferenceRuntime::TensorView* x,std::size_t n,InferenceRuntime::MutableTensorView y)override{
+-        if(n!=1 || x[0].size!=410 || y.size!=10)throw std::runtime_error("unexpected model tensor dimensions");
++        if(n!=1 || x[0].size!=195 || y.size!=10)throw std::runtime_error("unexpected model tensor dimensions");
+         input.assign(x[0].data,x[0].data+x[0].size);
+-        if(record){(*record)["model_input"]={{"shape",{1,410}},{"dtype","float32"},{"values",input}};
++        if(record){(*record)["model_input"]={{"shape",{1,195}},{"dtype","float32"},{"values",input}};
+             (*record)["model_input_capture_phase"]="synchronous copy immediately before underlying ONNX forward";
+-            (*record)["current_frame"]=arr(input.data()+369,41);}
++            (*record)["current_frame"]=arr(input.data()+156,39);}
+         for(float v:input)if(!std::isfinite(v))throw std::runtime_error("nonfinite model input");
+         inner->forwardInto(x,n,y);raw.assign(y.data,y.data+y.size);++calls;
+         if(record)(*record)["model_raw_action"]=raw;
+@@ -55,7 +57,7 @@
+     std::vector<int> jids;
+     J joint_mapping_evidence=J::array();
+     J safety_events=J::array();
+-    const std::string policy_key="LW/robot_lab/leg_loco";
++    const std::string policy_key="LW/robot_lab/wheel_loco";
+     explicit Diagnostic(const std::string& xml,const std::string& policy_root) {
+         char error[4096]{}; m=mj_loadXML(xml.c_str(),nullptr,error,sizeof(error));
+         if(!m) throw std::runtime_error(error);
+@@ -105,15 +107,15 @@
+         if(!v.valid()) throw std::runtime_error("ApplyCommand rejected torque");
+     }
+     void HandleLWPolicyOutputFault(LWPolicyOutputStatus s) noexcept override { core.handlePolicyOutputFault(s); }
+-    void reset() {
+-        std::srand(42);
+-        int k=mj_name2id(m,mjOBJ_KEY,"home_leg"); if(k<0)throw std::runtime_error("home_leg missing");
++    void reset(int seed, bool noise) {
++        std::srand(seed); diagnostic_noise.reset(seed, noise);
++        int k=mj_name2id(m,mjOBJ_KEY,"home_wheel"); if(k<0)throw std::runtime_error("home_wheel missing");
+         mj_resetDataKeyframe(m,d,k); mj_forward(m,d); GetState(&robot_state);
+     }
+     void activate() {
+-        // Same LegLocomotion Enter() as normal program; no interpolation or
+-        // alternate posture is applied to the home_leg reset state.
+-        fsm.RequestStateChange("RLFSMStateRLLocomotion_Leg");
++        // Same WheelLocomotion Enter() as normal program; no interpolation or
++        // alternate posture is applied to the home_wheel reset state.
++        fsm.RequestStateChange("RLFSMStateRLLocomotion_Wheel");
+         StateController(&robot_state,&robot_command,false);
+         core.publishInitialPolicyInput();
+     }
+@@ -166,7 +168,8 @@
+             {"type",m->sensor_type[i]},{"objtype",m->sensor_objtype[i]},{"objid",m->sensor_objid[i]},
+             {"adr",m->sensor_adr[i]},{"dim",m->sensor_dim[i]},{"noise",m->sensor_noise[i]},{"cutoff",m->sensor_cutoff[i]}});
+         j["joint_mapping_evidence"]=joint_mapping_evidence;
+-        j["added_observation_noise"]=false;
++        j["added_observation_noise"]=diagnostic_noise.enabled; j["seed"]=diagnostic_noise.seed;
++        j["noise_contract"]=diagnostic_noise.contract();
+         j["scene_file_count_robot"]=1;
+         return j;
+     }
+@@ -229,6 +232,24 @@
+ 
+ J read_json(const std::string& p){std::ifstream f(p);if(!f)throw std::runtime_error("missing JSON "+p);J j;f>>j;return j;}
+ int main(int argc,char** argv){
++    if(argc==3 && std::string(argv[1])=="--inspect") {
++        const J plan=read_json(argv[2]); Diagnostic h(plan["scene"],plan["policy_root"]); h.reset(42,false);
++        J cfg=h.config();
++        if(cfg["model_inputs"]!=J::array({{{"dtype","float32"},{"name","obs"},{"shape",{1,195}}}}))throw std::runtime_error("wrong interface");
++        int ground=0;for(auto& g:cfg["geoms"])if(g["body_id"]==0){++ground;if(g["type"]!=0 || g["quat_body_wxyz"]!=J({1.,0.,0.,0.}) || g["pos_body"]!=J({0.,0.,0.}))throw std::runtime_error("ground not level plane");}
++        if(ground!=1)throw std::runtime_error("unexpected ground objects");
++        auto& c=h.GetLWPolicyDefinition(h.policy_key)->runtime;
++        Observations<float> obs; obs.ang_vel={.3f,-.2f,.1f};obs.gravity_vec={0,0,-1};obs.base_quat={1,0,0,0};obs.commands={0,0,0};obs.dof_pos=c.default_dof_pos;obs.dof_vel.assign(10,.2f);obs.actions.assign(10,0);
++        std::vector<float> clean(39);h.ComputeLWObservationInto(c,obs,nullptr,clean);
++        auto a=clean;LWDiagnosticNoise(c,obs,a);if(a!=clean)throw std::runtime_error("noise-off changed frame");
++        diagnostic_noise.reset(42,true);auto b=clean;LWDiagnosticNoise(c,obs,b);
++        if(b[17]!=0 || b[18]!=0)throw std::runtime_error("wheel mask noise violation");
++        for(int i=6;i<9;++i)if(b[i]!=clean[i])throw std::runtime_error("noisy command");
++        for(int i=29;i<39;++i)if(b[i]!=clean[i])throw std::runtime_error("noisy previous action");
++        diagnostic_noise.reset(42,true);auto again=clean;LWDiagnosticNoise(c,obs,again);if(again!=b)throw std::runtime_error("noise seed not reproducible");
++        cfg["diagnostic_preflight"]={{"physics_steps",0},{"model_inferences",0},{"noise_off_identity",true},{"seed_repeatability",true},{"wheel_and_unnoised_fields_preserved",true}};
++        write_json(plan["output"].get<std::string>()+"/preflight_config.json",cfg);std::cout<<"preflight passed, no simulation advanced"<<std::endl;return 0;
++    }
+     if(argc!=4){std::cerr<<"usage: collect PLAN_JSON CASE_ID OUTPUT_DIR\n";return 2;}
+     const std::string cid=argv[2],out=argv[3];J pending;gzFile log=nullptr;
+     J result={{"case_id",cid},{"status","failed"},{"control_records",0}};
+@@ -240,7 +261,7 @@
+         if(spec.is_null())throw std::runtime_error("case not in authorized plan");
+         if(std::filesystem::exists(out+"/telemetry.jsonl.gz"))throw std::runtime_error("refuse telemetry overwrite");
+         runtime=std::make_unique<Diagnostic>(plan["scene"],plan["policy_root"]);auto& h=*runtime;
+-        h.reset();write_json(out+"/effective_config.json",h.config());
++        h.reset(spec["seed"],spec["condition"]=="B");write_json(out+"/effective_config.json",h.config());
+         log=gzopen((out+"/telemetry.jsonl.gz").c_str(),"wb1");if(!log)throw std::runtime_error("gzopen failed");
+         auto emit=[&](const J& j){std::string s=j.dump()+"\n";if(gzwrite(log,s.data(),s.size())!=int(s.size()))throw std::runtime_error("gzip write failed");};
+         double dt=h.m->opt.timestep,pd=h.params.config_node["dt"].as<double>();
+@@ -252,7 +273,7 @@
+         while(h.d->time<duration-1e-10){
+             const double boundary=step*period;std::vector<float> planned(3);
+             for(auto& segment:spec["segments"])if(boundary>=segment[0].get<double>()-1e-10 && boundary<segment[1].get<double>()-1e-10)planned=segment[2].get<std::vector<float>>();
+-            pending={{"case_id",cid},{"host_id",plan["host_id"]},{"control_step",step},{"simulation_time",h.d->time},
++            pending={{"case_id",cid},{"host_id",plan["host_id"]},{"seed",spec["seed"]},{"condition",spec["condition"]},{"control_step",step},{"simulation_time",h.d->time},
+                 {"monotonic_test_time",h.d->time},{"episode_time",h.d->time},{"nominal_policy_time",boundary},
+                 {"reset",step==0},{"reset_id",0},{"terminated",false},{"planned_command",planned},
+                 {"pre",h.state()},{"low_level_updates",J::array()},{"physics_substeps",J::array()},
+@@ -277,10 +298,11 @@
+             int calls=h.capture->calls;h.core.runInferenceCycle(false);
+             if(h.capture->calls!=calls+1)throw std::runtime_error("policy inference missing");
+             auto& input=h.capture->input;
+-            row["command_in_observation"]=arr(input.data()+375,3);
+-            row["projected_gravity_in_observation"]=arr(input.data()+372,3);
+-            row["previous_action_in_observation"]=arr(input.data()+398,10);
+-            row["observation_noise_applied"]=false;
++            row["command_in_observation"]=arr(input.data()+162,3);
++            row["projected_gravity_in_observation"]=arr(input.data()+159,3);
++            row["previous_action_in_observation"]=arr(input.data()+185,10);
++            row["observation_noise_applied"]=diagnostic_noise.enabled;
++            row["noise_evidence"]=diagnostic_noise.last;
+             auto p=h.LoadLWPolicyOutput();if(!p)throw std::runtime_error("policy output not published");
+             std::vector<float> clipped(10),scaled(10),raw_scaled(10);std::vector<bool> flags(10);
+             for(int i=0;i<10;++i){clipped[i]=std::clamp(h.capture->raw[i],cfg.clip_actions_lower[i],cfg.clip_actions_upper[i]);
+@@ -316,7 +338,7 @@
+         }
+         result={{"case_id",cid},{"status",why.empty()?"completed":"terminated_early"},{"termination_reason",why.empty()?"time_limit":why},
+             {"control_records",step},{"low_level_ticks",low_tick},{"physics_steps",physical},{"final_sim_time",h.d->time},
+-            {"requested_sim_duration",duration},{"seed",42},{"seed_method","srand(42); no explicit observation noise or random perturbation"},{"reset_count",1}};
++            {"requested_sim_duration",duration},{"seed",spec["seed"]},{"condition",spec["condition"]},{"seed_method","srand(seed); independent std::mt19937 noise generator, explicit top-24-bit uniform float32; no other randomization"},{"reset_count",1}};
+         if(gzclose(log)!=Z_OK)throw std::runtime_error("gzclose failed");log=nullptr;
+         write_json(out+"/result.json",result);std::cout<<result.dump()<<std::endl;return why.empty()?0:3;
+     }catch(const std::exception& e){
+--- /home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_core.hpp
++++ /home/lfr/sim2sim_test/tools/wheel_drift/lw_runtime_core.hpp
+@@ -571,6 +571,10 @@
+             inference_obs_,
+             inference_motion_reference_,
+             inference_flat_obs_);
++
++        // Approved diagnostic-only hook: each frame before original history/reset insertion.
++        extern void LWDiagnosticNoise(const LWPolicyRuntimeConfiguration&, const Observations<float>&, std::vector<float>&);
++        LWDiagnosticNoise(policy_configuration, inference_obs_, inference_flat_obs_);
+ 
+         const std::vector<float>* model_input = &inference_flat_obs_;
+         const auto& history_indices =

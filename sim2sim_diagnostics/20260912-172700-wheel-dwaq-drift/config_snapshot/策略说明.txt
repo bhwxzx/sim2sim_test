@@ -1,0 +1,133 @@
+策略说明
+
+归档目录: 2026-09-11-17-04-10
+任务: RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0
+算法: DWAQPPO
+Runner: OnPolicyRunnerDwaq
+训练 checkpoint: /home/server/liufengrong/robot_lab/logs/rsl_rl/LW_wheel_flat_dwaq/2026-09-11_17-04-10/model_49999.pt
+训练轮次: 49999
+Checkpoint SHA-256: 8798c9d1f744f5795ff7c9234147b7cab033295005056c18857fe83fbdbc22b5
+训练源码 commit: dafc3f140d297e9a1a5208a9583ab49a7ea883c3
+训练源码 dirty: true
+JIT SHA-256: 7fe006dade63ed6003321e37392834e490ef5e993ddc43dad64c72a5f5cb3ac3
+ONNX SHA-256: f19ef4d568e3fc5b0cc4cf07d3f34519683e372b4bc3f296284af4823257015d
+
+训练参数:
+{
+  "completed_training_iterations": 50000,
+  "effective_config": {
+    "effective_config_fingerprint": "93affb1414e356e41b424f1bdc25b60401ba12260607cc0c18e39f002413564e",
+    "path": "/home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/provenance/config-5b31a80d98c92183b81556df703062b454a62b7df4091becebb2ffcb97a93730.json",
+    "reward_fingerprint": "b5948683fc914f5d1e44738cfbdb9a139ae1186b708a62b61cf109e0c8703cd4",
+    "sha256": "5b31a80d98c92183b81556df703062b454a62b7df4091becebb2ffcb97a93730"
+  },
+  "onnx_export": {
+    "contract": {
+      "batch_contract": "static_batch_1",
+      "input_dtype": "float32",
+      "input_name": "obs",
+      "opset_version": 17,
+      "output_dtype": "float32",
+      "output_name": "actions",
+      "profile": "static_batch_1_simplified",
+      "simplified": true
+    },
+    "input_shape": [
+      1,
+      195
+    ],
+    "output_shape": [
+      1,
+      10
+    ],
+    "post_simplify_node_count": 14,
+    "pre_simplify_node_count": 18,
+    "simplifier_check": true
+  },
+  "reward_weights": {
+    "action_mirror": null,
+    "action_rate_l2": -0.2,
+    "action_smoothness": -0.075,
+    "action_sync": null,
+    "ang_vel_xy_l2": -0.1,
+    "applied_torque_limits": null,
+    "base_height_l2": -15.0,
+    "body_lin_acc_l2": null,
+    "body_orientation_l2": -3.0,
+    "centrifugal_compensation": 3.0,
+    "contact_forces": null,
+    "feet_air_time": null,
+    "feet_air_time_variance": null,
+    "feet_clearance": null,
+    "feet_contact": null,
+    "feet_contact_without_cmd": null,
+    "feet_distance_penalize": -150.0,
+    "feet_distance_y_exp": 3.0,
+    "feet_gait": null,
+    "feet_height": null,
+    "feet_height_body": null,
+    "feet_landing_vel": null,
+    "feet_slide": null,
+    "feet_standing_force_without_cmd": null,
+    "feet_stumble": null,
+    "flat_orientation_l2": -5.0,
+    "is_terminated": -200.0,
+    "joint_acc_l2": -2.5e-07,
+    "joint_acc_wheel_l2": -1.5e-07,
+    "joint_deviation_ankle": -1.0,
+    "joint_deviation_hip": -0.3,
+    "joint_deviation_legs": -0.4,
+    "joint_mirror": null,
+    "joint_pos_limits": -2.0,
+    "joint_pos_penalty": null,
+    "joint_power": -2e-05,
+    "joint_torques_l2": -1.25e-05,
+    "joint_torques_wheel_l2": -0.00016,
+    "joint_vel_l2": -5e-05,
+    "joint_vel_limits": -2.0,
+    "joint_vel_wheel_l2": -0.0005,
+    "keep_alive": 1.0,
+    "lazy_penalty": null,
+    "leg_symmetry": 0.5,
+    "lin_vel_z_l2": -1.0,
+    "same_foot_x_position": -50.0,
+    "stand_still": null,
+    "stop_motion": -5.0,
+    "track_ang_vel_z_exp": 3.0,
+    "track_lin_vel_xy_exp": 4.0,
+    "undesired_contacts": -5.0,
+    "upward": null,
+    "wheel_vel_penalty": null
+  },
+  "seed": 42,
+  "tensor_contract": {
+    "actor_input_order": [
+      "encoded_velocity",
+      "encoded_latent",
+      "current_obs"
+    ],
+    "history_contract": "flat_time_major_history",
+    "normalization_contract": "combined_actor_input",
+    "reset_contract": "environment_history_reset"
+  },
+  "training_num_envs": 4096,
+  "training_run_id": "2026-09-11_17-04-10"
+}
+
+评估证据:
+- /home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/evaluations/native-assess-20260912-001/raw/baseline-no-push-a01/result.json
+- /home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/evaluations/native-assess-20260912-001/raw/current-push-a01/result.json
+- /home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/evaluations/native-assess-20260912-001/raw/legacy-push-a01/result.json
+- /home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/evaluations/zero-standing-plane-20260912-001/raw/nominal-no-noise-a01/result.json
+- /home/server/liufengrong/robot_lab/learnings/policy_tuning/RobotLab-Isaac-Velocity-Flat-LW-wheel-Dwaq-v0/2026-09-11_17-04-10/evaluations/zero-standing-plane-20260912-001/raw/nominal-training-noise-a01/result.json
+
+人工说明:
+用户于2026-09-12要求将当前最新已评估的 Flat wheel DWAQ 策略导出、归档并提交推送。训练 run：2026-09-11_17-04-10，checkpoint：model_49999.pt。选择依据为用户指定最新策略，未通过跨检查点比较证明最优；尚无经批准的收敛判据。
+主要评估：seed42，三个场景各4环境×42秒。无推扰与当前双向随机推扰均无终止；旧版固定世界+Y推扰发生1次非法接触终止。xy速度RMSE分别为0.17145、0.24134、0.32456 m/s。无推扰环境0的1m/s指令段，去除切换首秒后的均值vx约0.989m/s。
+纯平面零速度站立补测：各1环境×120秒、seed42；固定质量/质心/初始位姿和速度、摩擦系数1、无推扰、无执行器延迟。两组只改变观测噪声开关。关闭观测噪声时，启动恢复后40–120秒净位移0.24mm；启用训练观测噪声时，同窗口净位移3.72m，拟合漂移速度约4.8cm/s。两组均无终止。初始恢复和运动后制动不能直接视为持续静态漂移；仍需分噪声通道和多seed验证。
+训练参数：线速度跟踪权重4、std=0.5；角速度跟踪权重3、std=0.5；stop_motion=-5；action_rate_l2=-0.2；action_smoothness=-0.075；standing比例0.02。推扰世界x/y均[-1,1]；质心三轴±0.075m；执行器延迟0–6物理步。完整奖励与有效配置引用见归档清单。
+部署接口：ONNX static_batch_1_simplified，opset17，float32 obs[1,195]→actions[1,10]。输入为5帧×39维，按时间由旧到新展平，最新帧在末尾；环境重置时同步重置历史。DWAQ actor输入顺序为[encoded_velocity, encoded_latent, current_obs]，归一化契约为combined_actor_input，本训练观测归一化关闭。每帧观测顺序、缩放、轮关节位置屏蔽及关节顺序必须与训练一致。
+导出验证：8个真实环境观测样本，覆盖initial/pre_reset/post_reset/final。以Native CPU为基准，JIT最大动作误差0，ONNX为2.384185791015625e-6，均低于1e-5；Native GPU到CPU最大误差3.0994415283203125e-6。此为有界开环动作一致性，未另外进行导出模型闭环或实物验证。
+仅可进入受监督实物测试；未经实物验证，不代表 hardware-ready。
+
+仅可进入受监督实物测试；未经实物验证，不代表 hardware-ready。

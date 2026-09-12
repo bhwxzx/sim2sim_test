@@ -1,0 +1,362 @@
+{
+  "A-seed42": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.007707977647044e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 4.6629367034256575e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "A-seed43": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.007707977647044e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 4.6629367034256575e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "A-seed44": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.007707977647044e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 4.6629367034256575e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "B-seed42": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.1825752372084395e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 4.884981308350689e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "B-seed43": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.3678934368831506e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 4.218847493575595e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "B-seed44": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.224391468796938e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 6.661338147750939e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "C-seed42": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.1444234732381773e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 6.217248937900877e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "C-seed43": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.1444234732381773e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 6.217248937900877e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  },
+  "C-seed44": {
+    "records": 6000,
+    "all_finite": true,
+    "chronology": true,
+    "shape_dtype": true,
+    "history_exact": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "wheel_positions_zero": true,
+    "noise_off_identity": true,
+    "noise_equation_exact": true,
+    "noise_bounds": true,
+    "noise_mask": true,
+    "sensor_mapping_exact": true,
+    "no_external_force": true,
+    "reset_steps": [
+      0
+    ],
+    "terminated_steps": [
+      5999
+    ],
+    "physics_steps": 60000,
+    "pd_updates": 24000,
+    "clean_joint_position_error": 0.0,
+    "clean_joint_velocity_error": 0.0,
+    "clean_angular_velocity_error": 0.0,
+    "clean_gravity_quaternion_error": 2.1444234732381773e-07,
+    "position_target_error": 0.0,
+    "velocity_target_error": 0.0,
+    "pd_candidate_error": 0.0,
+    "pd_limit_error": 0.0,
+    "lean_formula_error": 6.217248937900877e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "history_frames_checked": 30000,
+    "reset_validation": "fresh process plus physical keyframe and policy activation only; no midrun reset tested",
+    "counts_match_result": true
+  }
+}

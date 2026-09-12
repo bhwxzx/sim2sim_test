@@ -1,0 +1,110 @@
+[
+  {
+    "case_id": "A-seed42",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "A-seed42",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed42"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed42/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json A-seed42 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed42 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed42/console.log 2>&1"
+  },
+  {
+    "case_id": "A-seed43",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "A-seed43",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed43"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed43/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json A-seed43 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed43 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed43/console.log 2>&1"
+  },
+  {
+    "case_id": "A-seed44",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "A-seed44",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed44"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed44/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json A-seed44 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed44 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/A-seed44/console.log 2>&1"
+  },
+  {
+    "case_id": "B-seed42",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "B-seed42",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed42"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed42/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json B-seed42 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed42 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed42/console.log 2>&1"
+  },
+  {
+    "case_id": "B-seed43",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "B-seed43",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed43"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed43/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json B-seed43 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed43 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed43/console.log 2>&1"
+  },
+  {
+    "case_id": "B-seed44",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "B-seed44",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed44"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed44/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json B-seed44 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed44 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/B-seed44/console.log 2>&1"
+  },
+  {
+    "case_id": "C-seed42",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "C-seed42",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json C-seed42 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed42/console.log 2>&1"
+  },
+  {
+    "case_id": "C-seed43",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "C-seed43",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed43"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed43/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json C-seed43 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed43 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed43/console.log 2>&1"
+  },
+  {
+    "case_id": "C-seed44",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json",
+      "C-seed44",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed44"
+    ],
+    "cwd": "/home/lfr/rl_sar",
+    "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed44/console.log",
+    "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json C-seed44 /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed44 > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/cases/C-seed44/console.log 2>&1"
+  }
+]

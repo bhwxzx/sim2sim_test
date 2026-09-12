@@ -1,0 +1,57 @@
+[
+  {
+    "stage": "preflight",
+    "argv": [
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/tools/collect",
+      "--inspect",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/plan.json"
+    ],
+    "closed_loop_steps": 0
+  },
+  {
+    "stage": "analysis-default-python",
+    "argv": [
+      "python3",
+      "/home/lfr/sim2sim_test/tools/wheel_drift/analyze.py",
+      "--run",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift"
+    ],
+    "exit_code": 1,
+    "log": "tools/analysis_console.log",
+    "reason": "default Python lacks matplotlib"
+  },
+  {
+    "stage": "analysis-system-python",
+    "argv": [
+      "/usr/bin/python3",
+      "/home/lfr/sim2sim_test/tools/wheel_drift/analyze.py",
+      "--run",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift"
+    ],
+    "exit_code": 1,
+    "log": "tools/analysis_system_console.log",
+    "reason": "NumPy boolean JSON serialization"
+  },
+  {
+    "stage": "analysis-final",
+    "argv": [
+      "/usr/bin/python3",
+      "/home/lfr/sim2sim_test/tools/wheel_drift/analyze.py",
+      "--run",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift"
+    ],
+    "exit_code": 0,
+    "log": "tools/analysis_final_console.log"
+  },
+  {
+    "stage": "additional-audit",
+    "argv": [
+      "/usr/bin/python3",
+      "/home/lfr/sim2sim_test/tools/wheel_drift/audit.py",
+      "--run",
+      "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift"
+    ],
+    "exit_code": 0,
+    "log": "tools/audit_console.log"
+  }
+]

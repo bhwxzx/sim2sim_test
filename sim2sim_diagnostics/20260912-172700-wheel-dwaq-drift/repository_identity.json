@@ -1,0 +1,18 @@
+{
+  "/home/lfr/rl_sar": {
+    "head": "536e94dab10eedb31971c8b741f8b915163aa353",
+    "status": " M policy/LW/robot_lab/leg_loco/policy.onnx\n M policy/LW/robot_lab/wheel_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n"
+  },
+  "/home/lfr/robot_lab": {
+    "head": "49280e6d44a8917a3dece47e77cd4a48ee6854ff",
+    "status": ""
+  },
+  "/home/lfr/policy_storage": {
+    "head": "153c380b830ee3a44b1cbac1d3d8acf6d7557fc5",
+    "status": ""
+  },
+  "/home/lfr/sim2sim_test": {
+    "head": "6de215d92c9e6d8f39d5660c0064217e07740d52",
+    "status": "?? sim2sim_diagnostics/20260912-172700-wheel-dwaq-drift/\n?? sim2sim_work/\n?? tools/wheel_drift/\n"
+  }
+}

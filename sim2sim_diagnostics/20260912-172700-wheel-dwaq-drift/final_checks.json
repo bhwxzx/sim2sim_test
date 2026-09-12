@@ -1,0 +1,19 @@
+{
+  "completed_cases": 9,
+  "early_terminated_cases": 0,
+  "failed_cases": 0,
+  "simulation_seconds": 1079.9999999991157,
+  "authorized_maximum_seconds": 1080,
+  "policy_records": 54000,
+  "physics_substeps": 540000,
+  "pd_updates": 216000,
+  "initial_resets": 9,
+  "midrun_resets": 0,
+  "all_integrity_checks_pass": true,
+  "production_sources_unchanged": true,
+  "training_noise_config_evidence": "hash-matched inherited source plus user-confirmed absence of flat overrides",
+  "training_runtime_exact_source_version": "unknown; official reference implementation captured for operation ordering",
+  "receiver_inventory_received": false,
+  "git_commit_push_performed": false,
+  "preflight_note": "preflight advanced zero physics and performed zero closed-loop inference; production model loading performs validation/warmup inference. The original compiled preflight field model_inferences=0 refers to closed-loop calls and was clarified in preflight_config.json."
+}
