@@ -1,0 +1,13 @@
+[
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+  "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl"
+]
