@@ -1,0 +1,15 @@
+{
+  "case_id": "stand",
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/tools/collect",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/plan.json",
+    "stand",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/stand"
+  ],
+  "cwd": "/home/lfr/rl_sar",
+  "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/stand/console.log",
+  "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/plan.json stand /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/stand > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/stand/console.log 2>&1",
+  "started_at": "2026-09-12T08:29:49.636278+00:00",
+  "wall_seconds": 2.674347765976563,
+  "exit_code": 0
+}

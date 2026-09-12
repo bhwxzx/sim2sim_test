@@ -1,1 +1,4 @@
 sim2sim_diagnostics/20260911-115259-jointpos-ab.tar.gz filter=lfs diff=lfs merge=lfs -text
+sim2sim_diagnostics/20260912-162601-flat-20260911.tar.gz filter=lfs diff=lfs merge=lfs -text
+sim2sim_diagnostics/20260912-162601-flat-20260911/cases/*/telemetry.jsonl.gz filter=lfs diff=lfs merge=lfs -text
+sim2sim_diagnostics/20260912-162601-flat-20260911/cases/*/side_view.mp4 filter=lfs diff=lfs merge=lfs -text

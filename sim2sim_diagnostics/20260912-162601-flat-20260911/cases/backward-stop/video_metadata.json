@@ -1,0 +1,268 @@
+{
+  "argv": [
+    "/home/lfr/miniconda3/envs/fluxweave/bin/ffmpeg",
+    "-nostdin",
+    "-v",
+    "warning",
+    "-n",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "rgb24",
+    "-s",
+    "960x720",
+    "-r",
+    "50.000001",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libopenh264",
+    "-b:v",
+    "3500k",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/backward-stop/side_view.mp4"
+  ],
+  "mode": "offline telemetry replay; no mj_step or policy invocation",
+  "physics_version": "3.2.7",
+  "renderer_version": "3.7.0",
+  "frames": 1000,
+  "fps": 50.000001,
+  "duration_s": 19.99999960000001,
+  "decoded_frames": 1000,
+  "decoded_fps": 50.0,
+  "validation_pass": true,
+  "robot_visibility_checks": [
+    {
+      "step": 0,
+      "robot_pixels": 19614,
+      "bbox_xyxy": [
+        391,
+        220,
+        550,
+        515
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 50,
+      "robot_pixels": 19767,
+      "bbox_xyxy": [
+        375,
+        223,
+        552,
+        517
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 100,
+      "robot_pixels": 20123,
+      "bbox_xyxy": [
+        375,
+        221,
+        552,
+        519
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 150,
+      "robot_pixels": 20247,
+      "bbox_xyxy": [
+        390,
+        220,
+        550,
+        517
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 200,
+      "robot_pixels": 18895,
+      "bbox_xyxy": [
+        396,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 250,
+      "robot_pixels": 18876,
+      "bbox_xyxy": [
+        403,
+        219,
+        550,
+        517
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 300,
+      "robot_pixels": 20897,
+      "bbox_xyxy": [
+        388,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 350,
+      "robot_pixels": 19258,
+      "bbox_xyxy": [
+        399,
+        219,
+        550,
+        519
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 400,
+      "robot_pixels": 19063,
+      "bbox_xyxy": [
+        395,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 450,
+      "robot_pixels": 18755,
+      "bbox_xyxy": [
+        403,
+        219,
+        550,
+        518
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 500,
+      "robot_pixels": 20781,
+      "bbox_xyxy": [
+        387,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 550,
+      "robot_pixels": 19202,
+      "bbox_xyxy": [
+        400,
+        219,
+        550,
+        519
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 600,
+      "robot_pixels": 18917,
+      "bbox_xyxy": [
+        396,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 650,
+      "robot_pixels": 18887,
+      "bbox_xyxy": [
+        403,
+        219,
+        550,
+        518
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 700,
+      "robot_pixels": 20889,
+      "bbox_xyxy": [
+        388,
+        223,
+        550,
+        516
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 750,
+      "robot_pixels": 19242,
+      "bbox_xyxy": [
+        399,
+        219,
+        550,
+        519
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 800,
+      "robot_pixels": 20684,
+      "bbox_xyxy": [
+        380,
+        227,
+        550,
+        520
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 850,
+      "robot_pixels": 20616,
+      "bbox_xyxy": [
+        381,
+        227,
+        550,
+        520
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 900,
+      "robot_pixels": 20620,
+      "bbox_xyxy": [
+        382,
+        227,
+        550,
+        520
+      ],
+      "robot_present_and_inside_frame": true
+    },
+    {
+      "step": 950,
+      "robot_pixels": 20643,
+      "bbox_xyxy": [
+        382,
+        227,
+        550,
+        520
+      ],
+      "robot_present_and_inside_frame": true
+    }
+  ],
+  "robot_visibility_all_sampled_frames_pass": true,
+  "sampling": "one video frame per actual policy pre-state; 1 Hz segmentation visibility checks",
+  "camera": {
+    "elevation_deg": 0,
+    "azimuth": "90+base yaw",
+    "distance": 2.6
+  },
+  "last_frame_episode_time_s": 19.97999960040001
+}

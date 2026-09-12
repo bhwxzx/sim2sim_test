@@ -1,0 +1,15 @@
+{
+  "case_id": "forward-stop",
+  "argv": [
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/tools/collect",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/plan.json",
+    "forward-stop",
+    "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/forward-stop"
+  ],
+  "cwd": "/home/lfr/rl_sar",
+  "stdout_stderr": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/forward-stop/console.log",
+  "shell_command": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/tools/collect /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/plan.json forward-stop /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/forward-stop > /home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/cases/forward-stop/console.log 2>&1",
+  "started_at": "2026-09-12T08:29:52.311006+00:00",
+  "wall_seconds": 2.574845558963716,
+  "exit_code": 0
+}

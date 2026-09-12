@@ -1,0 +1,6 @@
+diff --git a/policy/LW/robot_lab/leg_loco/policy.onnx b/policy/LW/robot_lab/leg_loco/policy.onnx
+index 3340303..6d894d5 100644
+Binary files a/policy/LW/robot_lab/leg_loco/policy.onnx and b/policy/LW/robot_lab/leg_loco/policy.onnx differ
+diff --git a/policy/LW/robot_lab/wheel_loco/policy.onnx b/policy/LW/robot_lab/wheel_loco/policy.onnx
+index 085e74b..8fb1a5d 100644
+Binary files a/policy/LW/robot_lab/wheel_loco/policy.onnx and b/policy/LW/robot_lab/wheel_loco/policy.onnx differ

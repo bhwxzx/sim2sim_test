@@ -1,0 +1,1266 @@
+{
+  "stand": {
+    "first_saturation": {
+      "from_sim_time": 3.5599999999998295,
+      "actuator_indices": [
+        6
+      ],
+      "forces": [
+        4.306676864624023,
+        1.5163288116455078,
+        -43.57569122314453,
+        -8.55058765411377,
+        -72.35149383544922,
+        10.652563095092773,
+        -27.0,
+        11.46744155883789,
+        -0.5563137531280518,
+        0.20863904058933258
+      ]
+    },
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": 3.756137463285466
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": 0.6719580905530265
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": 3.7214246687954766
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": -0.0013313834999575391
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": -0.0038779908848471933
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": -0.004082610122917885
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": -0.002612515782493219
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": -0.0028927042558084537
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": -0.002898679732577847
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": -0.00230757721296726
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": -0.002715126772001142
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": -0.002661529701562415
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": -0.0017375472858827123
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 25698,
+      "floor / left_foot_collision": 24252
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  },
+  "forward-stop": {
+    "first_saturation": null,
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.15643037855625153,
+          -0.9876889586448669
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.30901288986206055,
+          -0.9510578513145447
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -1.0,
+          -4.147290746914223e-05
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": 1.1829829551725624
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": -0.20882617643332413
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": -0.012906301888081728
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": -0.03105473903291056
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": -0.6814462526995131
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": -0.22007780026312584
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": 0.04139467183116441
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": -0.0970546572312152
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": -0.7943773811812562
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": -0.24014352314472376
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": 0.010639421874162558
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": -0.21273498934733048
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": -0.5609040939951657
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 16424,
+      "floor / left_foot_collision": 18301
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  },
+  "backward-stop": {
+    "first_saturation": null,
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          -0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.15643037855625153,
+          -0.9876889586448669
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          -0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.30901288986206055,
+          -0.9510578513145447
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          -0.4000000059604645,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -1.0,
+          -4.147290746914223e-05
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": 2.3928161574398477
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": 0.3321998439708391
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": 0.17456851417872699
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": 0.04352013406592903
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": -0.03209219132985197
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": 0.2997976823158517
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": 0.1352967534177818
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": 0.07394826098644813
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": -0.050364080448396464
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": 0.2866201061294973
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": 0.16512623701153828
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": 0.038921400593341815
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": -0.033752936289484836
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 22484,
+      "floor / left_foot_collision": 22879
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  },
+  "turn-left": {
+    "first_saturation": {
+      "from_sim_time": 2.6799999999999264,
+      "actuator_indices": [
+        6
+      ],
+      "forces": [
+        1.5755671262741089,
+        -3.3212952613830566,
+        -30.317644119262695,
+        -9.999587059020996,
+        -42.70874786376953,
+        6.687338352203369,
+        -27.0,
+        2.8128104209899902,
+        -0.44660234451293945,
+        -0.2679779827594757
+      ]
+    },
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -0.15643037855625153,
+          -0.9876889586448669
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -0.30901288986206055,
+          -0.9510578513145447
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -1.0,
+          -4.147290746914223e-05
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": 24.85206537641461
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": 1.1139608154254788
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": 0.4021269245514709
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": 0.6729532534718814
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": 0.41894432891149336
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": 0.4690837477298402
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": 0.5732853430368081
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": 0.9242018224191781
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": 0.5095330803075697
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": 0.5141554741075964
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": 0.6079737350563619
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": 0.9010671523823817
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": 0.6840014474575611
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 25263,
+      "floor / left_foot_collision": 26603
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  },
+  "turn-right": {
+    "first_saturation": null,
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          0.0,
+          0.0,
+          -0.5
+        ],
+        "actual_phase": [
+          -0.15643037855625153,
+          -0.9876889586448669
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          0.0,
+          0.0,
+          -0.5
+        ],
+        "actual_phase": [
+          -0.30901288986206055,
+          -0.9510578513145447
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          0.0,
+          0.0,
+          -0.5
+        ],
+        "actual_phase": [
+          -1.0,
+          -4.147290746914223e-05
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": -19.43179950789056
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": -1.8108308609042876
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": -0.3340584056553695
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": -0.1953171744790012
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": -0.27800692477070754
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": -0.22082344699592937
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": -0.17480063917573574
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": -0.17721880910272247
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": -0.26245160075918506
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": -0.21554978140451198
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": -0.1644226066654113
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": -0.17753781753694753
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": -0.26916139373175696
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 27249,
+      "floor / left_foot_collision": 24299
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  },
+  "moving-turn": {
+    "first_saturation": null,
+    "first_overspeed": {
+      "post_sim_time": 1.5740000000000012,
+      "joint_names": [
+        "right_foot_joint"
+      ],
+      "dq_rad_s": [
+        10.427397310782178
+      ]
+    },
+    "phase_samples": [
+      {
+        "step": 0,
+        "episode_time": 0.0,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 99,
+        "episode_time": 1.9800000000000015,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          0.0,
+          -0.0
+        ]
+      },
+      {
+        "step": 100,
+        "episode_time": 2.0000000000000013,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -0.15643037855625153,
+          -0.9876889586448669
+        ]
+      },
+      {
+        "step": 101,
+        "episode_time": 2.019999999999999,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -0.30901288986206055,
+          -0.9510578513145447
+        ]
+      },
+      {
+        "step": 749,
+        "episode_time": 14.980000000001672,
+        "command": [
+          0.4000000059604645,
+          0.0,
+          0.5
+        ],
+        "actual_phase": [
+          -1.0,
+          -4.147290746914223e-05
+        ]
+      },
+      {
+        "step": 750,
+        "episode_time": 15.000000000001679,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      },
+      {
+        "step": 751,
+        "episode_time": 15.020000000001685,
+        "command": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "actual_phase": [
+          -0.0,
+          0.0
+        ]
+      }
+    ],
+    "one_second_heading_increments_deg": [
+      {
+        "window_s": [
+          2,
+          3
+        ],
+        "delta_deg": 11.996586057473674
+      },
+      {
+        "window_s": [
+          3,
+          4
+        ],
+        "delta_deg": 1.9287933365302052
+      },
+      {
+        "window_s": [
+          4,
+          5
+        ],
+        "delta_deg": 3.850695207536269
+      },
+      {
+        "window_s": [
+          5,
+          6
+        ],
+        "delta_deg": 2.986844376504891
+      },
+      {
+        "window_s": [
+          6,
+          7
+        ],
+        "delta_deg": 2.9497414867862126
+      },
+      {
+        "window_s": [
+          7,
+          8
+        ],
+        "delta_deg": 2.4238247002251967
+      },
+      {
+        "window_s": [
+          8,
+          9
+        ],
+        "delta_deg": 3.9036191952435786
+      },
+      {
+        "window_s": [
+          9,
+          10
+        ],
+        "delta_deg": 2.733222250001738
+      },
+      {
+        "window_s": [
+          10,
+          11
+        ],
+        "delta_deg": 2.853034419210097
+      },
+      {
+        "window_s": [
+          11,
+          12
+        ],
+        "delta_deg": 2.192355065668373
+      },
+      {
+        "window_s": [
+          12,
+          13
+        ],
+        "delta_deg": 3.6373797745701566
+      },
+      {
+        "window_s": [
+          13,
+          14
+        ],
+        "delta_deg": 2.4082969650292725
+      },
+      {
+        "window_s": [
+          14,
+          15
+        ],
+        "delta_deg": 2.640806928975529
+      }
+    ],
+    "max_external_xfrc": 0.0,
+    "max_external_qfrc": 0.0,
+    "active_contact_pairs": {
+      "floor / right_foot_collision": 15767,
+      "floor / left_foot_collision": 19601
+    },
+    "initial_two_second_state_input_action_equal_across_cases": true
+  }
+}

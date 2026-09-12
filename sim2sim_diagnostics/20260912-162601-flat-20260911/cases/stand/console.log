@@ -1,0 +1,16 @@
+[0;37m[INFO]   [0m [FSMManager] Registered type: LW
+[0;37m[INFO]   [0m Preloading ONNX model into memory: /home/lfr/sim2sim_test/sim2sim_work/20260912-162601-flat-20260911/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Successfully loaded ONNX model: /home/lfr/sim2sim_test/sim2sim_work/20260912-162601-flat-20260911/policy/LW/robot_lab/leg_loco/policy.onnx
+[0;37m[INFO]   [0m Validated model and warmed it up in 0.304 ms.
+[0;37m[INFO]   [0m Preload & Warmup finished for: LW/robot_lab/leg_loco
+[0;37m[INFO]   [0m [FSM] Set initial state: RLFSMStatePassive
+[0;37m[INFO]   [0m [FSMManager] FSM created for type: LW
+
+[0;37m[INFO]   [0m [FSM] Request switch from RLFSMStatePassive to RLFSMStateRLLocomotion_Leg
+[0;33m[WARNING][0m Torque(7)=-33.173 out of range(-27.000, 27.000)
+Safety observe 
+stand 250 5.000
+stand 500 10.000
+stand 750 15.000
+stand 1000 20.000
+{"case_id":"stand","control_records":1000,"final_sim_time":19.999999999999794,"low_level_ticks":4000,"physics_steps":10000,"requested_sim_duration":20.0,"reset_count":1,"seed":42,"seed_method":"srand(42); no explicit observation noise or random perturbation","status":"completed","termination_reason":"time_limit"}

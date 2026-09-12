@@ -1,0 +1,254 @@
+{
+  "stand": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 0.0,
+    "phase_episode_contract_max_error": 0.0,
+    "gravity_quaternion_max_error": 1.9002794837685855e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 3.1086244689504383e-15,
+    "gravity_pre_state_max_error": 2.220446049250313e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": true
+  },
+  "forward-stop": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 5.960464477539063e-08,
+    "phase_episode_contract_max_error": 0.15643037855624053,
+    "gravity_quaternion_max_error": 1.9654287486403632e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 1.0658141036401503e-14,
+    "gravity_pre_state_max_error": 2.220446049250313e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": false
+  },
+  "backward-stop": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 5.960464477539063e-08,
+    "phase_episode_contract_max_error": 0.15643037855624053,
+    "gravity_quaternion_max_error": 1.8905828558235527e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 4.440892098500626e-15,
+    "gravity_pre_state_max_error": 2.220446049250313e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": false
+  },
+  "turn-left": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 5.960464477539063e-08,
+    "phase_episode_contract_max_error": 0.15643037855624053,
+    "gravity_quaternion_max_error": 1.9710807330763913e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 2.886579864025407e-15,
+    "gravity_pre_state_max_error": 2.4424906541753444e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": false
+  },
+  "turn-right": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 5.960464477539063e-08,
+    "phase_episode_contract_max_error": 0.15643037855624053,
+    "gravity_quaternion_max_error": 1.926463789603261e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 5.773159728050814e-15,
+    "gravity_pre_state_max_error": 2.220446049250313e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": false
+  },
+  "moving-turn": {
+    "rows": 1000,
+    "all_raw_values_finite": true,
+    "chronology": true,
+    "all_history_frames_exact": true,
+    "wheels_zero_all_history": true,
+    "previous_action_exact": true,
+    "commands_exact": true,
+    "native_joint_sensor_mapping_exact": true,
+    "reset_steps": [
+      0
+    ],
+    "terminal_steps": [
+      999
+    ],
+    "no_added_noise": true,
+    "raw_action_clip_steps": 0,
+    "physics_substeps": 10000,
+    "pd_updates": 4000,
+    "phase_mask_correct": true,
+    "phase_runtime_recurrence_max_error": 5.960464477539063e-08,
+    "phase_episode_contract_max_error": 0.15643037855624053,
+    "gravity_quaternion_max_error": 1.7618566383603707e-07,
+    "raw_q_matches_sensor_evaluation_state": true,
+    "joint_pos_max_error": 0.0,
+    "joint_vel_max_error": 0.0,
+    "ang_vel_max_error": 0.0,
+    "q_target_max_error": 0.0,
+    "dq_target_max_error": 0.0,
+    "pd_candidate_max_error": 0.0,
+    "pd_bounded_max_error": 0.0,
+    "backward_formula_consistency_deg": 4.884981308350689e-15,
+    "gravity_pre_state_max_error": 2.220446049250313e-15,
+    "actual_pd_intervals_s": [
+      0.004,
+      0.006
+    ],
+    "initial_history_checked": true,
+    "history_frames_checked": 10000,
+    "reset_boundary_validation": "initial process only; no mid-run reset performed",
+    "phase_episode_contract_matches": false
+  }
+}

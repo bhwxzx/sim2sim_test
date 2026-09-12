@@ -1,0 +1,6 @@
+{
+  "case_id": "reset-check",
+  "requested_duration": 8,
+  "status": "not_executed",
+  "reason": "Actual ApplySimulationControls R resets only MuJoCo; no combined controller/history/phase reset. No replacement reset implemented."
+}

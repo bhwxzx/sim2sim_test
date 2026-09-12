@@ -1,0 +1,581 @@
+{
+  "host_id": "LFR",
+  "receiver_id": "younghit",
+  "repository": "/home/lfr/rl_sar",
+  "output": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911",
+  "policy_root": "/home/lfr/sim2sim_test/sim2sim_work/20260912-162601-flat-20260911/policy",
+  "scene": "/home/lfr/sim2sim_test/sim2sim_diagnostics/20260912-162601-flat-20260911/config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+  "seed": 42,
+  "wall_timeout_seconds": 120,
+  "cases": [
+    {
+      "case_id": "stand",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "forward-stop",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            0.4,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "backward-stop",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            -0.4,
+            0,
+            0
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "turn-left",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            0,
+            0,
+            0.5
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "turn-right",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            0,
+            0,
+            -0.5
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "case_id": "moving-turn",
+      "duration": 20,
+      "segments": [
+        [
+          0,
+          2,
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          2,
+          15,
+          [
+            0.4,
+            0,
+            0.5
+          ]
+        ],
+        [
+          15,
+          20,
+          [
+            0,
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  ],
+  "reset_check": {
+    "case_id": "reset-check",
+    "requested_duration": 8,
+    "status": "not_executed",
+    "reason": "Actual ApplySimulationControls R resets only MuJoCo; no combined controller/history/phase reset. No replacement reset implemented."
+  },
+  "model": {
+    "path": "/home/lfr/sim2sim_test/sim2sim_work/20260912-162601-flat-20260911/policy/LW/robot_lab/leg_loco/policy.onnx",
+    "sha256": "3f11bd36f147b3308354c5dca9f7474f0b0c039922586ef35b230584223303a2",
+    "archive_path": "/home/lfr/policy_storage/LW/leg_loco/2026-09-11-16-56-27",
+    "jit_sha256": "64b411b440898c15df2340ba68ccef135c68b07dfa71e92ce1c20005037195a1"
+  },
+  "removed_scene_obstacles": [
+    {
+      "pos": "2.3 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.05",
+      "quat": "1.0 0 0 0"
+    },
+    {
+      "pos": "2.7 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.10",
+      "quat": "1.0 0 0 0"
+    },
+    {
+      "pos": "3.1 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.15",
+      "quat": "1.0 0 0 0"
+    },
+    {
+      "pos": "3.5 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.20",
+      "quat": "1.0 0 0 0"
+    },
+    {
+      "pos": "3.9 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.25",
+      "quat": "1.0 0 0 0"
+    },
+    {
+      "pos": "4.3 0 0.02",
+      "type": "box",
+      "size": "0.2 2 0.30",
+      "quat": "1.0 0 0 0"
+    }
+  ],
+  "new_scene_sha256": "921bafda7ebf44fd980dadd43b9223dd49d11abb1f2c4c7322e4dee0d6168d46",
+  "source_files": [
+    {
+      "path": "/home/lfr/rl_sar/AGENTS.md",
+      "snapshot": "config_snapshot/AGENTS.md",
+      "sha256": "848736a6094218f7bf5446d11390d8716b6813efca48757ec18245f4b2edae30"
+    },
+    {
+      "path": "/home/lfr/rl_sar/policy/LW/base.yaml",
+      "snapshot": "config_snapshot/policy/LW/base.yaml",
+      "sha256": "6f9f3a4c3e16ec7c11deced011062f359650c17ac73378773cd6243e9ed1a1e8"
+    },
+    {
+      "path": "/home/lfr/rl_sar/policy/LW/robot_lab/leg_loco/config.yaml",
+      "snapshot": "config_snapshot/policy/LW/robot_lab/leg_loco/config.yaml",
+      "sha256": "89682b817081e7aeedfcb47af7f292a5e2a18953fef4dd778f235d9bd97b3622"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/fsm_robot/fsm_LW.hpp",
+      "sha256": "742908d3907e8b97187a386222d30aba16657759646762420c6b3ef59192c081"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/include/rl_sim_LW.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/include/rl_sim_LW.hpp",
+      "sha256": "26880437d767f9a159db918120685cf60018d909161533b68012b1a208f70884"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/debug/lw_debug_publisher.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/debug/lw_debug_publisher.cpp",
+      "sha256": "4ecb802937e55f41c4f90b4d347c2a2dc742de4833d573f3fb8e722f6c9fac7a"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/debug/lw_debug_publisher.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/debug/lw_debug_publisher.hpp",
+      "sha256": "121e6971a358e0d8bb12b9d75d43e7428b530974058e2e43f271a09ede0ed096"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/deployment/lw_deployment_bundle.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/deployment/lw_deployment_bundle.cpp",
+      "sha256": "f1fcd37787f15612c4bd9bd3d800416e3653fd2134abc39e9a13b2fb035ca1c6"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/deployment/lw_deployment_bundle.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/deployment/lw_deployment_bundle.hpp",
+      "sha256": "62cf00d01df263d98e8cee7309bfbca18634513b6235480dadb269bce0128781"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/fsm/fsm.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/fsm/fsm.hpp",
+      "sha256": "4b59489b9cc1702ad06c47efbcc4bfe5f10b0a6737cbe5fbc86fe53c4c06ba07"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.cpp",
+      "sha256": "97aab22d0a54dced5b13bfdd41a6ca3b8f2afcfc53c7b90ee84f6864133289b0"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/inference_runtime/inference_runtime.hpp",
+      "sha256": "3bbb55a1c31f12f9b4af2317e8253ac16aeda70634189a954589291c60cb7742"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/logger/logger.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/logger/logger.hpp",
+      "sha256": "53e0d41f9e8953a9a83331bdd62398a17a7f60bc97661aac3a61b622fcda6c42"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/loop/command_gate.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/loop/command_gate.hpp",
+      "sha256": "a1585c2502e1e584a4370a67dc9aed0eebf7bdd4562795a79b723ad62ac59c23"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/loop/loop.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/loop/loop.hpp",
+      "sha256": "cfeb6811775f6040ceb433e441868b0c1d40f1c6b473e2aa7169496de14b0bdf"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/matplotlibcpp/matplotlibcpp.h",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/matplotlibcpp/matplotlibcpp.h",
+      "sha256": "4dc15d82f644af5f1b0db14b963d548b477aaff5f7444dd21094b137930c2eee"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/motion_loader/motion_loader_lw.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.cpp",
+      "sha256": "73e95118c848ae09b3551bf00f234f3ec38896c6c3bd33f6dfa5da22c95f9f30"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/motion_loader/motion_loader_lw.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/motion_loader/motion_loader_lw.hpp",
+      "sha256": "cfd4f15382688b90a18cdad4d42db1799229f52afd4c624d669c1c86c2707690"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.cpp",
+      "sha256": "8140e69359d23f915f30ba9063e44be8b190d4aa07347d0a4d6e5e5021654b8c"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/observation_buffer/observation_buffer.hpp",
+      "sha256": "3f28d46b9b90ab2e9b74c034458aeda77d0343b9030ee0ad9b7df08a9a4cc898"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.cpp",
+      "sha256": "ea4341639e11ec3fcf2e8a803be9b724d4b95883b683182df8a3b6e8c0a92526"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/lw_configuration_validation.hpp",
+      "sha256": "ec5629cc61f61196cf09dd9c949b4080b555be36098f6151830f048c9e2332bb"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.cpp",
+      "sha256": "c51e73de8d18c1d270e6c95f78507ff03505fae8a8204cf80942e61c218b9ded"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/rl_sdk/rl_sdk.hpp",
+      "sha256": "2c6e9e980de54fa13f0808dc6f7de52d8de23d7f9bd85a01fac5b00cb3cfb651"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_config_profile.hpp",
+      "sha256": "a3978fa5a30e75652eaf388338a3c63209494c3b86003a68c04ce0622667c7c9"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_control_safety.hpp",
+      "sha256": "ab6c2bea4fb43a08d6f4c547756d92e7b90594998e31dfe1f02bd4473c868dc1"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_imu_ahrs_guard.hpp",
+      "sha256": "abe22531170e010a045d0149cf9542dd3e91523531ccc392dbb8e4115c0d8532"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_joystick_safety.hpp",
+      "sha256": "6805670b2c81bb102741af74bd4160e21acfe1b55a158675ac28096f2c65bf94"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_loop_config.hpp",
+      "sha256": "5d8d02e46247166119eca3f095e2e9b55358c965307f632d693bee73c433db1e"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_core.hpp",
+      "sha256": "798cb47d4518b8baf437dc6c3904034a9174193686dd721ad29e67e894df65b4"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_runtime_sync.hpp",
+      "sha256": "729144d55d05c76caae83026144f5ead1d82bbee4c2aa2234d4e644ea311ae81"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_safety_policy.hpp",
+      "sha256": "4e8e67aaf2014c202ce3634ff4e247539a37582b19b2d87ecf6f01c1348e9eb2"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_startup_disable.hpp",
+      "sha256": "061cbdd6822b33d3ad37de98f3531dc0d20dec14258bda5cdaf61c645eb1b84e"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/lw_terminal_keyboard.hpp",
+      "sha256": "0ca946de513fd64bc0fe51bec8a754802ffb2e101f56ba94e9b9fff3525fd1b5"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/safety/sensor_readiness.hpp",
+      "sha256": "ce00b507425d7c8dc0b9b148533d5a309f46cf5293fe836e7a5302e913a4eccf"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_joinable_worker.hpp",
+      "sha256": "3b8a0f3bbb645ca37993a4c09224415151559dc86adbf53ce1306b7e32abccf4"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.cpp",
+      "sha256": "8eac7aff034e2ecb885012bdbcd871480e62b5145d410a65889d03ecb15c6a7e"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_mujoco_control_adapter.hpp",
+      "sha256": "4b2698042fff6014fae8e467711eaad735d62b8baf5f70a6b1915434f0c5a684"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_signal_shutdown.hpp",
+      "sha256": "2f3f2845de39984ab69a4f451f2258b03dbf9e1059203c1920e48ea2c331167c"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.cpp",
+      "sha256": "2f028177e4859db02bf8a9e70090ce5d455b341d3256e556265eed56a15916a2"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_debug_message.hpp",
+      "sha256": "f98e7f3a75c5d476a203ed475dff35810a16ed4991fa6c5bc689f709907c0bcb"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_plot_config.hpp",
+      "sha256": "54e38e61ac7db14d42732f0a3a0a05e54734075cc0a72bc47371fd7f33ce074c"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_startup.hpp",
+      "sha256": "ebce1d930c03bfed673b300c4bf13d40e886e0859d8b5845dc9ef5d3ceb9cba3"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.cpp",
+      "sha256": "9dc1fe56b13cdf116164bb2c79589ced335fddc0d8f1d53b7ff8fac3f6016168"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/simulation/lw_sim_torque_validation.hpp",
+      "sha256": "35370cc092c85cd650b3a54b7b9c7e484cc28ae52331f45f88d6b2ba97b083fd"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "snapshot": "config_snapshot/src/rl_sar/library/core/vector_math/vector_math.hpp",
+      "sha256": "819c2169ce8c9d7c94b7c4b9d319d41dc2d82367815465b1cf5a5f49f9672c24"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar/src/rl_sim_LW.cpp",
+      "snapshot": "config_snapshot/src/rl_sar/src/rl_sim_LW.cpp",
+      "sha256": "c677c1835858a2ea29bfe58c2d612eec0a5e2679f9bd303f9ab7e118784c00ca"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW.xml",
+      "sha256": "aee18ff8549fdb6b2591be554902a81b13e1252bfc36cb331154e372e3419e6f"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/LW_inertial.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/LW_inertial.xml",
+      "sha256": "c44bd220ea19a264c3b97dced8d3fe2ba5c73c27700fda5ccc2c3537baa00586"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/base_link.stl",
+      "sha256": "b9a6b19059b13fc464d079850c0f01fc8d92273b022eb6c812226121200ec839"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_foot.stl",
+      "sha256": "eab6dd1896081d5dda4f9579f1fe73f94a1a61b5db29fb575393a25847f41cc3"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_hip.stl",
+      "sha256": "de83517b08196f2dcfbb3fed786fca0f4a8432c79defaba6de6dd7f02343d6e6"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_shank.stl",
+      "sha256": "a2412b88e9514bc9958d28cff59950973054102abadab7165acf8e5fa67483d6"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_thigh.stl",
+      "sha256": "728b0b7f1d745ecdebc37f22e0f594883a4412065180fa26814b3bcf7116165c"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/left_wheel.stl",
+      "sha256": "e4c1932dfced1b05134ec3dc6ec61af8178587810aac70ad5d192151a6d8a62e"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_foot.stl",
+      "sha256": "e55ff91db2f3fc29810853e726e495a558f413282ae4e939f61f6174abe90012"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_hip.stl",
+      "sha256": "d22d28271e537eb8cd7cfac82a32fa44e7b9593f20ec70b544292540a336b6f7"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_shank.stl",
+      "sha256": "9ca46193032a82ac9603483bbca0cacd0df240a5c962502d2c76b4add301fc17"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_thigh.stl",
+      "sha256": "22f3f46e572e5528996225679f8683db71b30029f77fd1f912272138fe32ad66"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/assets/right_wheel.stl",
+      "sha256": "6efcac8d8e72938d22a9db530eb8273e08a3ebb23ec32b9e50de5f264a1bb714"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene.xml",
+      "sha256": "cb879c82e32f23cac8ff5597caf39ed39032c272e84e50bcea59f0320ef707c0"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/mjcf/scene_terrain.xml",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/mjcf/scene_terrain.xml",
+      "sha256": "2d99527c373e859802aa374b22975b896b7182fdceb4843d82c55dbbf134d12d"
+    },
+    {
+      "path": "/home/lfr/rl_sar/src/rl_sar_zoo/LW_description/urdf/LW.urdf",
+      "snapshot": "config_snapshot/src/rl_sar_zoo/LW_description/urdf/LW.urdf",
+      "sha256": "e416fdf3568b6a25b42c5e73e67d15b03762bf20e870d0a205e389af9dc6861e"
+    }
+  ],
+  "git_head": "536e94dab10eedb31971c8b741f8b915163aa353",
+  "git_status": " M policy/LW/robot_lab/leg_loco/policy.onnx\n M policy/LW/robot_lab/wheel_loco/policy.onnx\n?? .agents/skills/inspect-context-compactions/\n?? library/\n",
+  "transfer_head": "b7547fdca230c499a0c8d9e4fdd8177f3f86f4c2"
+}

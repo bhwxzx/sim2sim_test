@@ -1,0 +1,18 @@
+stand 500
+stand 1000
+stand done True
+forward-stop 500
+forward-stop 1000
+forward-stop done True
+backward-stop 500
+backward-stop 1000
+backward-stop done True
+turn-left 500
+turn-left 1000
+turn-left done True
+turn-right 500
+turn-right 1000
+turn-right done True
+moving-turn 500
+moving-turn 1000
+moving-turn done True

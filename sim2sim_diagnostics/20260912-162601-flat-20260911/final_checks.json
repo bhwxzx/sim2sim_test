@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "completed_cases": 6,
+  "early_terminated_cases": 0,
+  "failed_cases": 0,
+  "not_executed_cases": [
+    "reset-check"
+  ],
+  "actual_simulation_seconds": 120,
+  "authorized_maximum_seconds": 128,
+  "policy_steps": 6000,
+  "physics_steps": 60000,
+  "pd_updates": 24000,
+  "all_integrity_checks_pass": true,
+  "full_training_input_contract_pass": false,
+  "known_semantic_differences": [
+    "phase advanced one policy period relative to recorded episode time",
+    "no deployment observation noise; upstream noise retained"
+  ],
+  "midrun_reset_validation": "unavailable",
+  "protected_sources_unchanged": true,
+  "repository_head_unchanged": true,
+  "repository_dirty_status_unchanged": true,
+  "receiver_cache_required": false,
+  "resource_inventory_received": false,
+  "resource_list_external": "/home/lfr/sim2sim_test/sim2sim_work/20260912-162601-flat-20260911/resources.json"
+}

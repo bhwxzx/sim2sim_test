@@ -1,0 +1,365 @@
+--- inspected_previous_collector.cpp
++++ parameterized_collect.cpp
+@@ -18,64 +18,28 @@
+     std::ofstream f(p); f << j.dump(2) << '\n';
+     if (!f) throw std::runtime_error("write failed: "+p);
+ }
+-// Process-local experiment state; no deployment configuration is changed.
+-namespace experiment {
+-bool isaac = false;
+-bool pairing = false;
+-std::size_t left_foot = 0, right_wheel = 0, left_wheel = 0;
+-bool names_resolved = false;
+-const LWPolicyRuntimeConfiguration* frame_config = nullptr;
+-Observations<float> frame_state;
+-std::vector<float> actual_frame;
+-}
+-bool LWDiagnosticZeroJointPosition(std::size_t index, bool baseline_zero) {
+-    if (!experiment::isaac) return baseline_zero;
+-    if (!experiment::names_resolved) throw std::runtime_error("joint names not resolved");
+-    if (index == experiment::left_foot) return true;
+-    if (index == experiment::right_wheel) return false;
+-    return baseline_zero;
+-}
+-void LWDiagnosticObserveFrame(const LWPolicyRuntimeConfiguration& cfg,
+-                              const Observations<float>& obs,
+-                              const std::vector<float>& frame) {
+-    if (experiment::pairing) return;
+-    experiment::frame_config = &cfg;
+-    experiment::frame_state = obs;
+-    experiment::actual_frame = frame;
+-}
++// Parameterized collector: all semantics execute in the unmodified deployment core.
+ struct CaptureModel : InferenceRuntime::Model {
+     std::shared_ptr<InferenceRuntime::Model> inner;
+-    std::vector<float> input, raw;
++    std::vector<float> input,raw;
++    J* record=nullptr;
+     int calls=0;
+-    J* record=nullptr;
+-    std::function<void(const std::vector<float>&)> before_model;
+-    std::vector<float> previous_input;
+-    explicit CaptureModel(std::shared_ptr<InferenceRuntime::Model> m):inner(m) {}
+-    bool load(const std::string& p) override { return inner->load(p); }
+-    bool is_loaded() const override { return inner->is_loaded(); }
+-    std::string get_model_type() const override { return inner->get_model_type(); }
+-    const std::vector<InferenceRuntime::TensorMetadata>& input_metadata() const override { return inner->input_metadata(); }
+-    const std::vector<InferenceRuntime::TensorMetadata>& output_metadata() const override { return inner->output_metadata(); }
+-    void forwardInto(const InferenceRuntime::TensorView* x, std::size_t n, InferenceRuntime::MutableTensorView y) override {
+-        if (n!=1) throw std::runtime_error("unexpected input count");
++    explicit CaptureModel(std::shared_ptr<InferenceRuntime::Model> m):inner(m){}
++    bool load(const std::string& p) override{return inner->load(p);}
++    bool is_loaded()const override{return inner->is_loaded();}
++    std::string get_model_type()const override{return inner->get_model_type();}
++    const std::vector<InferenceRuntime::TensorMetadata>& input_metadata()const override{return inner->input_metadata();}
++    const std::vector<InferenceRuntime::TensorMetadata>& output_metadata()const override{return inner->output_metadata();}
++    void forwardInto(const InferenceRuntime::TensorView* x,std::size_t n,InferenceRuntime::MutableTensorView y)override{
++        if(n!=1 || x[0].size!=410 || y.size!=10)throw std::runtime_error("unexpected model tensor dimensions");
+         input.assign(x[0].data,x[0].data+x[0].size);
+-        if(record) {
+-            (*record)["model_input"]={{"shape",{1,410}},{"dtype","float32"},{"values",input}};
++        if(record){(*record)["model_input"]={{"shape",{1,410}},{"dtype","float32"},{"values",input}};
+             (*record)["model_input_capture_phase"]="synchronous copy immediately before underlying ONNX forward";
+-        }
+-        if(before_model) before_model(input);
+-        if(input.size()!=410) throw std::runtime_error("input width mismatch");
+-        if(previous_input.empty()) {
+-            for(int frame=0;frame<10;++frame)
+-                if(!std::equal(input.begin()+frame*41,input.begin()+(frame+1)*41,input.begin()+369))
+-                    throw std::runtime_error("initial history is not repeated current condition frame");
+-        } else if(!std::equal(input.begin(),input.begin()+369,previous_input.begin()+41)) {
+-            throw std::runtime_error("history time-major shift mismatch");
+-        }
+-        previous_input=input;
+-        inner->forwardInto(x,n,y);
+-        raw.assign(y.data,y.data+y.size); ++calls;
+-        if(record) (*record)["model_raw_action"]=raw;
++            (*record)["current_frame"]=arr(input.data()+369,41);}
++        for(float v:input)if(!std::isfinite(v))throw std::runtime_error("nonfinite model input");
++        inner->forwardInto(x,n,y);raw.assign(y.data,y.data+y.size);++calls;
++        if(record)(*record)["model_raw_action"]=raw;
++        for(float v:raw)if(!std::isfinite(v))throw std::runtime_error("nonfinite raw action");
+     }
+ };
+ J metadata(const std::vector<InferenceRuntime::TensorMetadata>& ms) {
+@@ -92,13 +56,13 @@
+     J joint_mapping_evidence=J::array();
+     J safety_events=J::array();
+     const std::string policy_key="LW/robot_lab/leg_loco";
+-    explicit Diagnostic(const std::string& xml) {
++    explicit Diagnostic(const std::string& xml,const std::string& policy_root) {
+         char error[4096]{}; m=mj_loadXML(xml.c_str(),nullptr,error,sizeof(error));
+         if(!m) throw std::runtime_error(error);
+         d=mj_makeData(m); scratch=mj_makeData(m);
+         if(!d || !scratch) throw std::runtime_error("mj_makeData failed");
+         robot_name="LW"; ang_vel_axis="body";
+-        SetPolicyRoot("/home/lfr/rl_sar/policy"); ReadYaml(robot_name,"base.yaml");
++        SetPolicyRoot(policy_root); ReadYaml(robot_name,"base.yaml");
+         SetLWBaseRuntimeConfiguration(LWValidatedBaseConfiguration(params.config_node,ResolvePolicyPath("LW/base.yaml")));
+         const auto& b=GetLWBaseRuntimeConfiguration();
+         adapter=std::make_unique<LWMuJoCoControlAdapter>(*m,b.joint_names,b.joint_mapping);
+@@ -119,59 +83,10 @@
+             joint_mapping_evidence.push_back({{"policy_index",index},{"joint_name",jname},{"config_mapping",b.joint_mapping[index]},
+                 {"mj_joint_id",jid},{"mj_qpos_adr",m->jnt_qposadr[jid]},{"mj_dof_adr",m->jnt_dofadr[jid]},
+                 {"position_sensor_id",sensor},{"position_sensor_adr",m->sensor_adr[sensor]}});
+-            if(jname=="left_foot_joint") experiment::left_foot=index;
+-            if(jname=="right_wheel_joint") experiment::right_wheel=index;
+-            if(jname=="left_wheel_joint") experiment::left_wheel=index;
+-        }
+-        experiment::names_resolved=true;
++        }
+         PreloadModel(policy_key);
+         capture=std::make_shared<CaptureModel>(preloaded_models_.at(policy_key));
+         preloaded_models_[policy_key]=capture; PreloadLWPolicyContext(policy_key);
+-        capture->before_model=[this](const std::vector<float>& input) {
+-            if(input.size()!=410 || !experiment::frame_config || experiment::actual_frame.size()!=41)
+-                throw std::runtime_error("frame capture unavailable");
+-            const auto& cfg=*experiment::frame_config;
+-            const auto raw_state=experiment::frame_state;
+-            const auto current_frame=experiment::actual_frame;
+-            if(!std::equal(current_frame.begin(),current_frame.end(),input.begin()+369))
+-                throw std::runtime_error("frame reaching model differs from constructed frame");
+-            std::vector<float> paired_a(41),paired_b(41);
+-            const bool saved_condition=experiment::isaac;
+-            experiment::pairing=true;
+-            try {
+-                experiment::isaac=false; ComputeLWObservationInto(cfg,raw_state,nullptr,paired_a);
+-                experiment::isaac=true; ComputeLWObservationInto(cfg,raw_state,nullptr,paired_b);
+-            } catch(...) {experiment::isaac=saved_condition;experiment::pairing=false;throw;}
+-            experiment::isaac=saved_condition;experiment::pairing=false;
+-            std::vector<int> changed;
+-            for(int i=0;i<41;++i) if(paired_a[i]!=paired_b[i]) {
+-                changed.push_back(i);
+-                if(i!=9+int(experiment::left_foot) && i!=9+int(experiment::right_wheel))
+-                    throw std::runtime_error("same-state observation changed outside approved columns");
+-            }
+-            if(current_frame!=(saved_condition?paired_b:paired_a)) throw std::runtime_error("selected observation path mismatch");
+-            // Confirm raw joint angles are the named adapter's jointpos sensors,
+-            // not native guessed indices or wheel velocities.
+-            for(const auto& mapping:joint_mapping_evidence) {
+-                int i=mapping["policy_index"],adr=mapping["position_sensor_adr"];
+-                if(raw_state.dof_pos[i]!=static_cast<float>(d->sensordata[adr]))
+-                    throw std::runtime_error("named joint angle and policy state mismatch");
+-            }
+-            if(capture->record) {
+-                auto& r=*capture->record;
+-                r["condition"]=saved_condition?"B":"A";
+-                r["observation_frame"]={{"joint_pos_before_noise",arr(current_frame.data()+9,10)},
+-                    {"joint_pos_sent",arr(input.data()+378,10)},{"noise_applied",false},
+-                    {"raw_q_policy_float32",raw_state.dof_pos},{"default_q_policy_float32",cfg.default_dof_pos},
+-                    {"dq_policy_float32",raw_state.dof_vel},{"joint_mapping",joint_mapping_evidence},
+-                    {"quaternion_wxyz_body_to_world",raw_state.base_quat},
+-                    {"commands",raw_state.commands},{"previous_action",raw_state.actions},
+-                    {"gait_phase",raw_state.gait_phase}};
+-                r["same_state_pair"]={{"A_frame",paired_a},{"B_frame",paired_b},{"changed_columns",changed},
+-                    {"allowed_columns",{9+experiment::left_foot,9+experiment::right_wheel}},
+-                    {"stage","complete per-frame observation builder, scale/clip included, before history; no additional inference or physics"}};
+-            }
+-        };
+         InitJointNum(b.num_dofs); InitControl(); control.gait_frequency=b.gait_command[0];
+         core.bind(*this,[this](const LWSafetyDecision& dec,const std::string& reason){
+             safety_events.push_back({{"sim_time",d->time},{"action",LWSafetyActionName(dec.action)},{"reason",reason}});
+@@ -250,9 +165,9 @@
+         for(int i=0;i<m->nsensor;++i) j["sensors"].push_back({{"id",i},{"name",name(m,mjOBJ_SENSOR,i)},
+             {"type",m->sensor_type[i]},{"objtype",m->sensor_objtype[i]},{"objid",m->sensor_objid[i]},
+             {"adr",m->sensor_adr[i]},{"dim",m->sensor_dim[i]},{"noise",m->sensor_noise[i]},{"cutoff",m->sensor_cutoff[i]}});
+-        j["ab_experiment"]={{"condition",experiment::isaac?"B":"A"},{"noise_applied",false},
+-            {"joint_mapping",joint_mapping_evidence},{"selection_scope","joint-position zero predicate only"},
+-            {"application_stage","per-frame DofPosition before scaling/clipping and history insertion"}};
++        j["joint_mapping_evidence"]=joint_mapping_evidence;
++        j["added_observation_noise"]=false;
++        j["scene_file_count_robot"]=1;
+         return j;
+     }
+     J state() {
+@@ -269,7 +184,7 @@
+         std::vector<double> origin_body(3);
+         for(int i=0;i<3;++i) {origin_body[i]=0;for(int k=0;k<3;++k)origin_body[i]+=R[3*k+i]*d->qvel[k];}
+         const auto* qw=d->qpos+3;
+-        const double backward=std::asin(std::clamp(2*(qw[1]*qw[3]-qw[0]*qw[2]),-1.0,1.0))*180/M_PI;
++        const double backward=std::asin(std::clamp(-pg[0],-1.0,1.0))*180/M_PI;
+         J j={{"sim_time",d->time},{"qpos_mujoco",arr(d->qpos,m->nq)},{"qvel_mujoco",arr(d->qvel,m->nv)},
+             {"base_position_world",arr(scratch->xpos+3*base,3)},{"base_quaternion_wxyz_body_to_world",arr(d->qpos+3,4)},
+             {"base_com_linear_velocity_world",arr(vw+3,3)},{"base_com_linear_velocity_body",arr(vb+3,3)},
+@@ -285,7 +200,13 @@
+             j["contacts"].push_back({{"geom1",c.geom1},{"geom2",c.geom2},{"distance",c.dist},{"position_world",arr(c.pos,3)},
+                 {"frame_world_rows",arr(c.frame,9)},{"force_contact_frame",arr(f,6)},{"efc_address",c.efc_address}});
+         }
+-        for(const char* s:{"left_foot_site","right_foot_site"}) {int id=mj_name2id(m,mjOBJ_SITE,s);j["foot_sites_world"][s]=id>=0?arr(scratch->site_xpos+3*id,3):J(nullptr);}
++        for(const char* s:{"left_foot_site","right_foot_site"}) {
++            int id=mj_name2id(m,mjOBJ_SITE,s);
++            if(id<0){j["feet"][s]=nullptr;continue;}
++            mjtNum vel[6];mj_objectVelocity(m,scratch,mjOBJ_SITE,id,vel,0);
++            j["feet"][s]={{"position_world",arr(scratch->site_xpos+3*id,3)},
++                {"linear_velocity_world",arr(vel+3,3)},{"site_height_above_plane_m",scratch->site_xpos[3*id+2]}};
++        }
+         return j;
+     }
+     J command() {auto& c=robot_command.motor_command;return {{"q_target",c.q},{"dq_target",c.dq},{"feedforward_tau",c.tau},{"kp",c.kp},{"kd",c.kd},{"torque_candidates_policy_order",candidates},{"bounded_torque_policy_order",bounded},{"ctrl_mujoco_order",arr(d->ctrl,m->nu)}};}
+@@ -305,89 +226,105 @@
+     }
+ };
+ 
+-int main(int argc,char**argv) {
+-    if(argc!=5){std::cerr<<"usage: collect XML CASE_ID OUTPUT_DIR A|B\n";return 2;}
+-    std::string xml=argv[1],cid=argv[2],out=argv[3];
+-    const std::string condition=argv[4];
+-    if(condition!="A" && condition!="B") {std::cerr<<"condition must be A or B\n";return 2;}
+-    experiment::isaac=condition=="B";
+-    J pending_row;
+-    gzFile log=nullptr; J result={{"case_id",cid},{"status","failed"},{"control_records",0}};
+-    try {
+-        if(cid!="stand-a01" && cid!="walk-stop-a01")throw std::runtime_error("unknown case");
+-        if(std::filesystem::exists(out+"/telemetry.jsonl.gz"))throw std::runtime_error("refusing to overwrite telemetry");
+-        Diagnostic h(xml);h.reset(); write_json(out+"/effective_config.json",h.config());
++
++J read_json(const std::string& p){std::ifstream f(p);if(!f)throw std::runtime_error("missing JSON "+p);J j;f>>j;return j;}
++int main(int argc,char** argv){
++    if(argc!=4){std::cerr<<"usage: collect PLAN_JSON CASE_ID OUTPUT_DIR\n";return 2;}
++    const std::string cid=argv[2],out=argv[3];J pending;gzFile log=nullptr;
++    J result={{"case_id",cid},{"status","failed"},{"control_records",0}};
++    std::unique_ptr<Diagnostic> runtime;
++    int physical=0,low_tick=0,step=0;
++    try{
++        J plan=read_json(argv[1]),spec;
++        for(auto& c:plan["cases"])if(c["case_id"]==cid)spec=c;
++        if(spec.is_null())throw std::runtime_error("case not in authorized plan");
++        if(std::filesystem::exists(out+"/telemetry.jsonl.gz"))throw std::runtime_error("refuse telemetry overwrite");
++        runtime=std::make_unique<Diagnostic>(plan["scene"],plan["policy_root"]);auto& h=*runtime;
++        h.reset();write_json(out+"/effective_config.json",h.config());
+         log=gzopen((out+"/telemetry.jsonl.gz").c_str(),"wb1");if(!log)throw std::runtime_error("gzopen failed");
+-        auto emit=[&](const J& j){std::string s=j.dump()+"\n";if(gzwrite(log,s.data(),s.size())!=int(s.size()))throw std::runtime_error("gzwrite failed");};
+-        const double dt=h.m->opt.timestep;
+-        // Scheduling periods are read from YAML as doubles; the runtime retains
+-        // its own float32 periods for gait/state computations.
+-        double pd=h.params.config_node["dt"].as<double>();int dec=h.params.Get<int>("decimation");double period=pd*dec;
+-        double duration=cid=="stand-a01"?30:40;
+-        h.activate();
+-        int low_tick=0,physical=0,step=0; std::string why;
+-        while(h.d->time<duration-1e-10) {
+-            double boundary=step*period;
+-            pending_row=J{{"case_id",cid},{"control_step",step},{"simulation_time",h.d->time},
+-                {"nominal_policy_time",boundary},{"reset",step==0},{"reset_id",0},{"terminated",false},
++        auto emit=[&](const J& j){std::string s=j.dump()+"\n";if(gzwrite(log,s.data(),s.size())!=int(s.size()))throw std::runtime_error("gzip write failed");};
++        double dt=h.m->opt.timestep,pd=h.params.config_node["dt"].as<double>();
++        int dec=h.params.Get<int>("decimation");double period=pd*dec,duration=spec["duration"];
++        // Preserve audited scheduler: old output PD/state publication, then inference,
++        // then next physics/PD boundaries. No rescheduling to Isaac timing.
++        h.activate();std::string why;
++        const auto started=std::chrono::steady_clock::now();
++        while(h.d->time<duration-1e-10){
++            const double boundary=step*period;std::vector<float> planned(3);
++            for(auto& segment:spec["segments"])if(boundary>=segment[0].get<double>()-1e-10 && boundary<segment[1].get<double>()-1e-10)planned=segment[2].get<std::vector<float>>();
++            pending={{"case_id",cid},{"host_id",plan["host_id"]},{"control_step",step},{"simulation_time",h.d->time},
++                {"monotonic_test_time",h.d->time},{"episode_time",h.d->time},{"nominal_policy_time",boundary},
++                {"reset",step==0},{"reset_id",0},{"terminated",false},{"planned_command",planned},
+                 {"pre",h.state()},{"low_level_updates",J::array()},{"physics_substeps",J::array()},
+-                {"condition",condition},{"model_input",nullptr},{"model_raw_action",nullptr},{"new_policy_targets",nullptr},{"post",nullptr}};
+-            J& row=pending_row;
+-            h.capture->record=&row;
+-            float planned=cid=="walk-stop-a01" && boundary>=10-1e-10 && boundary<20-1e-10?0.4f:0.0f;
+-            row["planned_command"]={planned,0.0f,0.0f};
++                {"model_input",nullptr},{"model_raw_action",nullptr},{"new_policy_targets",nullptr},{"post",nullptr}};
++            auto& row=pending;h.capture->record=&row;
+             auto low=[&](){
+-                h.core.runControlCycle({[&](){h.control.x=planned;h.control.y=0;h.control.yaw=0;}, {}, [](){return true;}, [](){return true;}, {}, {}});
++                h.core.runControlCycle({[&](){h.control.x=planned[0];h.control.y=planned[1];h.control.yaw=planned[2];}, {}, [](){return true;}, [](){return true;}, {}, {}});
+                 J u=h.command();u["nominal_time"]=low_tick*pd;u["actual_sim_time"]=h.d->time;u["low_level_tick"]=low_tick++;
+                 auto a=h.LoadLWPolicyOutput();u["policy_output_frame_applied"]=a?J(a->frame):J(nullptr);
++                u["sensor_q"]=h.robot_state.motor_state.q;u["sensor_dq"]=h.robot_state.motor_state.dq;
++                u["saturation_by_policy_joint"]=J::array();
++                for(int i=0;i<10;++i)u["saturation_by_policy_joint"].push_back(h.candidates[i]!=h.bounded[i]);
+                 row["low_level_updates"].push_back(u);
+             };
+-            low();
+-            auto& s=h.robot_state;
++            low();auto& s=h.robot_state;
+             row["policy_state_float32"]={{"q",s.motor_state.q},{"dq",s.motor_state.dq},{"quaternion_wxyz_body_to_world",s.imu.quaternion},
+                 {"angular_velocity_body",s.imu.gyroscope},{"sensor_state_evaluation_time",std::max(0.0,h.d->time-dt)}};
+-            int calls=h.capture->calls;
+-            h.core.runInferenceCycle(false);
++            row["sensor_data_before_inference_float64"]=arr(h.d->sensordata,h.m->nsensordata);
++            row["actual_applied_command"]={h.control.x,h.control.y,h.control.yaw};
++            auto& cfg=h.GetLWPolicyDefinition(h.policy_key)->runtime;
++            row["default_q"]=cfg.default_dof_pos;row["joint_mapping"]=h.joint_mapping_evidence;
++            int calls=h.capture->calls;h.core.runInferenceCycle(false);
+             if(h.capture->calls!=calls+1)throw std::runtime_error("policy inference missing");
+-            row["model_input"]={{"shape",{1,410}},{"dtype","float32"},{"values",h.capture->input}};
+-            row["model_raw_action"]=h.capture->raw;
+-            row["command_in_observation"]=arr(h.capture->input.data()+369+6,3);
+-            row["projected_gravity_in_observation"]=arr(h.capture->input.data()+369+3,3);
+-            row["previous_action_in_observation"]=arr(h.capture->input.data()+369+29,10);
+-            auto p=h.LoadLWPolicyOutput();if(!p)throw std::runtime_error("output not published");
++            auto& input=h.capture->input;
++            row["command_in_observation"]=arr(input.data()+375,3);
++            row["projected_gravity_in_observation"]=arr(input.data()+372,3);
++            row["previous_action_in_observation"]=arr(input.data()+398,10);
++            row["observation_noise_applied"]=false;
++            auto p=h.LoadLWPolicyOutput();if(!p)throw std::runtime_error("policy output not published");
++            std::vector<float> clipped(10),scaled(10),raw_scaled(10);std::vector<bool> flags(10);
++            for(int i=0;i<10;++i){clipped[i]=std::clamp(h.capture->raw[i],cfg.clip_actions_lower[i],cfg.clip_actions_upper[i]);
++                flags[i]=clipped[i]!=h.capture->raw[i];scaled[i]=clipped[i]*cfg.action_scale[i];raw_scaled[i]=h.capture->raw[i]*cfg.action_scale[i];}
++            row["action_processing"]={{"clipped_action",clipped},{"raw_action_times_scale_diagnostic",raw_scaled},
++                {"clipped_action_times_scale",scaled},{"clip_flags",flags},
++                {"order","raw action -> action clipping -> scale -> leg default offset / wheel velocity target"}};
+             row["new_policy_targets"]={{"q",p->dof_pos},{"dq",p->dof_vel},{"pd_torque_at_inference",p->dof_tau},{"frame",p->frame},{"source_input_sequence",p->source_input_sequence}};
+-            const double end=std::min(duration,(step+1)*period);
+-            while(h.d->time<end-1e-10) {
+-                if(low_tick*pd<=h.d->time+1e-10)low();
+-                double before=h.d->time;
++            double end=std::min(duration,(step+1)*period);
++            while(h.d->time<end-1e-10){
++                if(low_tick*pd<=h.d->time+1e-10)low();double before=h.d->time;
+                 mj_step(h.m,h.d);++physical;
+                 J sub={{"physics_step",physical},{"from_sim_time",before},{"to_sim_time",h.d->time},
+                     {"ctrl",arr(h.d->ctrl,h.m->nu)},{"actuator_force",arr(h.d->actuator_force,h.m->nu)},
+                     {"qfrc_actuator",arr(h.d->qfrc_actuator,h.m->nv)},
+-                    {"post_qpos",arr(h.d->qpos,h.m->nq)},{"post_qvel",arr(h.d->qvel,h.m->nv)}};
+-                row["physics_substeps"].push_back(sub);
+-                why=h.stop_reason(); if(h.d->time<=before)why="unexpected_mujoco_time_reset";
++                    {"post_qpos",arr(h.d->qpos,h.m->nq)},{"post_qvel",arr(h.d->qvel,h.m->nv)},
++                    {"contacts",J::array()},{"sampling","ctrl/forces/contacts from mj_step dynamics at from_sim_time; post qpos/qvel at to_sim_time"}};
++                for(int i=0;i<h.d->ncon;++i){auto& c=h.d->contact[i];mjtNum f[6]{};mj_contactForce(h.m,h.d,i,f);
++                    sub["contacts"].push_back({{"geom1",c.geom1},{"geom2",c.geom2},{"distance",c.dist},{"efc_address",c.efc_address},
++                        {"position_world",arr(c.pos,3)},{"force_contact_frame",arr(f,6)},{"frame_world_rows",arr(c.frame,9)}});}
++                for(const char* site:{"left_foot_site","right_foot_site"}){int id=mj_name2id(h.m,mjOBJ_SITE,site);mjtNum v[6];
++                    if(id>=0){mj_objectVelocity(h.m,h.d,mjOBJ_SITE,id,v,0);sub["feet_dynamics"][site]={{"position_world",arr(h.d->site_xpos+3*id,3)},{"linear_velocity_world",arr(v+3,3)},{"site_height_above_plane_m",h.d->site_xpos[3*id+2]}};}}
++                row["physics_substeps"].push_back(sub);why=h.stop_reason();
++                if(h.d->time<=before)why="unexpected_mujoco_time_reset";
++                if(std::chrono::duration<double>(std::chrono::steady_clock::now()-started).count()>plan["wall_timeout_seconds"].get<double>())why="wall_timeout";
+                 if(!why.empty())break;
+             }
+             row["post"]=h.state();row["terminated"]=!why.empty() || h.d->time>=duration-1e-10;
+             row["termination_reason"]=why.empty()?(row["terminated"].get<bool>()?J("time_limit"):J(nullptr)):J(why);
+-            row["safety_events"]=h.safety_events;emit(row);pending_row=J();h.capture->record=nullptr;++step;
+-            if(step%250==0)std::cout<<"case="<<cid<<" step="<<step<<" time="<<h.d->time<<std::endl;
++            row["safety_events"]=h.safety_events;emit(row);pending=J();h.capture->record=nullptr;++step;
++            if(step%250==0)std::cout<<cid<<" "<<step<<" "<<h.d->time<<std::endl;
+             if(!why.empty())break;
+         }
+-        result={{"condition",condition},{"case_id",cid},{"status",why.empty()?"completed":"terminated_early"},{"termination_reason",why.empty()?"time_limit":why},
++        result={{"case_id",cid},{"status",why.empty()?"completed":"terminated_early"},{"termination_reason",why.empty()?"time_limit":why},
+             {"control_records",step},{"low_level_ticks",low_tick},{"physics_steps",physical},{"final_sim_time",h.d->time},
+-            {"requested_sim_duration",duration},{"seed",42},{"seed_method","std::srand(42) before home_leg reset; no explicit policy or physics randomization"},
+-            {"reset_count",1},{"safety_events",h.safety_events}};
++            {"requested_sim_duration",duration},{"seed",42},{"seed_method","srand(42); no explicit observation noise or random perturbation"},{"reset_count",1}};
+         if(gzclose(log)!=Z_OK)throw std::runtime_error("gzclose failed");log=nullptr;
+-        write_json(out+"/result.json",result);std::cout<<result.dump(2)<<std::endl;
+-        return why.empty()?0:3;
+-    }catch(const std::exception&e) {
+-        if(log && !pending_row.is_null()) {
+-            pending_row["terminated"]=true;pending_row["termination_reason"]=std::string("program_exception: ")+e.what();
+-            std::string line=pending_row.dump()+"\n";gzwrite(log,line.data(),line.size());
+-        }
+-        if(log){std::string s=J({{"event","program_exception"},{"case_id",cid},{"terminated",true},{"reason",e.what()}}).dump()+"\n";gzwrite(log,s.data(),s.size());gzclose(log);}
+-        result["exception"]=e.what();write_json(out+"/result.json",result);std::cerr<<e.what()<<std::endl;return 1;
++        write_json(out+"/result.json",result);std::cout<<result.dump()<<std::endl;return why.empty()?0:3;
++    }catch(const std::exception& e){
++        result["exception"]=e.what();result["termination_reason"]="program_exception";
++        result["control_records"]=step;result["physics_steps"]=physical;result["low_level_ticks"]=low_tick;
++        if(runtime)result["final_sim_time"]=runtime->d->time;
++        if(log){if(!pending.is_null()){pending["terminated"]=true;pending["termination_reason"]=std::string("program_exception: ")+e.what();
++            std::string s=pending.dump()+"\n";gzwrite(log,s.data(),s.size());result["control_records"]=step+1;}gzclose(log);}
++        write_json(out+"/result.json",result);std::cerr<<e.what()<<std::endl;return 1;
+     }
+ }

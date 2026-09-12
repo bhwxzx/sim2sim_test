@@ -1,0 +1,13 @@
+{
+  "case_id": "turn-left",
+  "control_records": 1000,
+  "final_sim_time": 19.999999999999794,
+  "low_level_ticks": 4000,
+  "physics_steps": 10000,
+  "requested_sim_duration": 20.0,
+  "reset_count": 1,
+  "seed": 42,
+  "seed_method": "srand(42); no explicit observation noise or random perturbation",
+  "status": "completed",
+  "termination_reason": "time_limit"
+}
